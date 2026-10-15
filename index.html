@@ -1,10 +1,15 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8">
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Saddle Up Drinks — Luxury Mobile Bar | Greater Sacramento</title>
-<meta name="description" content="Saddle Up Drinks is a family owned horse trailer converted to a full functioning luxury bar serving the greater Sacramento area. Licensed and insured, we supply the alcohol.">
 <link rel="canonical" href="https://saddleupdrinks.com/">
 <meta name="theme-color" content="#0E1A20">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Saddle Up">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="application-name" content="Saddle Up">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -17,509 +22,458 @@
 <meta property="og:image" content="https://saddleupdrinks.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The Saddle Up Drinks horse-trailer bar with the Saddle Up logo">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Saddle Up Drinks — Luxury Mobile Bar">
-<meta name="twitter:description" content="Family owned horse-trailer luxury bar serving the greater Sacramento area.">
 <meta name="twitter:image" content="https://saddleupdrinks.com/og-image.jpg">
-<style>body{margin:0;background:#0E1A20}</style>
-</head><body>
-<!-- ===== Saddle Up Drinks — landing page + booking funnel ===== -->
+<title>Saddle Up Drinks — Luxury Mobile Bar | Greater Sacramento</title>
+<meta name="description" content="Saddle Up Drinks is a family owned and operated horse trailer converted to a full functioning luxury bar serving the greater Sacramento area.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap">
-<style id="saddle-up-styles">
-.su{all:initial;display:block}
-.su *,.su *::before,.su *::after{box-sizing:border-box}
-.su h1,.su h2,.su h3,.su h4,.su h5,.su p,.su ul,.su figure{margin:0;padding:0;border:0;text-transform:none;letter-spacing:normal;background:none}
-.su button{font:inherit;margin:0;text-transform:none;box-shadow:none;text-shadow:none;line-height:normal}
-.su a{text-decoration:none;box-shadow:none}
-.su img{max-width:100%;height:auto;border:0;box-shadow:none}
-.su input,.su textarea{margin:0;box-shadow:none;width:100%}
-.su [hidden]{display:none!important}
-.su section{scroll-margin-top:84px}
-.su a{color:#E0A458}
-.su a:hover{color:#F4ECDF}
-.su *{box-sizing:border-box}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap">
+<style>
+/* Layout: a stack of pinned sheets — cream hero, navy "difference" sheet, ink offerings rail — then ordinary flow into the funnel and a brass-edged sign-off. */
+:root{
+  --cream:#F6EFE3; --cream-2:#ECE2D0; --paper:#FFFCF7;
+  --navy:#0E1A20; --navy-2:#13232B; --ink:#14242D; --pitch:#090F12;
+  --brass:#E0A458; --brass-hi:#FFC77A; --copper:#C7613C; --rust:#A4462A;
+  --on-dark:#FFF8EE; --on-dark-muted:#C9BEAC; --muted:#4B5A60; --hair:#DCCFB9;
+  --f-display:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --f-body:"Jost", "Helvetica Neue", Arial, sans-serif;
+  --ease-entrance:cubic-bezier(.2,0,0,1); --ease-plate:cubic-bezier(.33,0,0,1);
+  --gut-l:max(16px, env(safe-area-inset-left, 0px)); --gut-r:max(16px, env(safe-area-inset-right, 0px));
+  color-scheme:light;
+}
 html{scroll-behavior:smooth}
-.su .site{width:100%;background:#0E1A20;color:#F4ECDF;font-family:'Jost','Helvetica Neue',sans-serif;font-weight:300;overflow:hidden;position:relative}
-.su .serif{font-family:'Cormorant Garamond',Georgia,serif}
-.su .wrap{max-width:1240px;margin:0 auto;padding:0 40px}
-.su .eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:#E0A458;font-weight:500}
-.su .rule{width:56px;height:1px;background:#E0A458;display:inline-block;vertical-align:middle;margin-right:14px}
-.su .muted{color:#B9AE9C}
-.su .nav{position:sticky;top:0;z-index:50;background:rgba(14,26,32,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(224,164,88,.16)}
-.su .nav-in{display:flex;align-items:center;justify-content:space-between;height:78px;gap:24px}
-.su .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#F4ECDF}
-.su .brand:hover{color:#F4ECDF}
-.su .links{display:flex;gap:34px;align-items:center}
-.su .links a{color:#D8CDBB;text-decoration:none;font-size:14px;letter-spacing:.08em;position:relative;padding:6px 0}
-.su .links a::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:1px;background:#E0A458;transform:scaleX(0);transform-origin:right;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
-.su .links a:hover{color:#F4ECDF}
-.su .links a:hover::after{transform:scaleX(1);transform-origin:left}
-.su .btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 30px;border-radius:999px;background:#E0A458;color:#0E1A20;font-family:'Jost',sans-serif;font-size:14px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
-.su .btn::before{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:sheen 4.5s ease-in-out infinite}
-.su .btn:hover{color:#0E1A20;transform:translateY(-2px);box-shadow:0 14px 40px -12px rgba(224,164,88,.7)}
-.su .btn-sm{min-height:44px;padding:0 22px;font-size:12px}
-.su .btn-ghost{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;border:1px solid rgba(244,236,223,.35);color:#F4ECDF;text-decoration:none;font-size:14px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;transition:border-color .3s,background .3s}
-.su .btn-ghost:hover{border-color:#E0A458;background:rgba(224,164,88,.08);color:#F4ECDF}
-.su .btn[disabled]{background:#3A4A52;color:#8E9AA0;cursor:not-allowed;box-shadow:none;transform:none}
-.su .btn[disabled]::before{display:none}
-.su .hero{position:relative;padding:90px 0 110px}
-.su .glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;pointer-events:none}
-.su .hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:64px;align-items:center;position:relative}
-.su .h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:104px;line-height:.92;letter-spacing:-.02em;margin:26px 0 28px}
-.su .h1 em{font-style:italic;color:#E0A458;font-weight:400}
-.su .line{display:block;overflow:hidden}
-.su .line span{display:inline-block;animation:lineup 1.2s cubic-bezier(.2,.8,.2,1) both}
-.su .d1{animation-delay:.1s!important}
-.su .d2{animation-delay:.25s!important}
-.su .d3{animation-delay:.4s!important}
-.su .d4{animation-delay:.6s!important}
-.su .d5{animation-delay:.8s!important}
-.su .d6{animation-delay:1s!important}
-.su .fade{animation:rise 1.1s cubic-bezier(.2,.8,.2,1) both}
-.su .lede{font-size:19px;line-height:1.7;color:#D8CDBB;max-width:520px;margin:0 0 40px}
-.su .cta-row{display:flex;gap:16px;flex-wrap:wrap}
-.su .trust{display:flex;gap:28px;flex-wrap:wrap;margin-top:48px;padding-top:28px;border-top:1px solid rgba(244,236,223,.12)}
-.su .trust div{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#B9AE9C;display:flex;align-items:center;gap:10px}
-.su .trust svg{flex-shrink:0}
-.su .stage{position:relative;aspect-ratio:1/1.08;border-radius:320px 320px 24px 24px;background:radial-gradient(120% 80% at 50% 0%,#1F3642 0%,#14242D 55%,#0F1D24 100%);border:1px solid rgba(224,164,88,.28);overflow:hidden;animation:rise 1.4s .3s cubic-bezier(.2,.8,.2,1) both}
-.su .stage::after{content:'';position:absolute;inset:14px;border-radius:306px 306px 16px 16px;border:1px solid rgba(224,164,88,.14);pointer-events:none}
-.su .draw path,.su .draw circle,.su .draw rect,.su .draw line{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 3.2s 0.6s cubic-bezier(.6,.1,.2,1) forwards}
-.su .bulb{animation:twinkle 2.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
-.su .b2{animation-delay:.4s}
-.su .b3{animation-delay:.9s}
-.su .b4{animation-delay:1.3s}
-.su .b5{animation-delay:.2s}
-.su .b6{animation-delay:1.7s}
-.su .b7{animation-delay:.7s}
-.su .float{animation:floaty 7s ease-in-out infinite}
-.su .badge{position:absolute;right:-26px;bottom:60px;width:150px;height:150px;border-radius:50%;background:#0E1A20;border:1px solid rgba(224,164,88,.4);display:flex;align-items:center;justify-content:center;animation:pop 1s 1.6s cubic-bezier(.2,1.4,.4,1) both}
-.su .spin{animation:spin 22s linear infinite}
-.su .marq{border-top:1px solid rgba(224,164,88,.18);border-bottom:1px solid rgba(224,164,88,.18);background:#101F26;overflow:hidden;padding:26px 0}
-.su .track{display:flex;gap:56px;width:max-content;animation:marquee 38s linear infinite}
-.su .track span{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:34px;color:#E6D6BD;white-space:nowrap;display:flex;align-items:center;gap:56px}
-.su .track i{width:8px;height:8px;background:#C7613C;transform:rotate(45deg);display:inline-block}
-.su .sec{padding:130px 0;position:relative}
-.su .h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:68px;line-height:1;letter-spacing:-.015em;margin:22px 0 24px}
-.su .h2 em{font-style:italic;color:#E0A458;font-weight:400}
-.su .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:80px;align-items:end}
-.su .pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(224,164,88,.18);border:1px solid rgba(224,164,88,.18);border-radius:22px;overflow:hidden;margin-top:72px}
-.su .pillar{background:#0E1A20;padding:40px 32px 44px;transition:background .5s}
-.su .pillar:hover{background:#13232B}
-.su .pillar h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:30px;margin:26px 0 14px;line-height:1.1}
-.su .pillar p{font-size:15px;line-height:1.7;color:#B9AE9C;margin:0}
-.su .icon{width:54px;height:54px;border-radius:50%;border:1px solid rgba(224,164,88,.45);display:flex;align-items:center;justify-content:center;transition:transform .6s cubic-bezier(.2,.8,.2,1),background .4s}
-.su .pillar:hover .icon{transform:rotate(-12deg) scale(1.08);background:rgba(224,164,88,.12)}
-.su .num{font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;color:#E0A458;letter-spacing:.2em}
-.su .band{background:#F4ECDF;color:#14242D}
-.su .band .eyebrow{color:#A4462A}
-.su .band .h2 em{color:#A4462A}
-.su .band .muted{color:#4B5A60}
-.su .xgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:70px}
-.su .xcard{background:#13232B;border:1px solid rgba(224,164,88,.14);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:transform .6s cubic-bezier(.2,.8,.2,1),border-color .5s,box-shadow .6s}
-.su .xcard:hover{transform:translateY(-10px);border-color:rgba(224,164,88,.5);box-shadow:0 40px 80px -40px rgba(0,0,0,.8)}
-.su .xph{position:relative;height:230px;overflow:hidden;background:#1A2F39}
-.su .xph-in{position:absolute;inset:0;background:radial-gradient(90% 90% at 30% 20%,#2A4552 0%,#172A33 60%,#111F26 100%);transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
-.su .xcard:hover .xph-in{transform:scale(1.08)}
-.su .xph-label{position:absolute;left:18px;bottom:16px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#9FB0B6;border:1px dashed rgba(159,176,182,.5);padding:6px 10px;border-radius:6px}
-.su .xmono{position:absolute;right:22px;top:14px;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:88px;color:rgba(224,164,88,.22);line-height:1}
-.su .xbody{padding:30px 30px 32px;display:flex;flex-direction:column;gap:14px;flex-grow:1}
-.su .xtag{align-self:flex-start;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#E0A458;border:1px solid rgba(224,164,88,.4);border-radius:999px;padding:6px 12px}
-.su .xbody h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:34px;margin:4px 0 0;line-height:1.05}
-.su .xbody p{margin:0;font-size:15px;line-height:1.7;color:#B9AE9C}
-.su .xlist{list-style:none;padding:0;margin:4px 0 8px;display:flex;flex-direction:column;gap:8px}
-.su .xlist li{font-size:14px;color:#D8CDBB;display:flex;gap:10px;align-items:baseline}
-.su .xlist li::before{content:'';width:5px;height:5px;background:#C7613C;transform:rotate(45deg) translateY(-2px);flex-shrink:0}
-.su .xadd{margin-top:auto;display:inline-flex;align-items:center;justify-content:space-between;min-height:48px;padding:0 20px;border-radius:12px;border:1px solid rgba(224,164,88,.35);color:#F4ECDF;text-decoration:none;font-size:13px;letter-spacing:.14em;text-transform:uppercase;transition:background .3s,border-color .3s}
-.su .xadd:hover{background:#E0A458;color:#0E1A20;border-color:#E0A458}
-.su .xadd.on{background:#E0A458;color:#0E1A20;border-color:#E0A458}
-.su .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px;margin-top:80px;position:relative}
-.su .steps::before{content:'';position:absolute;top:27px;left:28px;right:28px;height:1px;background:linear-gradient(90deg,#E0A458,rgba(224,164,88,.1))}
-.su .step{position:relative}
-.su .dot{width:56px;height:56px;border-radius:50%;background:#0E1A20;border:1px solid #E0A458;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;color:#E0A458;position:relative;z-index:1}
-.su .step h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:28px;margin:28px 0 10px}
-.su .step p{font-size:15px;line-height:1.7;color:#B9AE9C;margin:0}
-.su .incl{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
-.su .incl span{padding:12px 20px;border-radius:999px;border:1px solid rgba(20,36,45,.2);font-size:15px;color:#14242D;transition:background .3s,color .3s}
-.su .incl span:hover{background:#14242D;color:#F4ECDF}
-.su .gal{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:260px 260px;gap:18px;margin-top:64px}
-.su .gph{position:relative;border-radius:18px;overflow:hidden;background:radial-gradient(90% 90% at 70% 20%,#2A4552 0%,#172A33 60%,#111F26 100%)}
-.su .gph:first-child{grid-row:span 2}
-.su .gph .xph-label{left:16px;bottom:14px}
-.su .book{background:radial-gradient(80% 60% at 80% 0%,#1C3440 0%,#0E1A20 70%)}
-.su .fwrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
-.su .panel{background:#F4ECDF;color:#14242D;border-radius:28px;padding:44px;box-shadow:0 60px 120px -50px rgba(0,0,0,.9);position:relative;overflow:hidden}
-.su .pbar{height:3px;background:rgba(20,36,45,.12);border-radius:3px;overflow:hidden;margin:18px 0 34px}
-.su .pfill{height:100%;background:linear-gradient(90deg,#C7613C,#E0A458);border-radius:3px;transition:width .7s cubic-bezier(.2,.8,.2,1)}
-.su .plabels{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#6B777C}
-.su .plabels b{color:#A4462A;font-weight:600}
-.su .q{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:38px;line-height:1.1;margin:0 0 8px}
-.su .qs{font-size:15px;color:#4B5A60;margin:0 0 26px}
-.su .screen{animation:slidein .6s cubic-bezier(.2,.8,.2,1) both}
-.su .chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.su .chip{min-height:60px;padding:14px 18px;border-radius:14px;border:1px solid rgba(20,36,45,.18);background:#FBF6EE;color:#14242D;font-family:'Jost',sans-serif;font-size:16px;text-align:left;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;transition:border-color .25s,background .25s,transform .25s}
-.su .chip:hover{border-color:#A4462A;transform:translateY(-2px)}
-.su .chip.on{background:#14242D;color:#F4ECDF;border-color:#14242D}
-.su .chip .tick{width:22px;height:22px;border-radius:50%;border:1px solid currentColor;display:flex;align-items:center;justify-content:center;opacity:.5;flex-shrink:0}
-.su .chip.on .tick{background:#E0A458;border-color:#E0A458;color:#14242D;opacity:1}
-.su .pk{min-height:74px;flex-direction:column;align-items:flex-start;justify-content:center;gap:4px}
-.su .pk small{font-size:13px;opacity:.75}
-.su .field{display:flex;flex-direction:column;gap:8px}
-.su .field label{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#4B5A60;font-weight:500}
-.su .field input,.su .field textarea{min-height:54px;padding:14px 16px;border-radius:12px;border:1px solid rgba(20,36,45,.22);background:#FBF6EE;font-family:'Jost',sans-serif;font-size:16px;color:#14242D;outline:none;transition:border-color .25s,box-shadow .25s}
-.su .field textarea{min-height:96px;resize:vertical}
-.su .field input:focus,.su .field textarea:focus{border-color:#A4462A;box-shadow:0 0 0 4px rgba(199,97,60,.14)}
-.su .fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.su .nav-row{display:flex;justify-content:space-between;align-items:center;margin-top:34px;gap:16px}
-.su .back{background:none;border:0;font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#4B5A60;cursor:pointer;min-height:44px;padding:0 6px}
-.su .back:hover{color:#14242D}
-.su .summary{background:#14242D;color:#F4ECDF;border-radius:16px;padding:22px 24px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 24px;margin-bottom:24px}
-.su .summary div{font-size:14px;line-height:1.5}
-.su .summary span{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#E0A458;margin-bottom:2px}
-.su .done{text-align:center;padding:20px 0}
-.su .seal{width:96px;height:96px;margin:0 auto 24px;border-radius:50%;background:#14242D;display:flex;align-items:center;justify-content:center;animation:pop .8s cubic-bezier(.2,1.4,.4,1) both}
-.su .side-list{list-style:none;padding:0;margin:36px 0 0;display:flex;flex-direction:column;gap:18px}
-.su .side-list li{display:flex;gap:16px;align-items:flex-start;font-size:16px;line-height:1.6;color:#D8CDBB}
-.su .side-list li svg{flex-shrink:0;margin-top:3px}
-.su .hint{font-size:13px;color:#6B777C}
-.su .final{text-align:center;padding:150px 0}
-.su .final .h2{font-size:84px}
-.su .foot{border-top:1px solid rgba(224,164,88,.16);padding:70px 0 50px}
-.su .fgrid3{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px}
-.su .foot h5{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#E0A458;font-weight:500;margin:0 0 18px}
-.su .foot a{color:#F4ECDF;text-decoration:none;font-size:17px}
-.su .foot a:hover{color:#E0A458}
-.su .foot p{margin:0 0 10px;color:#B9AE9C;font-size:15px;line-height:1.7}
-.su .fine{margin-top:60px;padding-top:24px;border-top:1px solid rgba(244,236,223,.08);font-size:13px;color:#7F8A8E;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
-.su .lic{background:#14242D;border-radius:24px;padding:44px}
-.su .why{display:flex;flex-direction:column;gap:90px;margin-top:80px}
-.su .why-row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:72px;align-items:center}
-.su .why-row.flip .why-ph{order:2}
-.su .why-ph,.su .fin-ph{position:relative;aspect-ratio:16/10;border-radius:24px;overflow:hidden;background:radial-gradient(90% 90% at 30% 20%,#2A4552 0%,#172A33 60%,#111F26 100%);border:1px solid rgba(224,164,88,.2)}
-.su .fin-ph{aspect-ratio:404/470}
-.su .why-tx h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:46px;line-height:1.05;margin:16px 0 18px}
-.su .why-tx p{font-size:18px;line-height:1.75;color:#B9AE9C;margin:0 0 14px}
-.su .fin-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:80px;align-items:center}
-.su .logo-slot{width:46px;height:46px;border-radius:10px;border:1px dashed rgba(224,164,88,.6);display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#E0A458;text-align:center;flex-shrink:0}
-.su .xcard.feat{grid-column:span 2}
-.su .xcard.feat .xph{height:320px}
-@media (max-width: 760px){.su .why-row,.su .fin-grid{grid-template-columns:1fr;gap:28px}
-.su .why-row.flip .why-ph{order:0}
-.su .why-tx h3{font-size:36px}
-.su .lic{padding:28px}
-.su .xcard.feat{grid-column:span 1}
-.su .xcard.feat .xph{height:230px}
-.su .why{gap:64px}}
-.su .logo-badge{width:58px;height:58px;border-radius:50%;background:#F4ECDF;display:flex;align-items:center;justify-content:center;padding:6px;flex-shrink:0;box-shadow:0 0 0 1px rgba(224,164,88,.5)}
-.su .logo-badge img{width:100%;height:100%;object-fit:contain;display:block}
-.su .stage img.kb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:45% 50%;animation:kenburns 18s ease-in-out infinite alternate}
-.su .stage-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,26,32,.55) 0%,rgba(14,26,32,0) 32%,rgba(14,26,32,0) 60%,rgba(14,26,32,.75) 100%)}
-.su .xph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
-.su .xcard:hover .xph img{transform:scale(1.08)}
-.su .xph-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,26,32,0) 55%,rgba(19,35,43,.9) 100%)}
-.su .xmono{color:rgba(244,236,223,.85)!important;font-size:54px!important;text-shadow:0 2px 18px rgba(0,0,0,.5)}
-.su .why-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
-.su .why-row:hover .why-ph img{transform:scale(1.05)}
-.su .fin-ph{background:#F4ECDF!important;display:flex;align-items:center;justify-content:center;padding:48px}
-.su .fin-ph img{width:100%;height:100%;object-fit:contain}
-.su .float-sm{animation:floatsm 6s ease-in-out infinite}
-@keyframes kenburns{from{transform:scale(1.02)}to{transform:scale(1.14) translate(-2%,-1%)}}
-@keyframes floatsm{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-12px) rotate(1deg)}}
-.su .brand-name,.su .brand-tag,.su .nav-cta{white-space:nowrap}
-.su .brand{min-width:0}
-.su .cta-short{display:none}
-@media (max-width: 760px){.su .nav-in{height:68px;gap:12px}
-.su .logo-badge{width:46px;height:46px;padding:4px}
-.su .brand{gap:10px}
-.su .brand-name{font-size:20px!important}
-.su .brand-tag{display:none}
-.su .nav-cta{min-height:42px;padding:0 16px;font-size:11px;letter-spacing:.1em}}
-@media (max-width: 400px){.su .brand-name{font-size:18px!important}
-.su .cta-long{display:none}
-.su .cta-short{display:inline}}
-.su .muted{color:#D2C8B7}
-.su .lede,.su .xbody p,.su .step p,.su .why-tx p,.su .foot p{color:#D2C8B7}
-.su .book{background:radial-gradient(70% 60% at 75% 10%,rgba(224,164,88,.28) 0%,rgba(224,164,88,0) 60%),radial-gradient(60% 50% at 10% 90%,rgba(199,97,60,.22) 0%,rgba(199,97,60,0) 60%),#1B3240}
-.su .book .h2,.su .book .side-list li{color:#FFF8EE}
-.su .panel{background:#FFFAF2;border:1.5px solid #E0A458;animation:glowpulse 3.2s ease-in-out infinite}
-.su .panel::before{content:'';position:absolute;inset:0;border-radius:28px;padding:2px;background:linear-gradient(120deg,#FFC77A,#C7613C,#FFE2B0,#E0A458,#FFC77A);background-size:300% 300%;animation:borderflow 6s linear infinite;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
-.su .q{color:#14242D}
-.su .qs,.su .plabels{color:#3E4D53}
-.su .chip{background:#FFFFFF}
-.su .field input,.su .field textarea{background:#FFFFFF}
-.su .summary{background:linear-gradient(135deg,#1F3A48,#14242D);box-shadow:inset 0 0 0 1px rgba(224,164,88,.35)}
-.su .summary span{color:#FFC77A}
-.su .summary .sv{display:block;font-weight:400;font-size:16px;color:#FFF8EE;letter-spacing:0;text-transform:none}
-.su .final{background:radial-gradient(60% 70% at 30% 50%,rgba(224,164,88,.18) 0%,rgba(224,164,88,0) 65%),#172C38}
-.su .final .h2{color:#FFF8EE}
-.su .fin-ph{box-shadow:0 0 0 1.5px #E0A458,0 0 50px rgba(224,164,88,.45)}
-@keyframes glowpulse{0%,100%{box-shadow:0 0 0 1px rgba(255,199,122,.6),0 0 36px rgba(224,164,88,.45),0 0 90px rgba(199,97,60,.28)}50%{box-shadow:0 0 0 1px rgba(255,199,122,.9),0 0 60px rgba(224,164,88,.7),0 0 140px rgba(199,97,60,.4)}}
-@keyframes borderflow{to{background-position:300% 0}}
-@supports (animation-timeline: view()){.su .rv,.su .rv-s{animation-range:entry 0px entry 220px!important}}
-.su .panel-wrap{position:relative;border-radius:31px;padding:3px;isolation:isolate}
-.su .panel-wrap::before{content:'';position:absolute;inset:0;border-radius:31px;background:conic-gradient(from var(--ang),#FFC77A,#C7613C,#FFE9C4,#E0A458,#FFB25E,#C7613C,#FFC77A);animation:spinborder 4s linear infinite;z-index:-1}
-.su .panel-wrap::after{content:'';position:absolute;inset:-6px;border-radius:36px;background:conic-gradient(from var(--ang),#FFC77A,#C7613C,#FFE9C4,#E0A458,#FFB25E,#C7613C,#FFC77A);filter:blur(28px);opacity:.85;animation:spinborder 4s linear infinite,glowbreath 2.8s ease-in-out infinite;z-index:-2}
-.su .panel-wrap .panel{border:0;border-radius:28px;background:#FFFCF7;animation:none;box-shadow:none;opacity:1}
-.su .panel-wrap .panel::before{display:none}
+body{background:var(--cream);color:var(--ink);font-family:var(--f-body);font-weight:300;font-size:16px;line-height:1.6;margin:0;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:70;background:var(--navy)}
+*,*::before,*::after{box-sizing:border-box}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1280px;margin:0 auto;padding-left:max(28px,var(--gut-l));padding-right:max(28px,var(--gut-r))}
+.eyebrow{font-family:var(--f-body);font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--rust)}
+.on-dark .eyebrow{color:var(--brass)}
+h1,h2,h3{font-family:var(--f-display);font-weight:500;margin:0;text-wrap:balance;letter-spacing:-.01em}
+em{font-style:italic}
+p{margin:0}
+[data-reveal] .u{display:inline-block;will-change:transform,opacity}
+[data-reveal] .w{display:inline-block;white-space:nowrap}
+
+/* ---------- loading veil ---------- */
+.veil{position:fixed;inset:0;z-index:100;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding-bottom:env(safe-area-inset-bottom,0px)}
+.veil .mark{position:relative;width:min(46vw,220px);aspect-ratio:1}
+.veil .mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.veil .mark .dim{opacity:.12;filter:grayscale(1) brightness(2)}
+.veil .mark .fill{clip-path:inset(100% 0 0 0)}
+.veil .mark::before{content:"";position:absolute;inset:-14%;border-radius:50%;background:radial-gradient(closest-side,rgba(224,164,88,.18),transparent)}
+.veil .lbl{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--on-dark-muted);font-variant-numeric:tabular-nums}
+.veil .meter{position:absolute;left:0;right:0;bottom:env(safe-area-inset-bottom,0px);height:4px;background:rgba(255,255,255,.08)}
+.veil .meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--copper),var(--brass-hi))}
+
+/* ---------- masthead ---------- */
+.mast{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:60;padding:12px var(--gut-r) 0 var(--gut-l);pointer-events:none}
+.mast-in{pointer-events:auto;max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(14,26,32,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(224,164,88,.28);border-radius:999px;padding:7px 8px 7px 8px;color:var(--on-dark)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.badge{width:42px;height:42px;border-radius:50%;padding:5px;flex-shrink:0;background:radial-gradient(closest-side,var(--cream) calc(100% - 4px),transparent calc(100% - 3.5px)),repeating-conic-gradient(from 10deg,#5A3720 0deg 5deg,#D9A86C 5deg 10deg,#A9733F 10deg 15deg)}
+.badge img{width:100%;height:100%;object-fit:contain}
+.brand b{font-family:var(--f-display);font-weight:600;font-size:21px;letter-spacing:.01em;white-space:nowrap}
+.links{display:flex;gap:28px}
+.links a{text-decoration:none;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-muted);transition:color .15s}
+.links a:hover{color:var(--brass-hi)}
+.cta{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 22px;border-radius:999px;background:var(--brass);color:var(--navy);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;border:0;cursor:pointer;transition:background .2s, transform .2s}
+.cta:hover{background:var(--brass-hi);transform:translateY(-1px)}
+.cta svg{flex-shrink:0}
+.ghost{display:inline-flex;align-items:center;min-height:52px;padding:0 26px;border-radius:999px;border:1px solid rgba(20,36,45,.3);color:var(--ink);text-decoration:none;font-size:13px;letter-spacing:.16em;text-transform:uppercase;transition:border-color .2s,background .2s}
+.ghost:hover{border-color:var(--rust);background:rgba(164,70,42,.06)}
+.cta.lg{min-height:52px;padding:0 28px;font-size:13px}
+
+
+.mast-r{display:flex;align-items:center;gap:6px}
+.socials{display:flex;align-items:center;gap:2px}
+.soc{width:38px;height:38px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--on-dark-muted);transition:color .15s,background .15s}
+.soc:hover{color:var(--brass-hi);background:rgba(255,255,255,.06)}
+.burger{width:44px;height:44px;border-radius:50%;border:1px solid rgba(224,164,88,.45);background:transparent;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;padding:0;flex-shrink:0}
+.burger i{display:block;width:17px;height:1.6px;background:var(--on-dark);transition:transform .3s var(--ease-entrance),opacity .2s}
+.burger:hover{border-color:var(--brass-hi)}
+.burger.open i:nth-child(1){transform:translateY(5.6px) rotate(45deg)}
+.burger.open i:nth-child(2){opacity:0}
+.burger.open i:nth-child(3){transform:translateY(-5.6px) rotate(-45deg)}
+.menu{position:fixed;inset:0;z-index:90;background:rgba(9,15,18,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;transition:opacity .3s}
+.menu.show{opacity:1}
+.menu-in{position:absolute;top:0;right:0;bottom:0;width:min(100%,460px);background:var(--navy);color:var(--on-dark);border-left:1px solid rgba(224,164,88,.3);display:flex;flex-direction:column;padding:calc(18px + env(safe-area-inset-top,0px)) max(22px,env(safe-area-inset-right,0px)) calc(26px + env(safe-area-inset-bottom,0px)) 28px;transform:translateX(100%);transition:transform .45s var(--ease-entrance);overflow-y:auto}
+.menu.show .menu-in{transform:none}
+.menu-top{display:flex;justify-content:space-between;align-items:center}
+.menu-top .badge{width:54px;height:54px}
+.menu-links{display:flex;flex-direction:column;margin-top:36px;flex:1}
+.menu-links a{text-decoration:none;font-family:var(--f-display);font-size:34px;line-height:1.1;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08);transition:color .15s,padding .25s}
+.menu-links a:hover{color:var(--brass-hi);padding-left:8px}
+.menu-links small{display:block;font-family:var(--f-body);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--brass);margin-bottom:4px}
+.menu-foot{display:grid;gap:16px;margin-top:28px}
+.menu-foot a{color:var(--on-dark);text-decoration:none;font-size:17px;display:block;margin-top:2px}
+.menu-foot .eyebrow{color:var(--brass);font-size:10.5px}
+.menu-foot .socials{display:flex}.menu-foot .soc{display:inline-flex;margin-top:0}.socials.big .soc{width:46px;height:46px;border:1px solid rgba(224,164,88,.35);margin-right:8px}
+@media (max-width:767px){.mast-cta{display:none}.soc{width:34px;height:34px}.mast-in{padding:6px}}
+@media (max-width:370px){.mast .socials .soc[data-social="tiktok"]{display:none}}
+
+
+/* ---------- signboard buttons ---------- */
+.cta,.btn{position:relative;isolation:isolate;background:none!important;border:0;border-radius:0;color:#1B120A;font-weight:600;padding:0 32px;filter:drop-shadow(0 4px 10px rgba(199,97,60,.45));transition:filter .25s,transform .25s}
+.cta::before,.btn::before{content:"";position:absolute;inset:0;z-index:-1;clip-path:polygon(14px 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,14px 100%,0 50%);background:linear-gradient(100deg,transparent 35%,rgba(255,255,255,.65) 50%,transparent 65%) -150% 0/250% 100% no-repeat,linear-gradient(180deg,#F7CB86 0%,#E0A458 55%,#C4853F 100%);transition:background-position .7s}
+.cta::after,.btn::after{content:"";position:absolute;inset:6px 20px;border-top:1.5px dashed rgba(70,40,15,.38);border-bottom:1.5px dashed rgba(70,40,15,.38);pointer-events:none}
+.cta:hover,.btn:hover{filter:drop-shadow(0 6px 18px rgba(255,190,110,.85));transform:translateY(-2px)}
+.cta:hover::before,.btn:hover::before{background-position:150% 0,0 0}
+.btn[disabled]{filter:none;color:#7c8a90;transform:none}
+.btn[disabled]::before{background:#d6dadc}
+.btn[disabled]::after{border-color:rgba(0,0,0,.12)}
+.ghost,.xadd,.btn-ghost{position:relative;isolation:isolate;background:none!important;border:0!important;border-radius:0;clip-path:none;padding:0 30px;font-weight:500;transition:transform .25s,filter .25s,color .2s}
+.ghost::before,.xadd::before,.btn-ghost::before{content:"";position:absolute;inset:0;z-index:-2;clip-path:polygon(14px 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,14px 100%,0 50%);background:var(--rust);transition:background .25s}
+.ghost::after,.xadd::after,.btn-ghost::after{content:"";position:absolute;inset:1.6px;z-index:-1;clip-path:polygon(14px 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,14px 100%,0 50%);background:var(--cream);transition:background .25s}
+.ghost:hover,.btn-ghost:hover{transform:translateY(-2px);filter:drop-shadow(0 5px 12px rgba(164,70,42,.3))}
+.ghost:hover::before,.btn-ghost:hover::before{background:var(--copper)}
+.ghost:hover::after,.btn-ghost:hover::after{background:#FFF6E6}
+.btn-ghost::after{background:var(--paper)}
+.xadd{color:var(--on-dark)}
+.xadd::before{background:rgba(224,164,88,.7)}
+.xadd::after{background:var(--pitch)}
+.xadd:hover,.xadd.on{color:var(--navy);filter:drop-shadow(0 4px 14px rgba(255,190,110,.55));transform:translateY(-2px)}
+.xadd:hover::after,.xadd.on::after{background:linear-gradient(180deg,#F7CB86,#E0A458 60%,#C4853F)}
+.lasso{position:absolute;left:0;top:0;overflow:visible;pointer-events:none}
+.lasso.back{z-index:0} .lasso.front{z-index:2}
+.lasso-wrap{cursor:pointer}
+.lasso-wrap em{position:relative;z-index:1}
+
+
+.install-row{display:flex;justify-content:center;margin-top:44px}.install-row:not(:has(:not([hidden]))){margin-top:0}
+.install{display:flex;align-items:center;gap:14px;width:min(100%,360px);padding:12px 16px;background:rgba(224,164,88,.1);border:1px dashed rgba(224,164,88,.6);color:var(--on-dark);font:inherit;text-align:left;cursor:pointer;transition:background .2s}
+.install:hover{background:rgba(224,164,88,.2)}
+.install .badge{width:44px;height:44px}
+.install small{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--brass)}
+.install span:last-child{font-family:var(--f-display);font-size:22px;line-height:1.2}
+.ios-tip{max-width:360px;text-align:center;font-size:14px;color:var(--on-dark-muted);border:1px dashed rgba(224,164,88,.5);padding:12px 14px}
+.ios-tip b{color:var(--brass-hi);font-weight:500}
+
+/* ---------- the stack ---------- */
+.stack{position:relative;background:var(--pitch)}
+.layer{position:relative}
+.layer.pin{position:sticky;top:0}
+.layer .inner{transform-origin:center top}
+.layer .shade{position:absolute;inset:0;background:var(--pitch);opacity:0;pointer-events:none;z-index:5}
+.layer:nth-child(1){z-index:0}.layer:nth-child(2){z-index:10}
+.offer{position:relative;z-index:20}
+
+/* ---------- hero ---------- */
+.hero{position:relative;isolation:isolate;min-height:100svh;background:var(--cream);overflow:hidden;display:flex;flex-direction:column}
+.bg-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.hero .wrap{flex:1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:40px;align-items:center;padding-top:calc(118px + env(safe-area-inset-top,0px));padding-bottom:24px;width:100%}
+.hero h1{font-size:clamp(56px,7.4vw,112px);line-height:.92;margin:22px 0 26px;color:var(--ink)}
+.hero h1 em{color:var(--rust);font-weight:500}
+.hero h1 .ln{display:block}
+.lede{font-size:18px;line-height:1.7;color:#33434A;max-width:33em}
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.coinbox{position:relative;display:grid;grid-template-rows:auto auto;gap:22px;justify-items:center}
+.coin{position:relative;width:min(100%,clamp(260px,40vw,520px));aspect-ratio:1;touch-action:pan-y}
+.coin canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab}
+.coin .fallback{position:absolute;inset:4%;display:none}
+.coin.nogl .fallback{display:block}
+.coin .fallback img{width:100%;height:100%;object-fit:contain}
+.coin-shadow{position:absolute;left:22%;right:22%;bottom:-2%;height:9%;border-radius:50%;background:radial-gradient(closest-side,rgba(14,26,32,.35),transparent);filter:blur(2px);z-index:-1}
+.coin-hint{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:min(100%,520px)}
+.bracket{position:relative;padding:18px 18px 16px;font-size:14px;line-height:1.5}
+.bracket::before,.bracket::after{content:"";position:absolute;width:14px;height:14px;border-color:currentColor;border-style:solid;opacity:.7}
+.bracket::before{top:0;left:0;border-width:1.5px 0 0 1.5px}
+.bracket::after{bottom:0;right:0;border-width:0 1.5px 1.5px 0}
+.bracket .eyebrow{font-size:10.5px;display:block;margin-bottom:6px}
+.p-dark{background:var(--navy);color:var(--on-dark)}
+.p-dark .eyebrow{color:var(--brass)}
+.p-line{background:rgba(255,252,247,.7);color:var(--ink);text-decoration:none;display:block;transition:background .2s}
+.p-line:hover{background:var(--paper)}
+.p-line b{font-weight:500}
+.hero-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px solid var(--hair);padding-top:18px;padding-bottom:26px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.hero-foot .cue{display:flex;align-items:center;gap:10px}
+.hero-foot .cue i{width:1px;height:28px;background:linear-gradient(var(--rust),transparent);display:block}
+
+/* ---------- difference ---------- */
+.diff{position:relative;isolation:isolate;min-height:100svh;background:var(--navy);color:var(--on-dark);overflow:hidden;display:flex;align-items:center}
+.seam{position:absolute;left:0;right:0;top:-1px;height:clamp(120px,20vh,200px);width:100%;z-index:1;pointer-events:none}
+.diff .wrap{position:relative;z-index:2;width:100%;padding-top:clamp(150px,22vh,220px);padding-bottom:56px}
+.diff h2{font-size:clamp(42px,5.6vw,84px);line-height:1;max-width:14ch;margin:18px 0 0}
+.lasso-wrap{position:relative;display:inline-block;color:var(--brass-hi);margin-top:.42em;margin-left:.35em}
+
+.diff .copy{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:end;margin-top:34px}
+.diff .copy p{font-size:18px;line-height:1.75;color:var(--on-dark-muted);max-width:36em}
+.diff .copy p b{color:var(--on-dark);font-weight:400}
+.pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:52px}
+.pillar{background:rgba(255,255,255,.04);border:1px solid rgba(224,164,88,.2);display:flex;flex-direction:column;transition:border-color .3s,background .3s}
+.pillar:hover{border-color:rgba(224,164,88,.6);background:rgba(255,255,255,.07)}
+.pillar .ph{aspect-ratio:16/10;overflow:hidden;clip-path:polygon(14px 0,100% 0,100% 100%,0 100%,0 14px)}
+.pillar .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease-entrance)}
+.pillar:hover .ph img{transform:scale(1.06)}
+.pillar .tx{padding:16px 16px 18px}
+.pillar h3{font-size:24px;line-height:1.1;margin-bottom:8px}
+.pillar p{font-size:14px;line-height:1.6;color:var(--on-dark-muted)}
+
+/* ---------- offerings rail ---------- */
+.offer{background:var(--pitch);color:var(--on-dark);padding-block:120px 140px;overflow:hidden}
+.offer .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end;margin-bottom:70px}
+.offer h2{font-size:clamp(44px,5.4vw,80px);line-height:1}
+.offer h2 em{color:var(--brass)}
+.offer .head p{color:var(--on-dark-muted);font-size:17px;max-width:30em}
+.rows{position:relative}
+.rail{position:absolute;top:0;bottom:0;left:50%;width:1px;background:rgba(255,255,255,.16);transform:translateX(-.5px)}
+.rail .thread{position:absolute;left:0;top:0;width:1px;height:0;background:linear-gradient(var(--brass),var(--on-dark))}
+.rail .marker{position:absolute;left:-6px;top:0;width:13px;height:13px;border:1.5px solid var(--brass-hi);background:var(--pitch);box-shadow:0 0 18px rgba(255,199,122,.55)}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:96px;align-items:center;padding-block:46px;transition:opacity .4s}
+@media (hover:hover){.rows:hover .row:not(:hover){opacity:.38}}
+.row:nth-child(odd) .plate{order:2}
+.plate{position:relative;aspect-ratio:4/3;overflow:hidden;clip-path:polygon(22px 0,100% 0,100% calc(100% - 22px),calc(100% - 22px) 100%,0 100%,0 22px);background:#1a2a31;will-change:transform}
+.plate img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;transition:transform 1.4s var(--ease-entrance),clip-path .7s var(--ease-plate);clip-path:inset(10% 10% 10% 10%)}
+.row.in .plate img{clip-path:inset(0 0 0 0)}
+.row:hover .plate img{transform:scale(1.05)}
+.plate::after{content:"";position:absolute;inset:0;border:1px solid rgba(224,164,88,.22);pointer-events:none}
+.rtx{position:relative;will-change:transform}
+.spec{font-family:var(--f-display);font-style:italic;font-size:clamp(34px,3.6vw,54px);line-height:1;color:var(--brass-hi);margin-bottom:18px;opacity:1;transition:opacity 1.8s ease 1.2s}
+.row.settled .spec{opacity:.45}
+.rtx h3{font-size:clamp(32px,3vw,44px);line-height:1.05;margin-bottom:12px}
+.rtx p{color:var(--on-dark-muted);font-size:16px;line-height:1.7;max-width:30em}
+.rtx ul{list-style:none;padding:0;margin:16px 0 24px;display:grid;gap:7px}
+.rtx li{font-size:15px;color:var(--on-dark);display:flex;gap:12px;align-items:baseline}
+.rtx li::before{content:"";width:6px;height:6px;background:var(--copper);transform:rotate(45deg) translateY(-2px);flex-shrink:0}
+.xadd{display:inline-flex;align-items:center;gap:12px;min-height:46px;padding:0 20px;border:1px solid rgba(224,164,88,.45);color:var(--on-dark);text-decoration:none;font-size:12px;letter-spacing:.16em;text-transform:uppercase;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);transition:background .25s,color .25s}
+.xadd:hover,.xadd.on{background:var(--brass);color:var(--navy)}
+
+/* ---------- book ---------- */
+.book{position:relative;isolation:isolate;background:var(--cream);padding-block:130px 140px;overflow:hidden}
+.book .grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:64px;align-items:start}
+.book h2{font-size:clamp(44px,5vw,76px);line-height:1;margin:18px 0 20px}
+.book h2 em{color:var(--rust)}
+.book .side p{color:#33434A;font-size:17px;max-width:30em}
+.bplate{margin-top:34px;aspect-ratio:5/4;overflow:hidden;clip-path:polygon(22px 0,100% 0,100% calc(100% - 22px),calc(100% - 22px) 100%,0 100%,0 22px)}
+.bplate img{width:100%;height:100%;object-fit:cover}
+.phone{margin-top:26px;display:flex;flex-direction:column;gap:4px}
+.phone span{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.phone a{font-family:var(--f-display);font-size:36px;text-decoration:none;color:var(--ink)}
+
 @property --ang{syntax:'<angle>';initial-value:0deg;inherits:false}
-@keyframes spinborder{to{--ang:360deg}}
-@keyframes glowbreath{0%,100%{opacity:.6;transform:scale(.99)}50%{opacity:1;transform:scale(1.02)}}
-@keyframes lineup{from{transform:translateY(110%)}to{transform:translateY(0)}}
-@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-@keyframes draw{to{stroke-dashoffset:0}}
-@keyframes twinkle{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes marquee{to{transform:translateX(-50%)}}
-@keyframes sheen{0%,60%{left:-120%}100%{left:160%}}
-@keyframes floaty{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-30px)}}
-@keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
-@keyframes slidein{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
-@supports (animation-timeline: view()){.su .rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% cover 26%}
-.su .rv-s{animation:rise linear both;animation-timeline:view();animation-range:entry 10% cover 34%}}
-@media (prefers-reduced-motion: reduce){.su *{animation:none!important;transition:none!important}
-.su .draw path,.su .draw circle,.su .draw rect,.su .draw line{stroke-dashoffset:0}}
-@media (max-width: 1080px){.su .h1{font-size:78px}
-.su .h2{font-size:54px}
-.su .final .h2{font-size:60px}
-.su .pillars{grid-template-columns:repeat(2,minmax(0,1fr))}
-.su .xgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
-.su .fwrap{grid-template-columns:1fr}}
-@media (max-width: 760px){.su .wrap{padding:0 22px}
-.su .links{display:none}
-.su .hero{padding:50px 0 80px}
-.su .hero-grid,.su .split{grid-template-columns:1fr;gap:48px}
-.su .h1{font-size:58px}
-.su .h2{font-size:44px}
-.su .final .h2{font-size:46px}
-.su .lede{font-size:17px}
-.su .sec{padding:90px 0}
-.su .pillars,.su .xgrid,.su .steps,.su .chips,.su .fgrid,.su .summary,.su .fgrid3{grid-template-columns:1fr}
-.su .steps::before{display:none}
-.su .gal{grid-template-columns:1fr 1fr;grid-template-rows:180px 180px 180px}
-.su .gph:first-child{grid-column:span 2;grid-row:span 1}
-.su .panel{padding:28px 22px}
-.su .badge{right:-6px;width:118px;height:118px}
-.su .track span{font-size:26px}
-.su .final{padding:100px 0}}
-.su .site{overflow:hidden;overflow:clip}
-.su .plabels .cur{color:#A4462A;font-weight:600}
-.su .su-err{color:#A4462A;font-size:14px;margin-top:16px}
-.su .btn.loading{opacity:.7;pointer-events:none}
-.su .stage img.kb,.su .xph img,.su .why-ph img{height:100%}
+.panel-wrap{position:relative;border-radius:30px;padding:3px;isolation:isolate}
+.panel-wrap::before,.panel-wrap::after{content:"";position:absolute;border-radius:inherit;background:conic-gradient(from var(--ang),#FFC77A,#C7613C,#FFE9C4,#E0A458,#FFB25E,#C7613C,#FFC77A);animation:spinb 4s linear infinite}
+.panel-wrap::before{inset:0;z-index:-1}
+.panel-wrap::after{inset:-6px;filter:blur(26px);opacity:.75;z-index:-2;border-radius:36px}
+@keyframes spinb{to{--ang:360deg}}
+.panel{background:var(--paper);border-radius:27px;padding:40px;color:var(--ink)}
+.plabels{display:flex;justify-content:space-between;gap:8px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#6B777C}
+.plabels .cur{color:var(--rust);font-weight:500}
+.pbar{height:3px;background:rgba(20,36,45,.12);border-radius:3px;overflow:hidden;margin:16px 0 30px}
+.pfill{height:100%;background:linear-gradient(90deg,var(--copper),var(--brass));transition:width .6s var(--ease-entrance)}
+.q{font-family:var(--f-display);font-weight:500;font-size:36px;line-height:1.1;margin:0 0 6px}
+.qs{font-size:15px;color:var(--muted);margin:0 0 24px}
+.chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.chip{min-height:56px;padding:12px 16px;border-radius:12px;border:1px solid rgba(20,36,45,.16);background:#fff;color:var(--ink);font:inherit;font-size:15px;text-align:left;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;transition:border-color .2s,transform .2s,background .2s}
+.chip:hover{border-color:var(--rust);transform:translateY(-1px)}
+.chip.on{background:var(--ink);color:var(--on-dark);border-color:var(--ink)}
+.chip .tick{width:22px;height:22px;border-radius:50%;border:1px solid currentColor;display:flex;align-items:center;justify-content:center;opacity:.45;flex-shrink:0}
+.chip.on .tick{background:var(--brass);border-color:var(--brass);color:var(--ink);opacity:1}
+.chip.pk{flex-direction:column;align-items:flex-start;justify-content:center;gap:3px;min-height:70px}
+.chip.pk small{font-size:12.5px;opacity:.72}
+.field{display:flex;flex-direction:column;gap:7px}
+.field label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.field input,.field textarea{min-height:52px;padding:13px 15px;border-radius:12px;border:1px solid rgba(20,36,45,.2);background:#fff;font:inherit;font-size:16px;color:var(--ink);outline:none;transition:border-color .2s,box-shadow .2s}
+.field textarea{min-height:92px;resize:vertical}
+.field input:focus,.field textarea:focus{border-color:var(--rust);box-shadow:0 0 0 4px rgba(199,97,60,.14)}
+.fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.nav-row{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:30px}
+.back{background:none;border:0;font:inherit;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);cursor:pointer;min-height:44px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;border-radius:999px;border:0;background:var(--brass);color:var(--navy);font:inherit;font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn:hover{background:var(--brass-hi)}
+.btn[disabled]{background:#cfd6d9;color:#7c8a90;cursor:not-allowed}
+.btn.loading{opacity:.7;pointer-events:none}
+.btn-ghost{display:inline-flex;align-items:center;min-height:50px;padding:0 24px;border-radius:999px;border:1px solid;text-decoration:none;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.summary{background:var(--ink);color:var(--on-dark);border-radius:14px;padding:18px 20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 20px;margin-bottom:22px}
+.summary span{display:block;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-hi)}
+.summary .sv{font-weight:400;font-size:15px}
+.su-err{color:var(--rust);font-size:14px;margin-top:14px}
+.done{text-align:center;padding:18px 0}
+.seal{width:92px;height:92px;margin:0 auto 22px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center}
+.hint{font-size:13px;color:var(--muted)}
 
+/* ---------- sign-off ---------- */
+.sign{background:var(--brass);padding:16px max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.sign-in{position:relative;isolation:isolate;background:var(--navy);color:var(--on-dark);border-radius:6px;overflow:hidden;padding:90px 0 34px}
+.sign .grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr) minmax(0,.8fr);gap:48px;align-items:start}
+.sign h2{font-size:clamp(44px,5.6vw,88px);line-height:.95;margin-top:16px}
+.sign h2 em{color:var(--brass)}
+.sign h4{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--brass);font-weight:500;margin:0 0 16px}
+.sign nav a,.sign .contact a{display:block;text-decoration:none;font-family:var(--f-display);font-size:26px;line-height:1.5;color:var(--on-dark);transition:color .15s}
+.sign nav a:hover,.sign .contact a:hover{color:var(--brass-hi)}
+.sign .contact p{color:var(--on-dark-muted);font-size:14px;margin-top:10px}
+.rise{display:flex;justify-content:center;margin-top:70px;will-change:transform}
+.rise .badge{width:clamp(150px,18vw,240px);height:auto;aspect-ratio:1;padding:22px;background:radial-gradient(closest-side,var(--cream) calc(100% - 12px),transparent calc(100% - 11px)),repeating-conic-gradient(from 10deg,#5A3720 0deg 4deg,#D9A86C 4deg 8deg,#A9733F 8deg 12deg);box-shadow:0 0 60px rgba(224,164,88,.3)}
+.legal{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.1);margin-top:60px;padding-top:22px;font-size:12.5px;color:rgba(255,255,255,.5)}
+
+/* ---------- responsive ---------- */
+@media (max-width:1023px){
+  .links{display:none}
+  .hero .wrap{grid-template-columns:1fr;gap:10px;padding-top:calc(104px + env(safe-area-inset-top,0px))}
+  .coinbox{display:contents}
+  .coin{order:-1;justify-self:center;width:min(76vw,380px)}
+  .panels{order:2;width:100%;margin-top:18px}
+  .diff .copy,.offer .head,.book .grid,.sign .grid{grid-template-columns:1fr;gap:28px}
+  .pillars{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:767px){
+  .wrap{padding-left:max(18px,var(--gut-l));padding-right:max(18px,var(--gut-r))}
+  .brand b{font-size:18px}
+  .badge{width:38px;height:38px}
+  .cta .long{display:none}
+  .hero h1{font-size:clamp(48px,14vw,72px)}
+  .lede{font-size:16.5px}
+  .panels{grid-template-columns:1fr}
+  .pillars{grid-template-columns:1fr}
+  .rail{left:9px}
+  .row{grid-template-columns:1fr;gap:26px;padding-left:34px;padding-block:34px}
+  .row:nth-child(odd) .plate{order:0}
+  .panel{padding:26px 18px}
+  .chips,.fgrid,.summary{grid-template-columns:1fr}
+  .q{font-size:30px}
+  .offer,.book{padding-block:90px 100px}
+  .sign-in{padding-top:64px}
+}
+@media (max-width:340px){.brand b{display:none}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .panel-wrap::before,.panel-wrap::after{animation:none}
+  .plate img{clip-path:none;transition:none}
+}
 </style>
-<div class="su" id="saddle-up"><div class="site">
+</head>
+<body>
+<div id="saddle-up">
 
-<!-- NAV -->
-<header class="nav">
-<div class="wrap nav-in">
-<a class="brand" href="#top" aria-label="Saddle Up Drinks home">
-<span class="logo-badge"><img src="logo.png" alt="Saddle Up Drinks logo"></span>
-<span style="display: flex; flex-direction: column; line-height: 1">
-<span class="serif brand-name" style="font-size: 26px; font-weight: 600; letter-spacing: .01em">Saddle Up Drinks</span>
-<span class="brand-tag" style="font-size: 10px; letter-spacing: .42em; text-transform: uppercase; color: #E0A458; margin-top: 4px">Luxury Mobile Bar</span>
-</span>
-</a>
-<nav class="links" aria-label="Primary">
-<a href="#experiences">Experiences</a>
-<a href="#about">About</a>
-<a href="#why">Why Choose Us</a>
-<a href="#book">Plan Your Bar</a>
-</nav>
-<a class="btn btn-sm nav-cta" href="#book"><span class="cta-long">Check your date</span><span class="cta-short">Book</span></a>
+<div class="veil" id="veil" aria-hidden="true">
+  <div class="mark"><img class="dim" src="logo.webp" alt=""><img class="fill" id="veil-fill" src="logo.webp" alt=""></div>
+  <div class="lbl" id="veil-lbl">Saddling up · 0%</div>
+  <div class="meter"><i id="veil-meter"></i></div>
 </div>
+
+<header class="mast">
+  <div class="mast-in">
+    <a class="brand" href="#top" aria-label="Saddle Up Drinks, back to top"><span class="badge"><img src="logo.webp" alt=""></span><b>Saddle Up Drinks</b></a>
+    <nav class="links" aria-label="Sections"><a href="#difference">Why us</a><a href="#offerings">Offerings</a><a href="#book">Plan your bar</a></nav>
+    <div class="mast-r">
+      <div class="socials"><a class="soc" data-social="instagram" href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a><a class="soc" data-social="facebook" href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21h3z"/></svg></a><a class="soc" data-social="tiktok" href="#" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.3 2.1 1.6 3.6 3.9 3.8v3a7.3 7.3 0 0 1-3.8-1.2v6.2a5.6 5.6 0 1 1-5.6-5.6c.3 0 .6 0 .9.1v3.1a2.6 2.6 0 1 0 1.7 2.4V3h2.9z"/></svg></a></div>
+      <a class="cta mast-cta" href="#book"><span class="long">Check your date</span><span aria-hidden="true">→</span></a>
+      <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
+    </div>
+  </div>
 </header>
-
-<!-- HERO -->
-<section class="hero" id="top">
-<div class="glow float" style="width: 520px; height: 520px; background: #C7613C; left: -200px; top: -120px; opacity: .22"></div>
-<div class="glow" style="width: 460px; height: 460px; background: #2891DA; right: -160px; top: 180px; opacity: .14"></div>
-<div class="wrap hero-grid">
-<div>
-<div class="eyebrow fade d1"><span class="rule"></span>Luxury mobile bar · Greater Sacramento</div>
-<h1 class="h1">
-<span class="line"><span class="d2">The bar</span></span>
-<span class="line"><span class="d3"><em>rides in</em> for</span></span>
-<span class="line"><span class="d4">your event.</span></span>
-</h1>
-<p class="lede fade d5">Saddle Up Drinks is a family owned and operated horse trailer that has been converted to a full functioning luxury bar serving the greater Sacramento area. An exciting and memorable way to celebrate your special occasion — a unique bar experience unlike any other.</p>
-<div class="cta-row fade d6">
-<a class="btn" href="#book">Build your bar
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
-</a>
-<a class="btn-ghost" href="#experiences">Explore experiences</a>
-</div>
-<div class="trust fade d6">
-<div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E0A458" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg>ABC catering license</div>
-<div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E0A458" stroke-width="1.6"><circle cx="12" cy="8" r="4"></circle><path d="M5 21c0-4 3-6 7-6s7 2 7 6"></path></svg>RBS-certified bartenders</div>
-<div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E0A458" stroke-width="1.6"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path></svg>Family owned</div>
-</div>
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="menu-in">
+    <div class="menu-top"><span class="badge"><img src="logo.webp" alt=""></span><button class="burger open" id="menu-close" type="button" aria-label="Close menu"><i></i><i></i><i></i></button></div>
+    <nav class="menu-links" aria-label="Quick links">
+      <a href="#top" data-close><small>Home</small>The bar rides in</a>
+      <a href="#difference" data-close><small>Why us</small>The Saddle Up difference</a>
+      <a href="#offerings" data-close><small>Packages</small>Our unique offerings</a>
+      <a href="#book" data-close><small>Plan your bar</small>Check your date</a>
+    </nav>
+    <div class="menu-foot">
+      <div><span class="eyebrow">Call or text</span><a href="tel:9162247557">916-224-7557</a></div>
+      <div><span class="eyebrow">Email</span><a href="mailto:Saddleupdrinks@gmail.com">Saddleupdrinks@gmail.com</a></div>
+      <div class="socials big"><a class="soc" data-social="instagram" href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a><a class="soc" data-social="facebook" href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21h3z"/></svg></a><a class="soc" data-social="tiktok" href="#" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.3 2.1 1.6 3.6 3.9 3.8v3a7.3 7.3 0 0 1-3.8-1.2v6.2a5.6 5.6 0 1 1-5.6-5.6c.3 0 .6 0 .9.1v3.1a2.6 2.6 0 1 0 1.7 2.4V3h2.9z"/></svg></a></div>
+    </div>
+  </div>
 </div>
 
-<div style="position: relative">
-<div class="stage">
-<img class="kb" src="hero.jpg" alt="Saddle Up Drinks bartender at the horse-trailer bar, decorated with florals and greenery">
-<div class="stage-shade"></div>
-<svg viewBox="0 0 600 640" width="100%" height="100%" style="position: absolute; inset: 0" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
-<path d="M30 150 Q165 215 300 150 Q435 215 570 150" stroke="#E6D6BD" stroke-width="1.2" fill="none" opacity=".7"></path>
-<circle class="bulb" cx="70" cy="168" r="6" fill="#FFC77A"></circle>
-<circle class="bulb b2" cx="140" cy="186" r="6" fill="#FFC77A"></circle>
-<circle class="bulb b3" cx="220" cy="186" r="6" fill="#FFC77A"></circle>
-<circle class="bulb b4" cx="300" cy="150" r="6" fill="#FFC77A"></circle>
-<circle class="bulb b5" cx="380" cy="186" r="6" fill="#FFC77A"></circle>
-<circle class="bulb b6" cx="460" cy="186" r="6" fill="#FFC77A"></circle>
-<circle class="bulb b7" cx="530" cy="168" r="6" fill="#FFC77A"></circle>
-</svg>
-<div style="position: absolute; left: 0; right: 0; bottom: 40px; text-align: center">
-<div class="serif" style="font-style: italic; font-size: 30px; color: #F4ECDF">Luxury Mobile Bar</div>
-</div>
-</div>
-<div class="badge">
-<svg class="spin" viewBox="0 0 150 150" width="150" height="150" style="position: absolute; inset: 0; width: 100%; height: 100%" aria-hidden="true">
-<defs><path id="ring" d="M75 75 m-56 0 a56 56 0 1 1 112 0 a56 56 0 1 1 -112 0"></path></defs>
-<text fill="#E6D6BD" font-family="Jost, sans-serif" font-size="11" letter-spacing="3.2"><textPath href="#ring">LICENSED · INSURED · WE SUPPLY THE BAR · </textPath></text>
-</svg>
-<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#E0A458" stroke-width="1.4" aria-hidden="true"><path d="M8 3h8l-1 7a3 3 0 0 1-6 0z"></path><path d="M12 13v7"></path><path d="M8 21h8"></path></svg>
-</div>
-</div>
-</div>
-</section>
+<main>
+<div class="stack" id="stack">
 
-<!-- ABOUT US -->
-<section class="sec band" id="about">
-<div class="wrap">
-<div class="split" style="align-items: start">
-<div class="rv">
-<div class="eyebrow"><span class="rule" style="background: #A4462A"></span>About us</div>
-<h2 class="h2">A unique bar experience <em>unlike any other.</em></h2>
-<p class="muted" style="font-size: 19px; line-height: 1.75; margin: 0 0 22px">We provide a wide variety of hand crafted cocktails, wine, craft beer, and more so your guests will be raving about your event.</p>
-<p class="muted" style="font-size: 19px; line-height: 1.75; margin: 0">We are flexible and can work with you to ensure we meet your vision for the perfect event!</p>
-</div>
-<div class="rv-s lic">
-<div class="eyebrow" style="color: #E0A458">The Saddle Up difference</div>
-<p class="serif" style="font-size: 34px; line-height: 1.2; margin: 18px 0 20px; color: #F4ECDF">Unlike most mobile bar companies, we hold a catering liquor license through ABC.</p>
-<p style="font-size: 17px; line-height: 1.75; margin: 0; color: #D8CDBB">This means we can not only provide you with the alcohol but also have the ability to order specific inventory from the top alcohol distributors.</p>
-</div>
-</div>
-</div>
-</section>
+  <div class="layer" data-layer>
+    <div class="inner">
+      <section class="hero" id="top" aria-label="Saddle Up Drinks">
+        <canvas class="bg-canvas" id="hero-contours" aria-hidden="true"></canvas>
+        <div class="wrap">
+          <div>
+            <div class="eyebrow" data-reveal="words" data-on="load" data-delay="100">Luxury mobile bar · Greater Sacramento</div>
+            <h1 data-reveal="letters" data-on="load" data-delay="250" data-stagger="28"><span class="ln">The bar</span><span class="ln"><em>rides in</em></span><span class="ln">for your event.</span></h1>
+            <p class="lede" data-reveal="words" data-on="load" data-delay="900" data-stagger="14">Saddle Up Drinks is a family owned and operated horse trailer that has been converted to a full functioning luxury bar serving the greater Sacramento area. A unique bar experience unlike any other.</p>
+            <div class="actions"><a class="cta lg" href="#book">Plan your bar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="ghost" href="#offerings">See offerings</a></div>
+          </div>
+          <div class="coinbox">
+            <div class="coin" id="coin">
+              <div class="coin-shadow" id="coin-shadow"></div>
+              <canvas id="coin-gl" aria-label="The Saddle Up Drinks horseshoe logo, spinning in 3D" role="img"></canvas>
+              <div class="fallback"><img src="logo.webp" alt="Saddle Up Drinks logo"></div>
+            </div>
+            <div class="panels">
+              <div class="bracket p-dark"><span class="eyebrow">Licensed &amp; insured</span>Catering liquor license through ABC. We supply the alcohol.</div>
+              <a class="bracket p-line" href="#book"><span class="eyebrow">Plan your bar</span><b>Four quick steps</b>, about two minutes. Your date won't hold itself →</a>
+            </div>
+          </div>
+        </div>
+        <div class="wrap" style="flex:0;display:block;padding-top:0;padding-bottom:0">
+          <div class="hero-foot"><span>Family owned · Weddings to festivals</span><span class="cue"><i></i>Scroll</span></div>
+        </div>
+      </section>
+    </div>
+    <div class="shade"></div>
+  </div>
 
-<!-- WHY CHOOSE US -->
-<section class="sec" id="why">
-<div class="wrap">
-<div class="rv" style="text-align: center; max-width: 760px; margin: 0 auto">
-<div class="eyebrow">Why choose us?</div>
-<h2 class="h2">Luxury mobile bartending <em>done right.</em></h2>
-</div>
-<div class="why">
-<div class="why-row rv">
-<div class="why-ph"><img src="why-licensed.jpg" alt="RBS certified bartenders serving guests from the trailer"></div>
-<div class="why-tx"><div class="num">01</div><h3>Licensed and Insured</h3><p>Saddle Up Drinks carries general liability insurance and RBS Certified Bartenders.</p></div>
-</div>
-<div class="why-row flip rv">
-<div class="why-ph"><img src="why-alcohol.jpg" alt="Stocked shelves of craft beer, wine and liquor inside the trailer"></div>
-<div class="why-tx"><div class="num">02</div><h3>We Can Supply the Alcohol</h3><p>We are licensed and legally allowed to provide and serve at your event with our liquor license and event-based permit.</p><p>Based on the package that you choose, we provide hand-picked craft beer, wine, and liquor. Packages can be customized.</p></div>
-</div>
-<div class="why-row rv">
-<div class="why-ph"><img src="why-seamless.jpg" alt="Guests lined up at the Saddle Up trailer at an outdoor event"></div>
-<div class="why-tx"><div class="num">03</div><h3>Seamless and Stress-free</h3><p>We handle everything from the start to finish! No need to worry about bar set up and logistics. Let us do the work for you.</p></div>
-</div>
-<div class="why-row flip rv">
-<div class="why-ph"><img src="why-inclusive.jpg" alt="Custom bar menu sign with cups and garnishes on the counter"></div>
-<div class="why-tx"><div class="num">04</div><h3>All Inclusive Experience</h3><p>We provide the trailer, staff, barware, ice, garnishes, cups, straws, liquor, beer, wine, champagne, soda, photo backdrop and customized beverage service.</p></div>
-</div>
-</div>
-</div>
-</section>
+  <div class="layer" data-layer>
+    <div class="inner">
+      <section class="diff on-dark" id="difference" aria-labelledby="diff-h">
+        <canvas class="bg-canvas" id="halftone" aria-hidden="true"></canvas>
+        <canvas class="seam" id="seam" aria-hidden="true"></canvas>
+        <div class="wrap">
+          <div class="eyebrow">The Saddle Up difference</div>
+          <h2 id="diff-h"><span data-reveal="words" data-stagger="60">Most mobile bars can't pour the drinks.</span> <br><span class="lasso-wrap" id="lasso-target" title="Throw the lasso"><svg class="lasso back" id="lasso-back" aria-hidden="true"></svg><em data-reveal="words" data-delay="420">We can.</em><svg class="lasso front" id="lasso-front" aria-hidden="true"></svg></span></h2>
+          <div class="copy">
+            <p data-reveal="words" data-stagger="8" data-delay="200">Unlike most mobile bar companies, we hold a <b>catering liquor license through ABC.</b> This means we can not only provide you with the alcohol but also have the ability to order specific inventory from the top alcohol distributors.</p>
+            <p data-reveal="words" data-stagger="12" data-delay="400">We are flexible and can work with you to ensure we meet your vision for the perfect event!</p>
+          </div>
+          <div class="pillars">
+            <article class="pillar"><div class="ph"><img src="why-licensed.webp" alt="Bartenders serving guests from the trailer" loading="lazy"></div><div class="tx"><h3>Licensed and Insured</h3><p>General liability insurance and RBS Certified Bartenders.</p></div></article>
+            <article class="pillar"><div class="ph"><img src="why-alcohol.webp" alt="Shelves of craft beer, wine and liquor inside the trailer" loading="lazy"></div><div class="tx"><h3>We Can Supply the Alcohol</h3><p>Hand-picked craft beer, wine and liquor under our liquor license and event-based permit.</p></div></article>
+            <article class="pillar"><div class="ph"><img src="why-seamless.webp" alt="Guests at the Saddle Up trailer at an outdoor event" loading="lazy"></div><div class="tx"><h3>Seamless and Stress-free</h3><p>We handle everything from start to finish. Let us do the work for you.</p></div></article>
+            <article class="pillar"><div class="ph"><img src="why-inclusive.webp" alt="Custom bar menu sign on the counter" loading="lazy"></div><div class="tx"><h3>All Inclusive Experience</h3><p>Trailer, staff, barware, ice, garnishes, cups, liquor, beer, wine, champagne, soda and a photo backdrop.</p></div></article>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="shade"></div>
+  </div>
 
-<!-- EXPERIENCES -->
-<section class="sec" id="experiences">
-<div class="wrap">
-<div class="split">
-<div class="rv">
-<div class="eyebrow"><span class="rule"></span>Luxury mobile bar</div>
-<h2 class="h2">Our unique <em>offerings.</em></h2>
-</div>
-<p class="muted rv-s" style="font-size: 18px; line-height: 1.75; margin: 0">Every package comes with a custom-designed menu. Tap <b style="color: #E0A458; font-weight: 500">Add to my event</b> on anything that catches your eye — it drops straight into your quote below.</p>
-</div>
-<div class="xgrid">
-<article class="xcard feat rv">
-<div class="xph"><img src="fancy-ash.jpg" alt="Wood-panel bar with greenery set up outdoors" loading="lazy"><div class="xph-shade"></div><div class="xmono">i</div></div>
-<div class="xbody"><div class="xtag">Luxury mobile bartending done right</div><h3>Fancy Ash</h3><p>Beer, Wine, Champagne, 3 signature drinks, plus non-alcoholic beverages and two Bartenders.</p><ul class="xlist"><li>Includes all necessary bartending equipment and alcohol</li><li>Disposable glassware, garnishes, ice, custom designed menu</li><li>Neon bar light, full set up and clean up</li><li>You can add a luxury seating arrangement</li></ul>
-<a class="xadd" href="#book" data-add="Fancy Ash"><span class="xadd-l">Add to my event</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a></div>
-</article>
-<article class="xcard rv">
-<div class="xph"><img src="bartending.jpg" alt="Guests ordering from a bartender at the trailer" loading="lazy"><div class="xph-shade"></div><div class="xmono">ii</div></div>
-<div class="xbody"><div class="xtag">4 hour service</div><h3>Bartending Service</h3><p>Professional Bartending Service. 4 hour service, 2 bartenders, custom designed menu.</p><ul class="xlist"><li>Cups, straws, napkins</li><li>Fresh juice &amp; infused syrups</li><li>Fresh garnishes and ice</li></ul>
-<a class="xadd" href="#book" data-add="Bartending Service"><span class="xadd-l">Add to my event</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a></div>
-</article>
-<article class="xcard rv">
-<div class="xph"><img src="bubbly.jpg" alt="Champagne wall beside a floral Love in Bloom backdrop" loading="lazy"><div class="xph-shade"></div><div class="xmono">iii</div></div>
-<div class="xbody"><div class="xtag">Champagne wall</div><h3>Bubbly Bar</h3><p>Champagne wall for your guests enjoyment.</p><ul class="xlist"><li>Glasses</li><li>Four juices, fruit and garnish</li><li>Custom designed menu</li></ul>
-<a class="xadd" href="#book" data-add="Bubbly Bar"><span class="xadd-l">Add to my event</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a></div>
-</article>
-<article class="xcard rv">
-<div class="xph"><img src="saddle-up-bar.jpg" alt="The Saddle Up horse-trailer bar under string lights" loading="lazy"><div class="xph-shade"></div><div class="xmono">iv</div></div>
-<div class="xbody"><div class="xtag">Mobile bar + 2 bartenders</div><h3>The Saddle Up Bar</h3><p>Mobile Bar including 2 Bartenders. Customer can choose this option for bartending service only with the Saddle Up Bar Trailer.</p><ul class="xlist"><li>The Saddle Up Bar Trailer</li><li>2 Bartenders</li><li>Bartending service only</li></ul>
-<a class="xadd" href="#book" data-add="The Saddle Up Bar"><span class="xadd-l">Add to my event</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a></div>
-</article>
-<article class="xcard rv">
-<div class="xph"><img src="slushy.jpg" alt="Double barrel slushy machine with tropical garnishes" loading="lazy"><div class="xph-shade"></div><div class="xmono">v</div></div>
-<div class="xbody"><div class="xtag">Six hour rental · Alcohol included</div><h3>The Slushy Bar</h3><p>Six hour rental with a double barrel slushy machine. Alcohol included.</p><ul class="xlist"><li>Garnish tray &amp; custom cocktail menu</li><li>100 count 5-ounce cups</li><li>Delivery, set-up, and breakdown</li></ul>
-<a class="xadd" href="#book" data-add="The Slushy Bar"><span class="xadd-l">Add to my event</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a></div>
-</article>
-<article class="xcard rv">
-<div class="xph"><img src="coffee.jpg" alt="The trailer set up as a gourmet coffee bar with fall decor" loading="lazy"><div class="xph-shade"></div><div class="xmono">vi</div></div>
-<div class="xbody"><div class="xtag">Up to 150 drinks</div><h3>Gourmet Coffee Bar</h3><p>Up to 150 drinks, 4 hour service, Custom Decor and Signage.</p><ul class="xlist"><li>Custom Cup Stickers</li><li>Complimentary Water Station</li><li>Add 1 a la carte pastry or a Signature Cocktail</li></ul>
-<a class="xadd" href="#book" data-add="Gourmet Coffee Bar"><span class="xadd-l">Add to my event</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a></div>
-</article>
-<article class="xcard rv">
-<div class="xph"><img src="decor.jpg" alt="Mr and Mrs sign on a greenery and white rose flower wall" loading="lazy"><div class="xph-shade"></div><div class="xmono">vii</div></div>
-<div class="xbody"><div class="xtag">Add-on</div><h3>Customized Decor</h3><p>Customized decor tailored to your special event.</p><ul class="xlist"><li>Designed around your theme</li><li>Pairs with any package</li></ul>
-<a class="xadd" href="#book" data-add="Customized Decor"><span class="xadd-l">Add to my event</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a></div>
-</article>
+  <section class="offer on-dark" id="offerings" aria-labelledby="off-h">
+    <div class="wrap">
+      <div class="head">
+        <div><div class="eyebrow">Luxury mobile bar</div><h2 id="off-h" style="margin-top:16px" data-reveal="words" data-stagger="70">Our unique <em>offerings.</em></h2></div>
+        <p>Every package comes with a custom designed menu. Tap <b style="color:var(--brass-hi);font-weight:400">Add to my event</b> and it drops straight into your quote.</p>
+      </div>
+      <div class="rows" id="rows">
+        <div class="rail" aria-hidden="true"><div class="thread" id="thread"></div><div class="marker" id="marker"></div></div>
+        <article class="row"><div class="plate"><img src="fancy-ash.webp" alt="Wood-panel bar with a greenery front set up outdoors" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">Alcohol included</div><h3>Fancy Ash</h3><p>Luxury mobile bartending done right. Beer, Wine, Champagne, 3 signature drinks, plus non-alcoholic beverages and two Bartenders.</p><ul><li>Includes all necessary bartending equipment and alcohol</li><li>Disposable glassware, garnishes, ice, custom designed menu</li><li>Neon bar light, full set up and clean up</li><li>You can add a luxury seating arrangement</li></ul><a class="xadd" href="#book" data-add="Fancy Ash"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+<article class="row"><div class="plate"><img src="bartending.webp" alt="Guests ordering from a bartender at the trailer" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">4-hour service</div><h3>Bartending Service</h3><p>Professional Bartending Service. 4 hour service, 2 bartenders, custom designed menu.</p><ul><li>Cups, straws, napkins</li><li>Fresh juice &amp; infused syrups</li><li>Fresh garnishes and ice</li></ul><a class="xadd" href="#book" data-add="Bartending Service"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+<article class="row"><div class="plate"><img src="bubbly.webp" alt="Champagne wall beside a floral Love in Bloom backdrop" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">Champagne wall</div><h3>Bubbly Bar</h3><p>Champagne wall for your guests enjoyment.</p><ul><li>Glasses</li><li>Four juices, fruit and garnish</li><li>Custom designed menu</li></ul><a class="xadd" href="#book" data-add="Bubbly Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+<article class="row"><div class="plate"><img src="saddle-up-bar.webp" alt="The Saddle Up horse-trailer bar under string lights" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">2 bartenders</div><h3>The Saddle Up Bar</h3><p>Mobile Bar including 2 Bartenders. Choose this option for bartending service only with the Saddle Up Bar Trailer.</p><ul><li>The Saddle Up Bar Trailer</li><li>2 Bartenders</li><li>Bartending service only</li></ul><a class="xadd" href="#book" data-add="The Saddle Up Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+<article class="row"><div class="plate"><img src="slushy.webp" alt="Double barrel slushy machine with tropical garnishes" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">6-hour rental</div><h3>The Slushy Bar</h3><p>Six hour rental with a double barrel slushy machine. Alcohol included.</p><ul><li>Garnish tray &amp; custom cocktail menu</li><li>100 count 5-ounce cups</li><li>Delivery, set-up, and breakdown</li></ul><a class="xadd" href="#book" data-add="The Slushy Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+<article class="row"><div class="plate"><img src="coffee.webp" alt="The trailer set up as a gourmet coffee bar with fall decor" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">150 drinks</div><h3>Gourmet Coffee Bar</h3><p>Up to 150 drinks, 4 hour service, Custom Decor and Signage.</p><ul><li>Custom Cup Stickers</li><li>Complimentary Water Station</li><li>Add 1 a la carte pastry or a Signature Cocktail</li></ul><a class="xadd" href="#book" data-add="Gourmet Coffee Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+<article class="row"><div class="plate"><img src="decor.webp" alt="Mr and Mrs sign on a greenery and white rose flower wall" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">Your theme</div><h3>Customized Decor</h3><p>Customized decor tailored to your special event.</p><ul><li>Designed around your theme</li><li>Pairs with any package</li></ul><a class="xadd" href="#book" data-add="Customized Decor"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+
+      </div>
+    </div>
+  </section>
 
 </div>
-</div>
-</section>
 
-<!-- PROCESS -->
-<section class="sec" id="process" style="background: #101F26; border-top: 1px solid rgba(224,164,88,.12); border-bottom: 1px solid rgba(224,164,88,.12)">
-<div class="wrap">
-<div class="rv" style="text-align: center; max-width: 760px; margin: 0 auto">
-<div class="eyebrow">How it works</div>
-<h2 class="h2">From first sip of an idea <em>to last call.</em></h2>
-</div>
-<div class="steps">
-<div class="step rv"><div class="dot">I</div><h4>Share your vision</h4><p>Tell us the occasion, the date and the vibe. Two minutes in the planner below.</p></div>
-<div class="step rv"><div class="dot">II</div><h4>We design your menu</h4><p>A custom drink menu and décor tailored to your event — signature cocktails included.</p></div>
-<div class="step rv"><div class="dot">III</div><h4>The trailer arrives</h4><p>We roll in, set up the bar, stock it and pour with RBS-certified bartenders.</p></div>
-<div class="step rv"><div class="dot">IV</div><h4>We clean it all up</h4><p>Full breakdown and clean-up. You wake up to memories, not a mess.</p></div>
-</div>
-</div>
-</section>
-
-<!-- FUNNEL -->
-<section class="sec book" id="book">
-<div class="wrap fwrap">
-<div class="rv">
-<div class="eyebrow"><span class="rule"></span>Plan your bar</div>
-<h2 class="h2">Your date won't <em>hold itself.</em></h2>
-<p class="muted" style="font-size: 18px; line-height: 1.75; margin: 0">Four quick steps and your request lands with our family. We'll come back with a custom menu and quote for your event.</p>
-<ul class="side-list">
-<li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0A458" stroke-width="1.8"><path d="M5 12l5 5 9-10"></path></svg>Takes about two minutes</li>
-<li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0A458" stroke-width="1.8"><path d="M5 12l5 5 9-10"></path></svg>No obligation — just a conversation</li>
-<li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E0A458" stroke-width="1.8"><path d="M5 12l5 5 9-10"></path></svg>Packages can be fully customized</li>
-</ul>
-<div style="margin-top: 44px; padding-top: 28px; border-top: 1px solid rgba(244,236,223,.12)">
-<div class="hint" style="color: #B9AE9C; margin-bottom: 10px">Rather talk now?</div>
-<a href="tel:9162247557" class="serif" style="font-size: 34px; text-decoration: none; color: #F4ECDF">916-224-7557</a>
-</div>
-</div>
-
-<div class="panel-wrap"><div class="panel">
+<section class="book" id="book" aria-labelledby="book-h">
+  <canvas class="bg-canvas" id="book-contours" aria-hidden="true"></canvas>
+  <div class="wrap grid">
+    <div class="side">
+      <div class="eyebrow">Plan your bar</div>
+      <h2 id="book-h" data-reveal="words" data-stagger="60">Your date won't <em>hold itself.</em></h2>
+      <p>Four quick steps and your request lands with the Saddle Up family. We'll come back with a custom menu and quote for your event.</p>
+      <div class="bplate"><img src="hero.webp" alt="The Saddle Up trailer bar dressed with greenery and florals" loading="lazy"></div>
+      <div class="phone"><span>Rather talk now?</span><a href="tel:9162247557">916-224-7557</a></div>
+    </div>
+    <div class="fun"><div class="panel-wrap"><div class="panel">
 <div class="plabels"><span data-l="1" class="cur">Occasion</span><span data-l="2">Experience</span><span data-l="3">Details</span><span data-l="4">Contact</span></div>
 <div class="pbar"><div class="pfill" id="su-pfill" style="width: 25%"></div></div>
 
@@ -598,60 +552,38 @@ html{scroll-behavior:smooth}
 <p class="qs" id="su-done-msg" style="max-width: 420px; margin: 0 auto 28px">Your request is on its way. The Saddle Up family will reach out with your custom menu and quote.</p>
 <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap">
 <a class="btn" href="tel:9162247557">Call 916-224-7557</a>
-<a class="btn-ghost" id="su-reopen" href="mailto:Saddleupdrinks@gmail.com" style="color: #14242D; border-color: rgba(20,36,45,.3)">Email us</a>
+<a class="btn-ghost" id="su-reopen" href="mailto:Saddleupdrinks@gmail.com" style="color: var(--ink); border-color: rgba(20,36,45,.3)">Email us</a>
 </div>
 <button type="button" class="back" style="margin-top: 20px" data-reset>Start a new request</button>
 </div>
 
 </div>
-</div>
-</div>
+</div></div>
+  </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="final">
-<div class="wrap fin-grid">
-<div class="fin-ph rv"><img class="float-sm" src="logo.png" alt="Saddle Up Drinks logo"></div>
-<div class="rv-s" style="text-align: left">
-<div class="eyebrow"><span class="rule"></span>Saddle up</div>
-<h2 class="h2" style="margin: 22px 0 24px">So your guests will be <em>raving about your event.</em></h2>
-<p class="muted" style="font-size: 18px; line-height: 1.75; margin: 0 0 34px">We are flexible and can work with you to ensure we meet your vision for the perfect event!</p>
-<div class="cta-row">
-<a class="btn" href="#book">Check your date</a>
-<a class="btn-ghost" href="mailto:Saddleupdrinks@gmail.com">Email us</a>
-</div>
-</div>
-</div>
-</section>
+</main>
 
-<!-- FOOTER -->
-<footer class="foot">
-<div class="wrap">
-<div class="fgrid3">
-<div>
-<div class="logo-badge" style="width: 132px; height: 132px; padding: 14px; margin-bottom: 22px"><img src="logo.png" alt="Saddle Up Drinks logo"></div>
-<div class="serif" style="font-size: 38px; font-weight: 600; margin-bottom: 14px">Saddle Up Drinks</div>
-<p>A family owned and operated horse trailer converted to a full functioning luxury bar serving the greater Sacramento area.</p>
-</div>
-<div>
-<h5>Contact</h5>
-<p><a href="tel:9162247557">916-224-7557</a></p>
-<p><a href="mailto:Saddleupdrinks@gmail.com">Saddleupdrinks@gmail.com</a></p>
-</div>
-<div>
-<h5>Explore</h5>
-<p><a href="#experiences">Experiences</a></p>
-<p><a href="#why">Why Choose Us</a></p>
-<p><a href="#book">Plan your bar</a></p>
-</div>
-</div>
-<div class="fine"><span>© 2025 Saddle Up Drinks · Greater Sacramento, CA</span><span>Please drink responsibly. 21+ for alcoholic service.</span></div>
-</div>
+<footer class="sign">
+  <div class="sign-in on-dark">
+    <canvas class="bg-canvas" id="sign-contours" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="grid">
+        <div><div class="eyebrow">Saddle up</div><h2 data-reveal="words" data-stagger="70">So your guests will be <em>raving about your event.</em></h2></div>
+        <div><h4>Explore</h4><nav aria-label="Footer"><a href="#difference" data-reveal="letters" data-stagger="22">Why us</a><a href="#offerings" data-reveal="letters" data-stagger="22" data-delay="120">Offerings</a><a href="#book" data-reveal="letters" data-stagger="22" data-delay="240">Plan your bar</a></nav></div>
+        <div class="contact"><h4>Contact</h4><a href="tel:9162247557">916-224-7557</a><a href="mailto:Saddleupdrinks@gmail.com" style="font-size:20px">Saddleupdrinks@gmail.com</a><p>Serving the greater Sacramento area.</p></div>
+      </div>
+      <div class="rise" id="rise"><span class="badge"><img src="logo.webp" alt="Saddle Up Drinks logo"></span></div>
+      <div class="install-row"><button class="install" id="install-btn" type="button" hidden><span class="badge"><img src="logo.webp" alt=""></span><span><small>Saddle Up app</small>Install on this phone</span></button><p class="ios-tip" id="ios-tip" hidden>Add the Saddle Up app to your phone: tap <b>Share</b>, then <b>Add to Home Screen</b>.</p></div>
+      <div class="legal"><span>© 2025 Saddle Up Drinks · Greater Sacramento, CA</span><span>Please drink responsibly. 21+ for alcoholic service.</span></div>
+    </div>
+  </div>
 </footer>
 
 </div>
-</div>
+
 <script>
+
 (function () {
   /* ================= SETTINGS — edit these ================= */
   var SU_CONFIG = {
@@ -799,7 +731,411 @@ html{scroll-behavior:smooth}
   show(1);
 })();
 
-</script>
-<!-- ===== end Saddle Up Drinks ===== -->
 
-</body></html>
+
+</script>
+<script>
+(function(){
+"use strict";
+var RM = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+try{ history.scrollRestoration = "manual"; }catch(e){}
+if(!location.hash) window.scrollTo(0,0);
+var clamp=function(v,a,b){return Math.min(b,Math.max(a,v));};
+var $=function(s,r){return (r||document).querySelector(s);};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));};
+
+/* ---------- one ticker ---------- */
+var subs=new Set(), raf=0;
+function loop(t){ Array.from(subs).forEach(function(s){ if(t-s.last>=s.fr()){ var dt=s.last?t-s.last:16; s.last=t; s.cb(t,dt);} }); raf=subs.size?requestAnimationFrame(loop):0; }
+function subscribe(cb,fr){ var s={cb:cb,fr:fr||function(){return 0;},last:0}; subs.add(s); if(!raf) raf=requestAnimationFrame(loop); return function(){subs.delete(s);}; }
+
+/* ---------- spring (damped, mass 1, 1ms substeps, 64ms cap) ---------- */
+function Spring(v,cfg){ this.v=v; this.t=v; this.vel=0; this.k=cfg.tension; this.c=cfg.friction; this.eps=cfg.eps||0.01; }
+Spring.prototype.step=function(dt){ var n=Math.min(250,Math.round(dt)); for(var i=0;i<n;i++){ var a=-this.k*(this.v-this.t)-this.c*this.vel; this.vel+=a*0.001; this.v+=this.vel*0.001; } return this.rest(); };
+Spring.prototype.rest=function(){ return Math.abs(this.vel)<this.eps && Math.abs(this.t-this.v)<this.eps; };
+var anims=new Set(), animOff=null;
+function animate(fn){ anims.add(fn); if(!animOff) animOff=subscribe(function(t,dt){ anims.forEach(function(f){ if(f(t,dt)) anims.delete(f); }); if(!anims.size){ animOff(); animOff=null; } }); }
+
+/* ---------- text engine ---------- */
+function split(el,mode){
+  var plain=el.textContent.replace(/\s+/g," ").trim();
+  var units=[];
+  function walk(node,into){
+    Array.prototype.slice.call(node.childNodes).forEach(function(ch){
+      if(ch.nodeType===3){
+        ch.textContent.split(/(\s+)/).forEach(function(part){
+          if(!part) return;
+          if(/^\s+$/.test(part)){ into.appendChild(document.createTextNode(" ")); return; }
+          if(mode==="letters"){ var w=document.createElement("span"); w.className="w"; Array.from(part).forEach(function(c){ var u=document.createElement("span"); u.className="u"; u.textContent=c; w.appendChild(u); units.push(u); }); into.appendChild(w); }
+          else { var u=document.createElement("span"); u.className="u"; u.textContent=part; into.appendChild(u); units.push(u); }
+        });
+      } else if(ch.nodeType===1){ var c2=ch.cloneNode(false); into.appendChild(c2); walk(ch,c2); }
+    });
+  }
+  var holder=document.createElement("span"); holder.setAttribute("aria-hidden","true");
+  walk(el,holder);
+  el.textContent=""; var sr=document.createElement("span"); sr.className="sr"; sr.textContent=plain;
+  el.appendChild(sr); el.appendChild(holder);
+  return units;
+}
+function play(el){
+  if(el._played) return; el._played=true;
+  var units=el._units, mode=el.getAttribute("data-reveal");
+  var stagger=+(el.getAttribute("data-stagger")||(mode==="letters"?24:40)), delay=+(el.getAttribute("data-delay")||0);
+  var off=mode==="letters"?0.3:0.35;
+  if(RM){ units.forEach(function(u){u.style.opacity=1;u.style.transform="none";}); return; }
+  var start=performance.now();
+  units.forEach(function(u,i){
+    var sp=new Spring(0,{tension:mode==="letters"?190:150,friction:24,eps:0.001}); sp.t=1; var begin=start+delay+i*stagger;
+    animate(function(t,dt){ if(t<begin) return false; var done=sp.step(dt); var p=done?1:sp.v; u.style.opacity=clamp(p,0,1); u.style.transform=done?"none":"translateY("+((1-p)*off).toFixed(3)+"em)"; return done; });
+  });
+}
+var reveals=$$("[data-reveal]");
+reveals.forEach(function(el){ el._units=split(el,el.getAttribute("data-reveal")); if(!RM) el._units.forEach(function(u){u.style.opacity=0;}); });
+var io=("IntersectionObserver" in window)? new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ play(e.target); io.unobserve(e.target);} }); },{rootMargin:"0px 0px -12% 0px"}) : null;
+function armReveals(){ reveals.forEach(function(el){ if(el.getAttribute("data-on")==="load") play(el); else if(io) io.observe(el); else play(el); }); }
+
+/* ---------- in-view gate for canvases (keeps running 10 frames after leaving) ---------- */
+function inView(el,onChange){ var vis=false; if(!("IntersectionObserver" in window)){ onChange(true); return; } new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting!==vis){ vis=e.isIntersecting; onChange(vis);} }); }).observe(el); }
+function runInView(el,cb,fps){ var off=null, tail=0; inView(el,function(v){ if(v){ tail=0; if(!off) off=subscribe(function(t,dt){ cb(t,dt); if(!el._vis){ if(++tail>10){ off(); off=null; } } },function(){return 1000/fps-2;}); } el._vis=v; }); }
+
+/* ---------- value noise ---------- */
+var P=new Uint8Array(512); (function(){ var p=[]; for(var i=0;i<256;i++)p[i]=i; var s=7; for(i=255;i>0;i--){ s=(s*16807)%2147483647; var j=s%(i+1); var tmp=p[i];p[i]=p[j];p[j]=tmp; } for(i=0;i<512;i++)P[i]=p[i&255]; })();
+function fade(t){return t*t*(3-2*t);}
+function hash3(x,y,z){ return P[(P[(P[x&255]+y)&255]+z)&255]/255; }
+function noise3(x,y,z){ var X=Math.floor(x),Y=Math.floor(y),Z=Math.floor(z); var fx=fade(x-X),fy=fade(y-Y),fz=fade(z-Z);
+  function L(a,b,t){return a+(b-a)*t;}
+  return L(L(L(hash3(X,Y,Z),hash3(X+1,Y,Z),fx),L(hash3(X,Y+1,Z),hash3(X+1,Y+1,Z),fx),fy), L(L(hash3(X,Y,Z+1),hash3(X+1,Y,Z+1),fx),L(hash3(X,Y+1,Z+1),hash3(X+1,Y+1,Z+1),fx),fy),fz); }
+function fbm(x,y,z){ return noise3(x,y,z)*0.65+noise3(x*2.1,y*2.1,z*1.3)*0.35; }
+
+/* ---------- contour field (marching squares) ---------- */
+var MS=[[],[[3,2]],[[2,1]],[[3,1]],[[0,1]],[[3,2],[0,1]],[[0,2]],[[3,0]],[[3,0]],[[0,2]],[[3,0],[2,1]],[[0,1]],[[3,1]],[[2,1]],[[3,2]],[]];
+function contours(canvas,opt){
+  var ctx=canvas.getContext("2d"), W=0,H=0,dpr=1,cols=0,rows=0,vals=null;
+  var cell=opt.cell||22, levels=opt.levels||[.3,.38,.46,.54,.62,.7];
+  function size(){ var r=canvas.getBoundingClientRect(); dpr=Math.min(1.5,window.devicePixelRatio||1); W=r.width;H=r.height; canvas.width=Math.max(1,W*dpr);canvas.height=Math.max(1,H*dpr); cols=Math.ceil(W/cell)+1; rows=Math.ceil(H/cell)+1; vals=new Float32Array(cols*rows); }
+  function draw(time){
+    if(!W) size();
+    var z=time*0.00004*(opt.speed||1), sc=opt.scale||0.0024;
+    for(var j=0;j<rows;j++) for(var i=0;i<cols;i++) vals[j*cols+i]=fbm(i*cell*sc,j*cell*sc+z*2,z);
+    ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,W,H); ctx.lineWidth=opt.width||1; ctx.strokeStyle=opt.color;
+    ctx.beginPath();
+    for(var L=0;L<levels.length;L++){ var lv=levels[L];
+      for(j=0;j<rows-1;j++) for(i=0;i<cols-1;i++){
+        var a=vals[j*cols+i], b=vals[j*cols+i+1], c=vals[(j+1)*cols+i+1], d=vals[(j+1)*cols+i];
+        var k=(a>=lv?8:0)|(b>=lv?4:0)|(c>=lv?2:0)|(d>=lv?1:0); if(k===0||k===15) continue;
+        var x=i*cell,y=j*cell, segs=MS[k];
+        for(var s=0;s<segs.length;s++){ var p0=edge(segs[s][0]),p1=edge(segs[s][1]); ctx.moveTo(p0[0],p0[1]); ctx.lineTo(p1[0],p1[1]); }
+      }
+    }
+    ctx.stroke();
+    function edge(e){ var t;
+      if(e===0){ t=(lv-a)/(b-a); return [x+t*cell,y]; }
+      if(e===1){ t=(lv-b)/(c-b); return [x+cell,y+t*cell]; }
+      if(e===2){ t=(lv-d)/(c-d); return [x+t*cell,y+cell]; }
+      t=(lv-a)/(d-a); return [x,y+t*cell]; }
+  }
+  window.addEventListener("resize",function(){W=0;});
+  if(RM){ draw(0); return; }
+  runInView(canvas,function(t){draw(t);},30);
+}
+
+/* ---------- sticky stack: pin what fits, recede what is covered ---------- */
+var layers=$$("[data-layer]"), stackEls=layers.map(function(l,i){ return {layer:l,inner:$(".inner",l),shade:$(".shade",l),next:layers[i+1]||$("#offerings")}; });
+var phone=window.matchMedia("(max-width: 639px)");
+function pinCheck(){ stackEls.forEach(function(s){ var fits=s.inner.firstElementChild.scrollHeight<=window.innerHeight+2 && window.innerWidth>=768 && !RM; s.layer.classList.toggle("pin",fits); s.pinned=fits; if(!fits){ s.inner.style.transform=""; s.shade.style.opacity=0; s.inner.style.visibility="visible"; } }); }
+var recedeQueued=false;
+function recede(){ recedeQueued=false; var view=window.innerHeight||1, shrink=phone.matches?0:0.1;
+  stackEls.forEach(function(s){ if(!s.pinned) return; var p=clamp(1-s.next.getBoundingClientRect().top/view,0,1);
+    s.inner.style.transform=p>0&&shrink>0?"scale("+(1-shrink*p).toFixed(4)+")":""; s.inner.style.willChange=p>0?"transform":""; s.shade.style.opacity=(0.55*p).toFixed(3); s.inner.style.visibility=p>=1?"hidden":"visible"; }); }
+window.addEventListener("scroll",function(){ if(!recedeQueued){ recedeQueued=true; requestAnimationFrame(recede);} },{passive:true});
+window.addEventListener("resize",function(){ pinCheck(); recede(); });
+
+/* ---------- WebGL medallion ---------- */
+var coinEl=$("#coin"), gl=null, coinReady=false;
+var coin={ burn:0, rotY:new Spring(-Math.PI*0.95,{tension:60,friction:14}), rotX:new Spring(0.15,{tension:90,friction:16}), spinExtra:0, px:0, py:0 };
+function initCoin(logoImg){
+  var cv=$("#coin-gl");
+  try{ gl=cv.getContext("webgl",{antialias:true,premultipliedAlpha:true,alpha:true}); }catch(e){ gl=null; }
+  if(!gl){ coinEl.classList.add("nogl"); coinReady=true; return; }
+  var VS="attribute vec3 aP;attribute vec3 aN;attribute vec2 aUV;attribute float aPart;uniform mat4 uM;uniform mat4 uVP;varying vec3 vN;varying vec3 vW;varying vec2 vUV;varying float vPart;varying vec3 vL;void main(){vec4 w=uM*vec4(aP,1.0);vW=w.xyz;vN=mat3(uM)*aN;vUV=aUV;vPart=aPart;vL=aP;gl_Position=uVP*w;}";
+  var FS="precision highp float;varying vec3 vN;varying vec3 vW;varying vec2 vUV;varying float vPart;varying vec3 vL;uniform sampler2D uTex;uniform float uBurn;uniform vec3 uCam;uniform vec2 uLight;"+
+  "float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}float n2(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.0-2.0*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}"+
+  "void main(){vec4 tx=texture2D(uTex,vUV);if(tx.a<0.5)discard;"+
+  "float t=1.0-(vL.y+1.0)*0.5;float nz=n2(vL.xy*4.0+vL.z*3.0)*0.22;float e=uBurn*1.3-(t+nz);if(e<0.0)discard;float glow=(1.0-smoothstep(0.0,0.10,e))*(1.0-smoothstep(1.15,1.3,uBurn));"+
+  "vec3 N=normalize(vN);if(!gl_FrontFacing)N=-N;vec3 V=normalize(uCam-vW);vec3 L=normalize(vec3(uLight.x*2.0,0.9+uLight.y,1.6));float d=max(dot(N,L),0.0);vec3 R=reflect(-V,N);float sp=pow(max(dot(R,L),0.0),36.0);vec3 col;"+
+  "if(vPart<1.5){col=tx.rgb*(0.5+0.62*d)+vec3(1.0,0.96,0.88)*sp*0.22*tx.a;}"+
+  "else{vec3 edge=mix(tx.rgb*0.42,vec3(0.32,0.21,0.13),0.55);col=edge*(0.55+0.45*d);}"+
+  "col+=vec3(1.0,0.72,0.35)*glow*2.2;gl_FragColor=vec4(col,1.0);}";
+  function sh(type,src){ var s=gl.createShader(type); gl.shaderSource(s,src); gl.compileShader(s); if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s)); return s; }
+  var prog;
+  try{ prog=gl.createProgram(); gl.attachShader(prog,sh(gl.VERTEX_SHADER,VS)); gl.attachShader(prog,sh(gl.FRAGMENT_SHADER,FS)); gl.linkProgram(prog); if(!gl.getProgramParameter(prog,gl.LINK_STATUS)) throw new Error("link"); }catch(err){ gl=null; coinEl.classList.add("nogl"); coinReady=true; return; }
+  gl.useProgram(prog);
+  /* the logo itself, cut out by its own alpha and given depth with stacked slices */
+  var P=[],N=[],U=[],K=[], T=0.032, SL=10;
+  function push(p,n,uv,k){ P.push(p[0],p[1],p[2]); N.push(n[0],n[1],n[2]); U.push(uv[0],uv[1]); K.push(k); }
+  function quad(z,nz,mirror,k){ var c=[[-1,-1],[1,-1],[1,1],[-1,1]], ord=nz>0?[0,1,2,0,2,3]:[0,2,1,0,3,2];
+    ord.forEach(function(ix){ var x=c[ix][0], y=c[ix][1], u=(x+1)/2; push([x,y,z],[0,0,nz],[mirror?1-u:u,(1-y)/2],k); }); }
+  quad(T,1,false,0); quad(-T,-1,true,1);
+  for(var i=1;i<SL;i++){ var z=T-2*T*i/SL; quad(z,1,false,2); }
+  var count=P.length/3;
+  function buf(arr,loc,n){ var b=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,b); gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(arr),gl.STATIC_DRAW); var l=gl.getAttribLocation(prog,loc); gl.enableVertexAttribArray(l); gl.vertexAttribPointer(l,n,gl.FLOAT,false,0,0); }
+  buf(P,"aP",3); buf(N,"aN",3); buf(U,"aUV",2); buf(K,"aPart",1);
+  var c=document.createElement("canvas"); c.width=c.height=1024; var x=c.getContext("2d");
+  var sc=Math.min(960/logoImg.naturalWidth,960/logoImg.naturalHeight), w=logoImg.naturalWidth*sc, hh=logoImg.naturalHeight*sc, ox=0;
+  try{ var oc=document.createElement("canvas"), ow=320, oh=Math.round(320*logoImg.naturalHeight/logoImg.naturalWidth); oc.width=ow; oc.height=oh; var oxx=oc.getContext("2d"); oxx.drawImage(logoImg,0,0,ow,oh); var dd=oxx.getImageData(0,0,ow,oh).data, xs=[];
+    for(var yy=0;yy<oh;yy++) for(var xx=0;xx<ow;xx++){ var o=(yy*ow+xx)*4, r=dd[o], g=dd[o+1], bb=dd[o+2], al=dd[o+3]; var mx=Math.max(r,g,bb), mn=Math.min(r,g,bb); if(al>200 && bb>=r && mx>150 && mx-mn<60) xs.push(xx); }
+    if(xs.length>200){ xs.sort(function(a,b){return a-b;}); var lo=xs[Math.floor(xs.length*0.01)], hi=xs[Math.floor(xs.length*0.99)]; ox=(ow/2-(lo+hi)/2)/ow*w; } }catch(e){}
+  x.drawImage(logoImg,512-w/2+ox,512-hh/2,w,hh);
+  var tex=gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D,tex); gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,false); gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,c); gl.generateMipmap(gl.TEXTURE_2D); gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR_MIPMAP_LINEAR); gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+  gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D,tex); gl.uniform1i(gl.getUniformLocation(prog,"uTex"),0);
+  var uM=gl.getUniformLocation(prog,"uM"), uVP=gl.getUniformLocation(prog,"uVP"), uBurn=gl.getUniformLocation(prog,"uBurn"), uCam=gl.getUniformLocation(prog,"uCam"), uLight=gl.getUniformLocation(prog,"uLight");
+  gl.enable(gl.DEPTH_TEST); gl.enable(gl.CULL_FACE); gl.cullFace(gl.BACK);
+  function persp(f,asp,n,fa){ var t=1/Math.tan(f/2); return [t/asp,0,0,0, 0,t,0,0, 0,0,(fa+n)/(n-fa),-1, 0,0,2*fa*n/(n-fa),0]; }
+  function mul(a,b){ var o=new Array(16); for(var i=0;i<4;i++)for(var j=0;j<4;j++){ var s=0; for(var k=0;k<4;k++) s+=a[k*4+j]*b[i*4+k]; o[i*4+j]=s; } return o; }
+  function rx(a){ var c=Math.cos(a),s=Math.sin(a); return [1,0,0,0, 0,c,s,0, 0,-s,c,0, 0,0,0,1]; }
+  function ry(a){ var c=Math.cos(a),s=Math.sin(a); return [c,0,-s,0, 0,1,0,0, s,0,c,0, 0,0,0,1]; }
+  function tr(x,y,z){ return [1,0,0,0, 0,1,0,0, 0,0,1,0, x,y,z,1]; }
+  var camZ=5.0, view=tr(0,0,-camZ);
+  var lx=new Spring(0,{tension:80,friction:18}), ly=new Spring(0,{tension:80,friction:18});
+  var drag=null, heroScroll=0;
+  function size(){ var r=cv.getBoundingClientRect(), d=Math.min(2,window.devicePixelRatio||1); cv.width=Math.max(1,Math.round(r.width*d)); cv.height=Math.max(1,Math.round(r.height*d)); gl.viewport(0,0,cv.width,cv.height); }
+  size(); window.addEventListener("resize",size);
+  window.addEventListener("pointermove",function(e){ var r=cv.getBoundingClientRect(); coin.px=clamp((e.clientX-(r.left+r.width/2))/(window.innerWidth/2),-1,1); coin.py=clamp((e.clientY-(r.top+r.height/2))/(window.innerHeight/2),-1,1); if(drag){ coin.spinExtra=drag.base+(e.clientX-drag.x)*0.012; } },{passive:true});
+  cv.addEventListener("pointerdown",function(e){ drag={x:e.clientX,base:coin.spinExtra}; cv.style.cursor="grabbing"; });
+  window.addEventListener("pointerup",function(){ if(drag){ drag=null; cv.style.cursor="grab"; coin.spinExtra=Math.round(coin.spinExtra/(Math.PI*2))*Math.PI*2; } });
+  var shadow=$("#coin-shadow");
+  function frame(t,dt){
+    var hr=$("#top").getBoundingClientRect(); heroScroll=clamp(-hr.top/Math.max(1,hr.height),0,1);
+    if(coin.started && !drag && !RM){ if(!coin.lastFlip) coin.lastFlip=t; if(t-coin.lastFlip>6500){ coin.spinExtra+=Math.PI*2; coin.lastFlip=t; } }
+    coin.rotY.t=coin.px*0.55+coin.spinExtra+heroScroll*Math.PI*0.9; coin.rotX.t=coin.py*0.38+Math.sin(t*0.0007)*0.05;
+    if(coin.started){ coin.rotY.step(dt); coin.rotX.step(dt); }
+    lx.t=-coin.px; ly.t=-coin.py; lx.step(dt); ly.step(dt);
+    var bob=RM?0:Math.sin(t*0.0011)*0.06;
+    var M=mul(tr(0,bob,0),mul(ry(coin.rotY.v+Math.sin(t*0.0004)*0.06),rx(coin.rotX.v)));
+    var VP=mul(persp(30*Math.PI/180,cv.width/cv.height,0.1,20),view);
+    gl.clearColor(0,0,0,0); gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
+    gl.uniformMatrix4fv(uM,false,new Float32Array(M)); gl.uniformMatrix4fv(uVP,false,new Float32Array(VP));
+    gl.uniform1f(uBurn,coin.burn); gl.uniform3f(uCam,0,0,camZ); gl.uniform2f(uLight,lx.v,ly.v);
+    gl.drawArrays(gl.TRIANGLES,0,count);
+    shadow.style.transform="translateY("+(bob*-40).toFixed(1)+"px) scaleX("+(0.9+Math.abs(Math.cos(coin.rotY.v))*0.12).toFixed(3)+")";
+    shadow.style.opacity=(0.85-bob*2).toFixed(2);
+  }
+  coin.frame=frame;
+  runInView(cv,frame,60);
+  coinReady=true;
+}
+function startCoin(){
+  coin.started=true;
+  if(!gl){ return; }
+  if(RM){ coin.burn=1.4; coin.rotY.v=0; return; }
+  var t0=performance.now();
+  animate(function(t){ var p=clamp((t-t0)/1900,0,1); coin.burn=1.32*(1-Math.pow(1-p,2.2)); return p>=1; });
+}
+
+/* ---------- halftone with reticle (difference sheet) ---------- */
+function halftone(canvas){
+  var ctx=canvas.getContext("2d"), W=0,H=0,dpr=1, mx=-1, my=-1, active=false, sec=canvas.parentElement;
+  function size(){ var r=canvas.getBoundingClientRect(); dpr=Math.min(1.5,window.devicePixelRatio||1); W=r.width;H=r.height; canvas.width=W*dpr; canvas.height=H*dpr; }
+  sec.addEventListener("pointermove",function(e){ var r=canvas.getBoundingClientRect(); mx=e.clientX-r.left; my=e.clientY-r.top; active=true; });
+  sec.addEventListener("pointerleave",function(){ active=false; });
+  window.addEventListener("resize",function(){W=0;});
+  var rx=new Spring(0,{tension:140,friction:30}), ry=new Spring(0,{tension:140,friction:30});
+  function draw(t,dt){
+    if(!W) size();
+    var s=W<700?12:15, cols=Math.ceil(W/s), rows=Math.ceil(H/s), z=t*0.00005;
+    if(!active){ mx=W*(0.76+0.14*Math.sin(t*0.00021)); my=H*(0.42+0.22*Math.sin(t*0.00017+1.2)); }
+    rx.t=mx; ry.t=my; rx.step(dt); ry.step(dt);
+    var ci=Math.round(rx.v/s), cj=Math.round(ry.v/s);
+    ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,W,H);
+    ctx.fillStyle="rgba(185,174,156,.42)"; ctx.beginPath();
+    var sq=[];
+    for(var j=0;j<rows;j++) for(var i=0;i<cols;i++){
+      var x=i*s+s/2, y=j*s+s/2;
+      var f=fbm(x*0.004,y*0.004,z); var mask=clamp((x/W)*1.2-0.15,0,1)*clamp(1-Math.abs(y/H-0.5)*1.4,0,1);
+      var r=s*0.36*Math.pow(clamp(f*1.25-0.25,0,1),1.4)*(0.25+0.75*mask);
+      var di=Math.abs(i-ci), dj=Math.abs(j-cj);
+      var arm=(di===0&&dj<=14)||(dj===0&&di<=14), chq=di<=3&&dj<=3&&((i+j)&1)===0; if(arm||chq){ sq.push(x,y,Math.max(r,s*0.16),chq?0.9:0.5*(1-Math.max(di,dj)/15)); continue; }
+      if(r<0.35) continue; ctx.moveTo(x+r,y); ctx.arc(x,y,r,0,6.283);
+    }
+    ctx.fill();
+    for(var q=0;q<sq.length;q+=4){ var rr=sq[q+2]; ctx.fillStyle="rgba(255,199,122,"+sq[q+3].toFixed(2)+")"; ctx.fillRect(sq[q]-rr,sq[q+1]-rr,rr*2,rr*2); }
+  }
+  if(RM){ draw(0,16); return; }
+  runInView(canvas,draw,30);
+}
+
+/* ---------- the drink seam: the cream pours off as you scroll, bubbles and glasses rise ---------- */
+function seam(canvas){
+  var ctx=canvas.getContext("2d"), W=0,H=0,dpr=1, sec=$("#difference"), bubbles=[], icons=[];
+  function hsh(i,j){ return P[(P[i&255]+j*7)&255]/255; }
+  function size(){ var r=canvas.getBoundingClientRect(); dpr=Math.min(2,window.devicePixelRatio||1); W=r.width;H=r.height; canvas.width=W*dpr; canvas.height=H*dpr;
+    bubbles=[]; var nb=W<700?26:48; for(var i=0;i<nb;i++) bubbles.push({x:hsh(i,1)*W, r:1.6+hsh(i,2)*3.4, sp:0.018+hsh(i,3)*0.03, ph:hsh(i,4), wob:hsh(i,5)*6.283});
+    icons=[]; var kinds=["martini","coupe","highball","lime"], n=W<700?4:7;
+    for(var k=0;k<n;k++) icons.push({k:kinds[k%4], x:(k+0.5)/n*W, s:W<700?30:40, d:hsh(k,11)*0.14, rot:(hsh(k,5)-0.5)*0.5}); }
+  window.addEventListener("resize",function(){W=0;});
+  function glass(k,sz){ ctx.beginPath();
+    if(k==="martini"){ ctx.moveTo(-sz*.55,-sz*.5); ctx.lineTo(sz*.55,-sz*.5); ctx.lineTo(0,sz*.05); ctx.closePath(); ctx.moveTo(0,sz*.05); ctx.lineTo(0,sz*.5); ctx.moveTo(-sz*.25,sz*.5); ctx.lineTo(sz*.25,sz*.5); ctx.moveTo(sz*.13,-sz*.32); ctx.arc(sz*.06,-sz*.32,sz*.07,0,6.283); ctx.moveTo(sz*.06,-sz*.32); ctx.lineTo(sz*.32,-sz*.62); }
+    else if(k==="coupe"){ ctx.moveTo(-sz*.55,-sz*.38); ctx.quadraticCurveTo(0,sz*.2,sz*.55,-sz*.38); ctx.closePath(); ctx.moveTo(0,-sz*.1); ctx.lineTo(0,sz*.5); ctx.moveTo(-sz*.25,sz*.5); ctx.lineTo(sz*.25,sz*.5); }
+    else if(k==="highball"){ ctx.moveTo(-sz*.3,-sz*.45); ctx.lineTo(-sz*.25,sz*.5); ctx.lineTo(sz*.25,sz*.5); ctx.lineTo(sz*.3,-sz*.45); ctx.moveTo(sz*.08,sz*.2); ctx.lineTo(sz*.22,-sz*.72); ctx.moveTo(-sz*.13,-sz*.45); ctx.arc(-sz*.3,-sz*.45,sz*.17,0,3.1416,true); }
+    else { ctx.arc(0,0,sz*.42,0,6.283); for(var q=0;q<6;q++){ var an=q/6*6.283; ctx.moveTo(0,0); ctx.lineTo(Math.cos(an)*sz*.36,Math.sin(an)*sz*.36); } }
+    ctx.stroke(); }
+  function draw(t){
+    if(!W) size();
+    var vh=window.innerHeight, top=sec.getBoundingClientRect().top;
+    var p=clamp((vh*1.0-top)/(vh*1.05),0,1);
+    var level=H*(0.55-p*0.8);
+    ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,W,H);
+    /* the cream surface, swaying like a poured drink */
+    ctx.fillStyle="#F6EFE3"; ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(W,0);
+    for(var x=W;x>=0;x-=8){ var y=level+Math.sin(x*0.011+t*0.0018)*7+Math.sin(x*0.027-t*0.0012)*3.5; ctx.lineTo(x,y); }
+    ctx.closePath(); ctx.fill();
+    /* a thin brass meniscus along the surface */
+    ctx.strokeStyle="rgba(224,164,88,.55)"; ctx.lineWidth=1.5; ctx.beginPath();
+    for(x=0;x<=W;x+=8){ y=level+Math.sin(x*0.011+t*0.0018)*7+Math.sin(x*0.027-t*0.0012)*3.5+3; if(x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y); } ctx.stroke();
+    /* champagne bubbles rising up into the surface */
+    var fade=1-clamp((p-0.75)/0.25,0,1);
+    ctx.fillStyle="rgba(246,239,227,"+(0.75*fade).toFixed(3)+")"; ctx.beginPath();
+    bubbles.forEach(function(bb){ var prog=((t*bb.sp*0.06+bb.ph*1000)%1000)/1000; var by=H-prog*(H-Math.max(0,level)); var bx=bb.x+Math.sin(prog*10+bb.wob)*4; if(by<level+4) return; ctx.moveTo(bx+bb.r,by); ctx.arc(bx,by,bb.r,0,6.283); });
+    ctx.fill();
+    /* cocktail glasses lifting out as it drains */
+    ctx.lineWidth=2.4; ctx.lineCap="round"; ctx.lineJoin="round";
+    icons.forEach(function(ic,i){ var q=clamp((p-ic.d)/0.7,0,1), al=Math.min(1,Math.sin(Math.PI*q)*1.8); if(al<=0.01) return;
+      ctx.save(); ctx.globalAlpha=al; ctx.translate(ic.x, H*0.85-q*H*0.55+Math.sin(t*0.002+i)*3); ctx.rotate(ic.rot+Math.sin(t*0.0013+i)*0.08); ctx.strokeStyle=i%2?"#FFC77A":"#F6EFE3"; glass(ic.k,ic.s); ctx.restore(); });
+  }
+  if(RM){ draw(0); return; }
+  runInView(sec,draw,30);
+}
+
+/* ---------- 3D lasso: twirls beside the line, flies over and cinches around "We can." as you scroll ---------- */
+function lasso(){
+  var host=$("#lasso-target"), back=$("#lasso-back"), front=$("#lasso-front"), h2=$("#diff-h"); if(!host||!back||!front) return;
+  var NS="http://www.w3.org/2000/svg";
+  function mk(svg){ var o={}; ["out","body","twist"].forEach(function(k){ var p=document.createElementNS(NS,"path"); p.setAttribute("fill","none"); p.setAttribute("stroke-linecap","round"); p.setAttribute("stroke-linejoin","round"); svg.appendChild(p); o[k]=p; });
+    o.out.setAttribute("stroke","#2A190D"); o.body.setAttribute("stroke","#8A5A33"); o.twist.setAttribute("stroke","#E2B57A"); o.twist.setAttribute("stroke-dasharray","3 6"); return o; }
+  var B=mk(back), T=mk(front), F=mk(front);
+  var knot=document.createElementNS(NS,"ellipse"); knot.setAttribute("fill","#6B4226"); knot.setAttribute("stroke","#2A190D"); knot.setAttribute("stroke-width","1.5"); front.appendChild(knot);
+  function setW(o,w){ o.out.setAttribute("stroke-width",(w+3).toFixed(2)); o.body.setAttribute("stroke-width",w.toFixed(2)); o.twist.setAttribute("stroke-width",(w*0.45).toFixed(2)); }
+  setW(B,4.2); setW(F,5.6); setW(T,4.8);
+  function setD(o,d,off){ o.out.setAttribute("d",d); o.body.setAttribute("d",d); o.twist.setAttribute("d",d); o.twist.style.strokeDashoffset=off; }
+  var S=new Spring(0,{tension:110,friction:24,eps:0.0005}), spin=0, lastY=window.scrollY, boost=0, throwAt=-1, px=9999, py=9999, near=0;
+  function ease(x){ return x<0.5?2*x*x:1-Math.pow(-2*x+2,2)/2; }
+  function lerp(a,b,t){ return a+(b-a)*t; }
+  host.addEventListener("click",function(){ throwAt=performance.now(); S.v=0; S.vel=0; });
+  window.addEventListener("pointermove",function(e){ var r=host.getBoundingClientRect(); px=e.clientX-(r.left+r.width/2); py=e.clientY-(r.top+r.height/2); },{passive:true});
+  function draw(t,dt){
+    var r=host.getBoundingClientRect(), hr=h2.getBoundingClientRect(), vh=window.innerHeight;
+    var w=r.width, h=r.height, cy0=h*0.52;
+    var scrollS=clamp((vh*0.92-r.top)/(vh*0.55),0,1), target=scrollS;
+    if(throwAt>0){ var tp=clamp((t-throwAt)/2600,0,1); target=Math.min(scrollS,tp); if(tp>=1) throwAt=-1; }
+    if(RM){ S.v=1; } else { S.t=target; S.step(dt); }
+    var s=clamp(S.v,0,1);
+    var dy=window.scrollY-lastY; lastY=window.scrollY; boost=boost*0.9+Math.min(0.02,Math.abs(dy)*0.0009);
+    var avail=Math.max(60,hr.right-r.right);
+    var Rw=w/2+20, Rt=clamp(avail*0.36,34,110);
+    var a=ease(clamp((s-0.32)/0.42,0,1)), b=ease(clamp((s-0.76)/0.24,0,1));
+    var tiltW=Math.asin(clamp((h/2+9)/Rw,0.2,0.95)), tiltT=0.5;
+    var R=lerp(Rt,Rw*1.22,a); R=lerp(R,Rw,b);
+    var tilt=lerp(tiltT,tiltW*1.1,a); tilt=lerp(tilt,tiltW,b);
+    var dist=Math.hypot(px,py); near=near*0.92+(dist<w*0.9?1:0)*0.08;
+    var cx=lerp(w+24+Rt,w/2,a)+clamp(px,-200,200)*0.015*(1-b), cy=lerp(cy0-h*0.2,cy0,a)+clamp(py,-200,200)*0.012*(1-b);
+    if(!RM) spin+=dt*(0.0085+boost)*(1-a*0.97);
+    var uk=lerp(spin,Math.round(spin/6.2832)*6.2832,a);
+    R+=Math.sin(t*0.012)*2.2*near*b;
+    var f=650, N=120, pts=[];
+    for(var i=0;i<=N;i++){ var u=uk+i/N*6.2832, X=R*Math.cos(u), Z=R*Math.sin(u); var y=-Z*Math.sin(tilt), z=Z*Math.cos(tilt), k=f/(f+z); pts.push([cx+X*k, cy+y*k, z]); }
+    var bd="", fd="", prev=null;
+    for(i=0;i<pts.length;i++){ var q=pts[i], isB=q[2]>0, seg=q[0].toFixed(1)+" "+q[1].toFixed(1);
+      if(prev!==isB){ var start=i>0?(pts[i-1][0].toFixed(1)+" "+pts[i-1][1].toFixed(1)):seg; if(isB) bd+="M"+start+"L"+seg; else fd+="M"+start+"L"+seg; }
+      else { if(isB) bd+="L"+seg; else fd+="L"+seg; }
+      prev=isB; }
+    var off=(-spin*24).toFixed(1);
+    setD(B,bd,off); setD(F,fd,off);
+    var kp=pts[0], ax=Math.min(hr.right-r.left-4, w+Rt*2+60), ay=cy0-h*0.55, sag=(1-b)*26+5;
+    var mx=(kp[0]+ax)/2, my=(kp[1]+ay)/2+sag;
+    setD(T,"M"+kp[0].toFixed(1)+" "+kp[1].toFixed(1)+"Q"+mx.toFixed(1)+" "+my.toFixed(1)+" "+ax.toFixed(1)+" "+ay.toFixed(1),off);
+    knot.setAttribute("cx",kp[0].toFixed(1)); knot.setAttribute("cy",kp[1].toFixed(1)); knot.setAttribute("rx","5.5"); knot.setAttribute("ry","4");
+    var vis=s>0.02?"1":"0"; back.style.opacity=vis; front.style.opacity=vis;
+  }
+  if(RM){ draw(performance.now(),16); window.addEventListener("resize",function(){ draw(performance.now(),16); }); return; }
+  runInView(host,draw,60);
+}
+
+/* ---------- offerings rail: progress thread, turning marker, parallax ---------- */
+function rail(){
+  var sec=$("#rows"), thread=$("#thread"), marker=$("#marker"), rows=$$(".row",sec);
+  var plates=rows.map(function(r){return $(".plate",r);}), specs=rows.map(function(r){return $(".spec",r);}), txs=rows.map(function(r){return $(".rtx",r);});
+  if("IntersectionObserver" in window){ var o=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ var r=e.target; r.classList.add("in"); setTimeout(function(){r.classList.add("settled");},900); o.unobserve(r);} }); },{rootMargin:"0px 0px -25% 0px"}); rows.forEach(function(r){o.observe(r);}); } else rows.forEach(function(r){r.classList.add("in","settled");});
+  function draw(){
+    var vh=window.innerHeight, r=sec.getBoundingClientRect();
+    var p=clamp((vh*0.55-r.top)/r.height,0,1);
+    thread.style.height=(p*100).toFixed(2)+"%"; marker.style.top="calc("+(p*100).toFixed(2)+"% - 6px)"; marker.style.transform="rotate("+(p*1800).toFixed(1)+"deg)";
+    if(RM) return;
+    rows.forEach(function(row,i){ var b=row.getBoundingClientRect(); var d=(b.top+b.height/2-vh/2)/vh; if(Math.abs(d)>1.4) return;
+      plates[i].style.transform="translateY("+(d*-36).toFixed(1)+"px)"; specs[i].style.transform="translateY("+(d*44).toFixed(1)+"px)"; txs[i].style.transform="translateY("+(d*-12).toFixed(1)+"px)"; });
+  }
+  runInView(sec,draw,60); window.addEventListener("resize",draw);
+}
+
+/* ---------- sign-off: the medallion rides back into place ---------- */
+function riseLogo(){
+  var el=$("#rise");
+  function draw(){ var doc=document.documentElement, rest=doc.scrollHeight-(window.scrollY+window.innerHeight); var p=clamp(1-rest/(window.innerHeight*0.7),0,1); el.style.transform=RM?"":"translateY("+((1-p)*90).toFixed(1)+"px) rotate("+((1-p)*-14).toFixed(1)+"deg)"; }
+  window.addEventListener("scroll",draw,{passive:true}); draw();
+}
+
+/* ---------- loader: fill the mark, then lift ---------- */
+var veil=$("#veil"), fill=$("#veil-fill"), meter=$("#veil-meter"), lbl=$("#veil-lbl");
+var prog=new Spring(0,{tension:10,friction:30,eps:0.001}), target=0, lifted=false;
+var imgs=$$("img").filter(function(i){return !i.complete && i.loading!=="lazy";}), total=imgs.length+2, done=0;
+function tick(){ done++; target=clamp(done/total,0,1)*0.92; }
+imgs.forEach(function(i){ i.addEventListener("load",tick,{once:true}); i.addEventListener("error",tick,{once:true}); });
+var t0=performance.now();
+animate(function(t,dt){
+  prog.t=target; prog.step(dt); var v=clamp(prog.v,0,1);
+  fill.style.clipPath="inset("+((1-v)*100).toFixed(2)+"% 0 0 0)"; meter.style.width=(v*100).toFixed(2)+"%"; lbl.textContent="Saddling up · "+Math.round(v*100)+"%";
+  if(!lifted && ((coinReady && t-t0>900) || t-t0>2200)){ lifted=true; target=1; prog.k=170; prog.c=26; lift(); }
+  return lifted && prog.rest();
+});
+function lift(){
+  var s=performance.now()+260, D=750;
+  animate(function(t){ if(t<s) return false; var p=clamp((t-s)/D,0,1), e=1-Math.pow(1-p,3); veil.style.transform="translateY("+(-e*100).toFixed(2)+"%)"; if(p>=1){ veil.hidden=true; } return p>=1; });
+  setTimeout(function(){ armReveals(); startCoin(); },380);
+}
+
+
+/* ---------- social links + menu ---------- */
+var SOCIAL={ instagram:"", facebook:"", tiktok:"" };   /* paste her profile URLs here */
+$$(".soc").forEach(function(a){ var u=SOCIAL[a.getAttribute("data-social")]; if(u){ a.href=u; a.target="_blank"; a.rel="noopener"; } else a.addEventListener("click",function(e){ e.preventDefault(); }); });
+var menu=$("#menu"), burger=$("#burger"), lastFocus=null;
+function openMenu(){ lastFocus=document.activeElement; menu.hidden=false; burger.setAttribute("aria-expanded","true"); requestAnimationFrame(function(){ requestAnimationFrame(function(){ menu.classList.add("show"); }); }); setTimeout(function(){ var f=$(".menu-links a",menu); if(f) f.focus(); },120); }
+function closeMenu(){ menu.classList.remove("show"); burger.setAttribute("aria-expanded","false"); setTimeout(function(){ menu.hidden=true; },420); if(lastFocus) lastFocus.focus(); }
+burger.addEventListener("click",openMenu); $("#menu-close").addEventListener("click",closeMenu);
+menu.addEventListener("click",function(e){ if(e.target===menu || e.target.closest("[data-close]")) closeMenu(); });
+document.addEventListener("keydown",function(e){ if(e.key==="Escape" && !menu.hidden) closeMenu(); });
+
+
+/* ---------- installable app ---------- */
+if("serviceWorker" in navigator){ window.addEventListener("load",function(){ navigator.serviceWorker.register("sw.js").catch(function(){}); }); }
+var deferredInstall=null, installBtn=$("#install-btn"), iosTip=$("#ios-tip");
+var standalone=window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone===true;
+window.addEventListener("beforeinstallprompt",function(e){ e.preventDefault(); deferredInstall=e; if(!standalone) installBtn.hidden=false; });
+installBtn.addEventListener("click",function(){ if(!deferredInstall) return; deferredInstall.prompt(); deferredInstall.userChoice.finally(function(){ deferredInstall=null; installBtn.hidden=true; }); });
+window.addEventListener("appinstalled",function(){ installBtn.hidden=true; });
+if(!standalone && /iphone|ipad|ipod/i.test(navigator.userAgent) && !/crios|fxios/i.test(navigator.userAgent)) iosTip.hidden=false;
+
+/* ---------- boot ---------- */
+var logo=new Image(); logo.src=$(".veil .dim").src;
+function bootCoin(){ try{ initCoin(logo); }catch(e){ coinEl.classList.add("nogl"); coinReady=true; } tick(); }
+if(logo.complete) bootCoin(); else { logo.onload=bootCoin; logo.onerror=function(){ coinEl.classList.add("nogl"); coinReady=true; tick(); }; }
+tick();
+contours($("#hero-contours"),{color:"rgba(20,36,45,.10)",cell:20,levels:[.3,.36,.42,.48,.54,.6,.66,.72]});
+contours($("#book-contours"),{color:"rgba(20,36,45,.08)",cell:22});
+contours($("#sign-contours"),{color:"rgba(255,255,255,.10)",cell:22,speed:1.4});
+halftone($("#halftone")); seam($("#seam")); lasso(); rail(); riseLogo();
+pinCheck(); recede();
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ pinCheck(); });
+})();
+</script>
+</body>
+</html>
