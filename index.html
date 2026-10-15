@@ -152,6 +152,18 @@ p{margin:0}
 .ios-tip{max-width:360px;text-align:center;font-size:14px;color:var(--on-dark-muted);border:1px dashed rgba(224,164,88,.5);padding:12px 14px}
 .ios-tip b{color:var(--brass-hi);font-weight:500}
 
+
+/* ---------- footer: free-spinning logo ---------- */
+.rise{position:relative;perspective:900px;margin-top:64px}
+.rise .halo{position:absolute;left:50%;top:50%;width:clamp(240px,30vw,380px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(246,239,227,.95) 52%,rgba(246,239,227,.35) 74%,rgba(246,239,227,0));pointer-events:none}
+.spin3d{position:relative;width:clamp(170px,21vw,250px);aspect-ratio:640/693;transform-style:preserve-3d;cursor:grab;touch-action:pan-y;will-change:transform}
+.spin3d:active{cursor:grabbing}
+.spin3d img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;user-select:none;-webkit-user-drag:none;pointer-events:none}
+.spin3d .f{transform:translateZ(5px);backface-visibility:hidden}
+.spin3d .b{transform:rotateY(180deg) translateZ(5px);backface-visibility:hidden}
+.spin3d .l{filter:brightness(.38) sepia(.7) saturate(1.4)}
+.spin-hint{position:absolute;left:50%;bottom:-44px;transform:translateX(-50%);font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.45);white-space:nowrap}
+
 /* ---------- the stack ---------- */
 .stack{position:relative;background:var(--pitch)}
 .layer{position:relative}
@@ -306,9 +318,9 @@ p{margin:0}
 .sign nav a,.sign .contact a{display:block;text-decoration:none;font-family:var(--f-display);font-size:26px;line-height:1.5;color:var(--on-dark);transition:color .15s}
 .sign nav a:hover,.sign .contact a:hover{color:var(--brass-hi)}
 .sign .contact p{color:var(--on-dark-muted);font-size:14px;margin-top:10px}
-.rise{display:flex;justify-content:center;margin-top:70px;will-change:transform}
+.rise{display:flex;justify-content:center;will-change:transform}
 .rise .badge{width:clamp(150px,18vw,240px);height:auto;aspect-ratio:1;padding:22px;background:radial-gradient(closest-side,var(--cream) calc(100% - 12px),transparent calc(100% - 11px)),repeating-conic-gradient(from 10deg,#5A3720 0deg 4deg,#D9A86C 4deg 8deg,#A9733F 8deg 12deg);box-shadow:0 0 60px rgba(224,164,88,.3)}
-.legal{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.1);margin-top:60px;padding-top:22px;font-size:12.5px;color:rgba(255,255,255,.5)}
+.legal{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.1);margin-top:76px;padding-top:22px;font-size:12.5px;color:rgba(255,255,255,.5)}
 
 /* ---------- responsive ---------- */
 @media (max-width:1023px){
@@ -573,9 +585,9 @@ p{margin:0}
         <div><h4>Explore</h4><nav aria-label="Footer"><a href="#difference" data-reveal="letters" data-stagger="22">Why us</a><a href="#offerings" data-reveal="letters" data-stagger="22" data-delay="120">Offerings</a><a href="#book" data-reveal="letters" data-stagger="22" data-delay="240">Plan your bar</a></nav></div>
         <div class="contact"><h4>Contact</h4><a href="tel:9162247557">916-224-7557</a><a href="mailto:Saddleupdrinks@gmail.com" style="font-size:20px">Saddleupdrinks@gmail.com</a><p>Serving the greater Sacramento area.</p></div>
       </div>
-      <div class="rise" id="rise"><span class="badge"><img src="logo.webp" alt="Saddle Up Drinks logo"></span></div>
+      <div class="rise" id="rise"><div class="halo" aria-hidden="true"></div><div class="spin3d" id="spin3d" role="img" aria-label="Saddle Up Drinks logo, drag to spin"><img class="l" src="logo.webp" alt="" aria-hidden="true" style="transform:translateZ(4px)"><img class="l" src="logo.webp" alt="" aria-hidden="true" style="transform:translateZ(2.7px)"><img class="l" src="logo.webp" alt="" aria-hidden="true" style="transform:translateZ(1.3px)"><img class="l" src="logo.webp" alt="" aria-hidden="true" style="transform:translateZ(0px)"><img class="l" src="logo.webp" alt="" aria-hidden="true" style="transform:translateZ(-1.3px)"><img class="l" src="logo.webp" alt="" aria-hidden="true" style="transform:translateZ(-2.7px)"><img class="l" src="logo.webp" alt="" aria-hidden="true" style="transform:translateZ(-4px)"><img class="f" src="logo.webp" alt=""><img class="b" src="logo.webp" alt=""></div><span class="spin-hint">Drag to spin</span></div>
       <div class="install-row"><button class="install" id="install-btn" type="button" hidden><span class="badge"><img src="logo.webp" alt=""></span><span><small>Saddle Up app</small>Install on this phone</span></button><p class="ios-tip" id="ios-tip" hidden>Add the Saddle Up app to your phone: tap <b>Share</b>, then <b>Add to Home Screen</b>.</p></div>
-      <div class="legal"><span>© 2025 Saddle Up Drinks · Greater Sacramento, CA</span><span>Please drink responsibly. 21+ for alcoholic service.</span></div>
+      <div class="legal"><span>© 2026 Saddle Up Drinks · Greater Sacramento, CA</span><span>Please drink responsibly. 21+ for alcoholic service.</span></div>
     </div>
   </div>
 </footer>
@@ -1080,7 +1092,7 @@ function rail(){
 /* ---------- sign-off: the medallion rides back into place ---------- */
 function riseLogo(){
   var el=$("#rise");
-  function draw(){ var doc=document.documentElement, rest=doc.scrollHeight-(window.scrollY+window.innerHeight); var p=clamp(1-rest/(window.innerHeight*0.7),0,1); el.style.transform=RM?"":"translateY("+((1-p)*90).toFixed(1)+"px) rotate("+((1-p)*-14).toFixed(1)+"deg)"; }
+  function draw(){ var doc=document.documentElement, rest=doc.scrollHeight-(window.scrollY+window.innerHeight); var p=clamp(1-rest/(window.innerHeight*0.7),0,1); el.style.transform=RM?"":"translateY("+((1-p)*90).toFixed(1)+"px)"; }
   window.addEventListener("scroll",draw,{passive:true}); draw();
 }
 
@@ -1123,6 +1135,19 @@ window.addEventListener("beforeinstallprompt",function(e){ e.preventDefault(); d
 installBtn.addEventListener("click",function(){ if(!deferredInstall) return; deferredInstall.prompt(); deferredInstall.userChoice.finally(function(){ deferredInstall=null; installBtn.hidden=true; }); });
 window.addEventListener("appinstalled",function(){ installBtn.hidden=true; });
 if(!standalone && /iphone|ipad|ipod/i.test(navigator.userAgent) && !/crios|fxios/i.test(navigator.userAgent)) iosTip.hidden=false;
+
+
+/* ---------- footer logo: always turning, flick to spin ---------- */
+(function(){
+  var el=$("#spin3d"); if(!el) return;
+  var ang=0, vel=0.03, base=0.03, drag=null, lastX=0, lastT=0;
+  el.addEventListener("pointerdown",function(e){ drag=true; lastX=e.clientX; lastT=performance.now(); el.setPointerCapture(e.pointerId); });
+  el.addEventListener("pointermove",function(e){ if(!drag) return; var now=performance.now(), dx=e.clientX-lastX; ang+=dx*0.6; vel=dx*0.6/Math.max(8,now-lastT); lastX=e.clientX; lastT=now; });
+  function up(){ drag=null; } el.addEventListener("pointerup",up); el.addEventListener("pointercancel",up);
+  el.addEventListener("dblclick",function(){ vel=1.4; });
+  if(RM){ el.style.transform="rotateY(-18deg)"; return; }
+  runInView(el,function(t,dt){ if(!drag){ vel+=(base-vel)*Math.min(1,dt*0.0025); ang+=vel*dt; } el.style.transform="rotateY("+(ang%360).toFixed(2)+"deg)"; },60);
+})();
 
 /* ---------- boot ---------- */
 var logo=new Image(); logo.src=$(".veil .dim").src;
