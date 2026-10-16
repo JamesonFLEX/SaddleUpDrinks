@@ -355,6 +355,10 @@ p{margin:0}
   .panel-wrap::before,.panel-wrap::after{animation:none}
   .plate img{clip-path:none;transition:none}
 }
+/* no-copy: block text selection + long-press menu; form fields stay usable */
+html,body{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-touch-callout:none}
+img{-webkit-user-drag:none;user-drag:none}
+input,textarea,select,[contenteditable]{-webkit-user-select:text;-moz-user-select:text;user-select:text;-webkit-touch-callout:default}
 </style>
 </head>
 <body>
@@ -1159,6 +1163,18 @@ contours($("#sign-contours"),{color:"rgba(255,255,255,.10)",cell:22,speed:1.4});
 halftone($("#halftone")); seam($("#seam")); lasso(); rail(); riseLogo();
 pinCheck(); recede();
 if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ pinCheck(); });
+})();
+</script>
+<script>
+(function(){
+  function isField(t){ return t && t.closest && t.closest("input,textarea,select,[contenteditable]"); }
+  ["copy","cut","selectstart","dragstart","contextmenu"].forEach(function(ev){
+    document.addEventListener(ev,function(e){ if(!isField(e.target)) e.preventDefault(); },{capture:true});
+  });
+  document.addEventListener("keydown",function(e){
+    var k=(e.key||"").toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&(k==="c"||k==="a"||k==="x"||k==="s"||k==="u"||k==="p")&&!isField(e.target)) e.preventDefault();
+  },{capture:true});
 })();
 </script>
 </body>
