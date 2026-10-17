@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<link rel="preload" as="image" href="logo.webp?v=16" fetchpriority="high">
+<link rel="preload" as="image" href="cow-dark.webp?v=16">
 <link rel="canonical" href="https://saddleupdrinks.com/">
 <meta name="theme-color" content="#0E1A20">
 <meta name="mobile-web-app-capable" content="yes">
@@ -28,7 +30,8 @@
 <meta name="description" content="Saddle Up Drinks is a family owned and operated horse trailer converted to a full functioning luxury bar serving the greater Sacramento area.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap"></noscript>
 <style>
 /* Layout: a stack of pinned sheets — cream hero, navy "difference" sheet, ink offerings rail — then ordinary flow into the funnel and a brass-edged sign-off. */
 :root{
@@ -175,7 +178,11 @@ p{margin:0}
 /* ---------- hero ---------- */
 .hero{position:relative;isolation:isolate;min-height:100svh;background:var(--cream);overflow:hidden;display:flex;flex-direction:column}
 .bg-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
-.bg-canvas.cow{inset:-22%;width:144%;height:144%;will-change:transform;animation:cowdrift 46s ease-in-out infinite alternate}
+.bg-canvas.cow{inset:-22%;width:144%;height:144%;background-repeat:no-repeat;background-position:center;background-size:cover;opacity:0;transition:opacity 1s ease;animation:cowdrift 46s ease-in-out infinite alternate;animation-play-state:paused}
+.bg-canvas.cow.on{opacity:var(--cow-o,.13);animation-play-state:running;will-change:transform}
+.cow-d.lit{background-image:url("cow-dark.webp?v=16")}
+.cow-l.lit{background-image:url("cow-light.webp?v=16")}
+#hero-contours{--cow-o:.15}#book-contours{--cow-o:.11}#sign-contours{--cow-o:.11}
 #book-contours.cow{animation-duration:58s;animation-direction:alternate-reverse}
 #sign-contours.cow{animation-duration:52s}
 @keyframes cowdrift{
@@ -376,13 +383,16 @@ p{margin:0}
 .plate.wg{background:transparent}
 .plate.wg::after{opacity:0;transition:opacity .6s ease}
 .plate.wg.done::after{opacity:1}
+/* no zoom, no sideways scrolling */
+html{overflow-x:clip;max-width:100%;touch-action:pan-y;overscroll-behavior-x:none;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{max-width:100%;touch-action:pan-y}
+img{-webkit-user-drag:none;user-select:none}
+@media print{html,body{display:none!important}}
 /* no-copy: block text selection + long-press menu; form fields stay usable */
 html,body{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-touch-callout:none}
 img{-webkit-user-drag:none;user-drag:none}
 input,textarea,select,[contenteditable]{-webkit-user-select:text;-moz-user-select:text;user-select:text;-webkit-touch-callout:default}
 </style>
-<link rel="preload" as="image" href="logo.webp?v=15" fetchpriority="high">
-<link rel="preload" as="image" href="hero.webp?v=15">
 <script>
 /* if any photo fails to load, retry it straight from the server (up to 2 times) */
 document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!=="IMG")return;var n=+(t.dataset.retry||0);if(n>=2)return;t.dataset.retry=n+1;var u=t.getAttribute("src").split("&r=")[0];setTimeout(function(){t.src=u+(u.indexOf("?")<0?"?":"&")+"r="+Date.now();},400*(n+1));},true);
@@ -392,14 +402,14 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
 <div id="saddle-up">
 
 <div class="veil" id="veil" aria-hidden="true">
-  <div class="mark"><img class="dim" src="logo.webp?v=15" alt=""><img class="fill" id="veil-fill" src="logo.webp?v=15" alt=""></div>
+  <div class="mark"><img decoding="async" class="dim" src="logo.webp?v=16" alt=""><img decoding="async" class="fill" id="veil-fill" src="logo.webp?v=16" alt=""></div>
   <div class="lbl" id="veil-lbl">Saddling up · 0%</div>
   <div class="meter"><i id="veil-meter"></i></div>
 </div>
 
 <header class="mast">
   <div class="mast-in">
-    <a class="brand" href="#top" aria-label="Saddle Up Drinks, back to top"><span class="badge"><img src="logo.webp?v=15" alt=""></span><b>Saddle Up Drinks</b></a>
+    <a class="brand" href="#top" aria-label="Saddle Up Drinks, back to top"><span class="badge"><img decoding="async" src="logo.webp?v=16" alt=""></span><b>Saddle Up Drinks</b></a>
     <nav class="links" aria-label="Sections"><a href="#difference">Why us</a><a href="#offerings">Offerings</a><a href="#book">Plan your bar</a></nav>
     <div class="mast-r">
       <div class="socials"><a class="soc" data-social="instagram" href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a><a class="soc" data-social="facebook" href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21h3z"/></svg></a></div>
@@ -410,7 +420,7 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
 </header>
 <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
   <div class="menu-in">
-    <div class="menu-top"><span class="badge"><img src="logo.webp?v=15" alt=""></span><button class="burger open" id="menu-close" type="button" aria-label="Close menu"><i></i><i></i><i></i></button></div>
+    <div class="menu-top"><span class="badge"><img decoding="async" src="logo.webp?v=16" alt=""></span><button class="burger open" id="menu-close" type="button" aria-label="Close menu"><i></i><i></i><i></i></button></div>
     <nav class="menu-links" aria-label="Quick links">
       <a href="#top" data-close><small>Home</small>The bar rides in</a>
       <a href="#difference" data-close><small>Why us</small>The Saddle Up difference</a>
@@ -431,7 +441,7 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
   <div class="layer" data-layer>
     <div class="inner">
       <section class="hero" id="top" aria-label="Saddle Up Drinks">
-        <canvas class="bg-canvas" id="hero-contours" aria-hidden="true"></canvas>
+        <div class="bg-canvas cow cow-d" id="hero-contours" aria-hidden="true"></div>
         <div class="wrap">
           <div>
             <div class="eyebrow" data-reveal="words" data-on="load" data-delay="100">Luxury mobile bar · Greater Sacramento</div>
@@ -443,7 +453,7 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
             <div class="coin" id="coin">
               <div class="coin-shadow" id="coin-shadow"></div>
               <canvas id="coin-gl" aria-label="The Saddle Up Drinks horseshoe logo, spinning in 3D" role="img"></canvas>
-              <div class="css3d" id="coin-css" role="img" aria-label="Saddle Up Drinks logo, drag to spin"><img class="l" src="logo.webp?v=15" alt="" aria-hidden="true" style="transform:translateZ(6px)"><img class="l" src="logo.webp?v=15" alt="" aria-hidden="true" style="transform:translateZ(4px)"><img class="l" src="logo.webp?v=15" alt="" aria-hidden="true" style="transform:translateZ(2px)"><img class="l" src="logo.webp?v=15" alt="" aria-hidden="true" style="transform:translateZ(0px)"><img class="l" src="logo.webp?v=15" alt="" aria-hidden="true" style="transform:translateZ(-2px)"><img class="l" src="logo.webp?v=15" alt="" aria-hidden="true" style="transform:translateZ(-4px)"><img class="l" src="logo.webp?v=15" alt="" aria-hidden="true" style="transform:translateZ(-6px)"><img class="f" fetchpriority="high" src="logo.webp?v=15" alt="Saddle Up Drinks logo"><img class="b" src="logo.webp?v=15" alt=""></div>
+              <div class="css3d" id="coin-css" role="img" aria-label="Saddle Up Drinks logo, drag to spin"><img decoding="async" class="l" src="logo.webp?v=16" alt="" aria-hidden="true" style="transform:translateZ(6px)"><img decoding="async" class="l" src="logo.webp?v=16" alt="" aria-hidden="true" style="transform:translateZ(4px)"><img decoding="async" class="l" src="logo.webp?v=16" alt="" aria-hidden="true" style="transform:translateZ(2px)"><img decoding="async" class="l" src="logo.webp?v=16" alt="" aria-hidden="true" style="transform:translateZ(0px)"><img decoding="async" class="l" src="logo.webp?v=16" alt="" aria-hidden="true" style="transform:translateZ(-2px)"><img decoding="async" class="l" src="logo.webp?v=16" alt="" aria-hidden="true" style="transform:translateZ(-4px)"><img decoding="async" class="l" src="logo.webp?v=16" alt="" aria-hidden="true" style="transform:translateZ(-6px)"><img decoding="async" class="f" fetchpriority="high" src="logo.webp?v=16" alt="Saddle Up Drinks logo"><img decoding="async" class="b" src="logo.webp?v=16" alt=""></div>
             </div>
             <div class="panels">
               <div class="bracket p-dark"><span class="eyebrow">Licensed &amp; insured</span>Catering liquor license through ABC. We supply the alcohol.</div>
@@ -472,10 +482,10 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
             <p data-reveal="words" data-stagger="12" data-delay="400">We are flexible and can work with you to ensure we meet your vision for the perfect event!</p>
           </div>
           <div class="pillars">
-            <article class="pillar"><div class="ph"><img src="why-licensed.webp?v=15" alt="Bartenders serving guests from the trailer" loading="lazy"></div><div class="tx"><h3>Licensed and Insured</h3><p>General liability insurance and RBS Certified Bartenders.</p></div></article>
-            <article class="pillar"><div class="ph"><img src="why-alcohol.webp?v=15" alt="Shelves of craft beer, wine and liquor inside the trailer" loading="lazy"></div><div class="tx"><h3>We Can Supply the Alcohol</h3><p>Hand-picked craft beer, wine and liquor under our liquor license and event-based permit.</p></div></article>
-            <article class="pillar"><div class="ph"><img src="why-seamless.webp?v=15" alt="Guests at the Saddle Up trailer at an outdoor event" loading="lazy"></div><div class="tx"><h3>Seamless and Stress-free</h3><p>We handle everything from start to finish. Let us do the work for you.</p></div></article>
-            <article class="pillar"><div class="ph"><img src="why-inclusive.webp?v=15" alt="Custom bar menu sign on the counter" loading="lazy"></div><div class="tx"><h3>All Inclusive Experience</h3><p>Trailer, staff, barware, ice, garnishes, cups, liquor, beer, wine, champagne, soda and a photo backdrop.</p></div></article>
+            <article class="pillar"><div class="ph"><img decoding="async" src="why-licensed.webp?v=16" alt="Bartenders serving guests from the trailer" loading="lazy"></div><div class="tx"><h3>Licensed and Insured</h3><p>General liability insurance and RBS Certified Bartenders.</p></div></article>
+            <article class="pillar"><div class="ph"><img decoding="async" src="why-alcohol.webp?v=16" alt="Shelves of craft beer, wine and liquor inside the trailer" loading="lazy"></div><div class="tx"><h3>We Can Supply the Alcohol</h3><p>Hand-picked craft beer, wine and liquor under our liquor license and event-based permit.</p></div></article>
+            <article class="pillar"><div class="ph"><img decoding="async" src="why-seamless.webp?v=16" alt="Guests at the Saddle Up trailer at an outdoor event" loading="lazy"></div><div class="tx"><h3>Seamless and Stress-free</h3><p>We handle everything from start to finish. Let us do the work for you.</p></div></article>
+            <article class="pillar"><div class="ph"><img decoding="async" src="why-inclusive.webp?v=16" alt="Custom bar menu sign on the counter" loading="lazy"></div><div class="tx"><h3>All Inclusive Experience</h3><p>Trailer, staff, barware, ice, garnishes, cups, liquor, beer, wine, champagne, soda and a photo backdrop.</p></div></article>
           </div>
         </div>
       </section>
@@ -491,13 +501,13 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
       </div>
       <div class="rows" id="rows">
         <div class="rail" aria-hidden="true"><div class="thread" id="thread"></div><div class="marker" id="marker"></div></div>
-        <article class="row"><div class="plate"><img src="fancy-ash.webp?v=15" alt="Wood-panel bar with a greenery front set up outdoors" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">Alcohol included</div><h3>Fancy Ash</h3><p>Luxury mobile bartending done right. Beer, Wine, Champagne, 3 signature drinks, plus non-alcoholic beverages and two Bartenders.</p><ul><li>Includes all necessary bartending equipment and alcohol</li><li>Disposable glassware, garnishes, ice, custom designed menu</li><li>Neon bar light, full set up and clean up</li><li>You can add a luxury seating arrangement</li></ul><a class="xadd" href="#book" data-add="Fancy Ash"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
-<article class="row"><div class="plate"><img src="bartending.webp?v=15" alt="Guests ordering from a bartender at the trailer" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">4-hour service</div><h3>Bartending Service</h3><p>Professional Bartending Service. 4 hour service, 2 bartenders, custom designed menu.</p><ul><li>Cups, straws, napkins</li><li>Fresh juice &amp; infused syrups</li><li>Fresh garnishes and ice</li></ul><a class="xadd" href="#book" data-add="Bartending Service"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
-<article class="row"><div class="plate"><img src="bubbly.webp?v=15" alt="Champagne wall beside a floral Love in Bloom backdrop" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">Champagne wall</div><h3>Bubbly Bar</h3><p>Champagne wall for your guests enjoyment.</p><ul><li>Glasses</li><li>Four juices, fruit and garnish</li><li>Custom designed menu</li></ul><a class="xadd" href="#book" data-add="Bubbly Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
-<article class="row"><div class="plate"><img src="saddle-up-bar.webp?v=15" alt="The Saddle Up horse-trailer bar under string lights" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">2 bartenders</div><h3>The Saddle Up Bar</h3><p>Mobile Bar including 2 Bartenders. Choose this option for bartending service only with the Saddle Up Bar Trailer.</p><ul><li>The Saddle Up Bar Trailer</li><li>2 Bartenders</li><li>Bartending service only</li></ul><a class="xadd" href="#book" data-add="The Saddle Up Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
-<article class="row"><div class="plate"><img src="slushy.webp?v=15" alt="Double barrel slushy machine with tropical garnishes" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">6-hour rental</div><h3>The Slushy Bar</h3><p>Six hour rental with a double barrel slushy machine. Alcohol included.</p><ul><li>Garnish tray &amp; custom cocktail menu</li><li>100 count 5-ounce cups</li><li>Delivery, set-up, and breakdown</li></ul><a class="xadd" href="#book" data-add="The Slushy Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
-<article class="row"><div class="plate"><img src="coffee.webp?v=15" alt="The trailer set up as a gourmet coffee bar with fall decor" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">150 drinks</div><h3>Gourmet Coffee Bar</h3><p>Up to 150 drinks, 4 hour service, Custom Decor and Signage.</p><ul><li>Custom Cup Stickers</li><li>Complimentary Water Station</li><li>Add 1 a la carte pastry or a Signature Cocktail</li></ul><a class="xadd" href="#book" data-add="Gourmet Coffee Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
-<article class="row"><div class="plate"><img src="decor.webp?v=15" alt="Mr and Mrs sign on a greenery and white rose flower wall" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">Your theme</div><h3>Customized Decor</h3><p>Customized decor tailored to your special event.</p><ul><li>Designed around your theme</li><li>Pairs with any package</li></ul><a class="xadd" href="#book" data-add="Customized Decor"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+        <article class="row"><div class="plate"><img decoding="async" src="fancy-ash.webp?v=16" alt="Wood-panel bar with a greenery front set up outdoors" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">Alcohol included</div><h3>Fancy Ash</h3><p>Luxury mobile bartending done right. Beer, Wine, Champagne, 3 signature drinks, plus non-alcoholic beverages and two Bartenders.</p><ul><li>Includes all necessary bartending equipment and alcohol</li><li>Disposable glassware, garnishes, ice, custom designed menu</li><li>Neon bar light, full set up and clean up</li><li>You can add a luxury seating arrangement</li></ul><a class="xadd" href="#book" data-add="Fancy Ash"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+<article class="row"><div class="plate"><img decoding="async" src="bartending.webp?v=16" alt="Guests ordering from a bartender at the trailer" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">4-hour service</div><h3>Bartending Service</h3><p>Professional Bartending Service. 4 hour service, 2 bartenders, custom designed menu.</p><ul><li>Cups, straws, napkins</li><li>Fresh juice &amp; infused syrups</li><li>Fresh garnishes and ice</li></ul><a class="xadd" href="#book" data-add="Bartending Service"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+<article class="row"><div class="plate"><img decoding="async" src="bubbly.webp?v=16" alt="Champagne wall beside a floral Love in Bloom backdrop" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">Champagne wall</div><h3>Bubbly Bar</h3><p>Champagne wall for your guests enjoyment.</p><ul><li>Glasses</li><li>Four juices, fruit and garnish</li><li>Custom designed menu</li></ul><a class="xadd" href="#book" data-add="Bubbly Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+<article class="row"><div class="plate"><img decoding="async" src="saddle-up-bar.webp?v=16" alt="The Saddle Up horse-trailer bar under string lights" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">2 bartenders</div><h3>The Saddle Up Bar</h3><p>Mobile Bar including 2 Bartenders. Choose this option for bartending service only with the Saddle Up Bar Trailer.</p><ul><li>The Saddle Up Bar Trailer</li><li>2 Bartenders</li><li>Bartending service only</li></ul><a class="xadd" href="#book" data-add="The Saddle Up Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+<article class="row"><div class="plate"><img decoding="async" src="slushy.webp?v=16" alt="Double barrel slushy machine with tropical garnishes" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">6-hour rental</div><h3>The Slushy Bar</h3><p>Six hour rental with a double barrel slushy machine. Alcohol included.</p><ul><li>Garnish tray &amp; custom cocktail menu</li><li>100 count 5-ounce cups</li><li>Delivery, set-up, and breakdown</li></ul><a class="xadd" href="#book" data-add="The Slushy Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+<article class="row"><div class="plate"><img decoding="async" src="coffee.webp?v=16" alt="The trailer set up as a gourmet coffee bar with fall decor" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">150 drinks</div><h3>Gourmet Coffee Bar</h3><p>Up to 150 drinks, 4 hour service, Custom Decor and Signage.</p><ul><li>Custom Cup Stickers</li><li>Complimentary Water Station</li><li>Add 1 a la carte pastry or a Signature Cocktail</li></ul><a class="xadd" href="#book" data-add="Gourmet Coffee Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+<article class="row"><div class="plate"><img decoding="async" src="decor.webp?v=16" alt="Mr and Mrs sign on a greenery and white rose flower wall" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">Your theme</div><h3>Customized Decor</h3><p>Customized decor tailored to your special event.</p><ul><li>Designed around your theme</li><li>Pairs with any package</li></ul><a class="xadd" href="#book" data-add="Customized Decor"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
 
       </div>
     </div>
@@ -506,13 +516,13 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
 </div>
 
 <section class="book" id="book" aria-labelledby="book-h">
-  <canvas class="bg-canvas" id="book-contours" aria-hidden="true"></canvas>
+  <div class="bg-canvas cow cow-d" id="book-contours" aria-hidden="true"></div>
   <div class="wrap grid">
     <div class="side">
       <div class="eyebrow">Plan your bar</div>
       <h2 id="book-h" data-reveal="words" data-stagger="60">Your date won't <em>hold itself.</em></h2>
       <p>Four quick steps and your request lands with the Saddle Up family. We'll come back with a custom menu and quote for your event.</p>
-      <div class="bplate"><img src="hero.webp?v=15" alt="The Saddle Up trailer bar dressed with greenery and florals" loading="lazy"></div>
+      <div class="bplate"><img decoding="async" src="hero.webp?v=16" alt="The Saddle Up trailer bar dressed with greenery and florals" loading="lazy"></div>
       <div class="phone"><span>Rather talk now?</span><a href="tel:9162247557">916-224-7557</a></div>
     </div>
     <div class="fun"><div class="panel-wrap"><div class="panel">
@@ -608,15 +618,15 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
 
 <footer class="sign">
   <div class="sign-in on-dark">
-    <canvas class="bg-canvas" id="sign-contours" aria-hidden="true"></canvas>
+    <div class="bg-canvas cow cow-l" id="sign-contours" aria-hidden="true"></div>
     <div class="wrap">
       <div class="grid">
         <div><div class="eyebrow">Saddle up</div><h2 data-reveal="words" data-stagger="70">So your guests will be <em>raving about your event.</em></h2></div>
         <div><h4>Explore</h4><nav aria-label="Footer"><a href="#difference" data-reveal="letters" data-stagger="22">Why us</a><a href="#offerings" data-reveal="letters" data-stagger="22" data-delay="120">Offerings</a><a href="#book" data-reveal="letters" data-stagger="22" data-delay="240">Plan your bar</a></nav></div>
         <div class="contact"><h4>Contact</h4><a href="tel:9162247557">916-224-7557</a><a href="mailto:Saddleupdrinks@gmail.com" style="font-size:20px">Saddleupdrinks@gmail.com</a><p>Serving the greater Sacramento area.</p></div>
       </div>
-      <div class="rise" id="rise"><div class="halo" aria-hidden="true"></div><div class="spin3d" id="spin3d" role="img" aria-label="Saddle Up Drinks logo, drag to spin"><img class="l" src="logo.webp?v=15" alt="" aria-hidden="true" style="transform:translateZ(4px)"><img class="l" src="logo.webp?v=15" alt="" aria-hidden="true" style="transform:translateZ(2.7px)"><img class="l" src="logo.webp?v=15" alt="" aria-hidden="true" style="transform:translateZ(1.3px)"><img class="l" src="logo.webp?v=15" alt="" aria-hidden="true" style="transform:translateZ(0px)"><img class="l" src="logo.webp?v=15" alt="" aria-hidden="true" style="transform:translateZ(-1.3px)"><img class="l" src="logo.webp?v=15" alt="" aria-hidden="true" style="transform:translateZ(-2.7px)"><img class="l" src="logo.webp?v=15" alt="" aria-hidden="true" style="transform:translateZ(-4px)"><img class="f" src="logo.webp?v=15" alt=""><img class="b" src="logo.webp?v=15" alt=""></div><span class="spin-hint">Drag to spin</span></div>
-      <div class="install-row"><button class="install" id="install-btn" type="button" hidden><span class="badge"><img src="logo.webp?v=15" alt=""></span><span><small>Saddle Up app</small>Install on this phone</span></button><p class="ios-tip" id="ios-tip" hidden>Add the Saddle Up app to your phone: tap <b>Share</b>, then <b>Add to Home Screen</b>.</p></div>
+      <div class="rise" id="rise"><div class="halo" aria-hidden="true"></div><div class="spin3d" id="spin3d" role="img" aria-label="Saddle Up Drinks logo, drag to spin"><img decoding="async" class="l" src="logo.webp?v=16" alt="" aria-hidden="true" style="transform:translateZ(4px)"><img decoding="async" class="l" src="logo.webp?v=16" alt="" aria-hidden="true" style="transform:translateZ(2.7px)"><img decoding="async" class="l" src="logo.webp?v=16" alt="" aria-hidden="true" style="transform:translateZ(1.3px)"><img decoding="async" class="l" src="logo.webp?v=16" alt="" aria-hidden="true" style="transform:translateZ(0px)"><img decoding="async" class="l" src="logo.webp?v=16" alt="" aria-hidden="true" style="transform:translateZ(-1.3px)"><img decoding="async" class="l" src="logo.webp?v=16" alt="" aria-hidden="true" style="transform:translateZ(-2.7px)"><img decoding="async" class="l" src="logo.webp?v=16" alt="" aria-hidden="true" style="transform:translateZ(-4px)"><img decoding="async" class="f" src="logo.webp?v=16" alt=""><img decoding="async" class="b" src="logo.webp?v=16" alt=""></div><span class="spin-hint">Drag to spin</span></div>
+      <div class="install-row"><button class="install" id="install-btn" type="button" hidden><span class="badge"><img decoding="async" src="logo.webp?v=16" alt=""></span><span><small>Saddle Up app</small>Install on this phone</span></button><p class="ios-tip" id="ios-tip" hidden>Add the Saddle Up app to your phone: tap <b>Share</b>, then <b>Add to Home Screen</b>.</p></div>
       <div class="legal"><span>© 2026 Saddle Up Drinks · Greater Sacramento, CA</span><span>Please drink responsibly. 21+ for alcoholic service.</span></div>
     </div>
   </div>
@@ -850,49 +860,12 @@ function noise3(x,y,z){ var X=Math.floor(x),Y=Math.floor(y),Z=Math.floor(z); var
   return L(L(L(hash3(X,Y,Z),hash3(X+1,Y,Z),fx),L(hash3(X,Y+1,Z),hash3(X+1,Y+1,Z),fx),fy), L(L(hash3(X,Y,Z+1),hash3(X+1,Y,Z+1),fx),L(hash3(X,Y+1,Z+1),hash3(X+1,Y+1,Z+1),fx),fy),fz); }
 function fbm(x,y,z){ return noise3(x,y,z)*0.65+noise3(x*2.1,y*2.1,z*1.3)*0.35; }
 
-/* ---------- cowhide: soft, organic cow-hide patches with hair texture (rendered once per size) ---------- */
-function hairTile(dark){
-  var S=192, c=document.createElement("canvas"); c.width=c.height=S; var g=c.getContext("2d"), seed=dark?11:23;
-  function r(){ seed=(seed*16807)%2147483647; return seed/2147483647; }
-  g.lineCap="round";
-  for(var i=0;i<1400;i++){ var x=r()*S, y=r()*S, len=3+r()*7, ang=-0.55+(r()-0.5)*0.5, lt=r()<0.5;
-    g.strokeStyle=lt?"rgba(255,250,240,"+(0.10+r()*0.18)+")":"rgba(0,0,0,"+(0.10+r()*0.22)+")"; g.lineWidth=0.5+r()*0.6;
-    for(var dx=-S;dx<=S;dx+=S) for(var dy=-S;dy<=S;dy+=S){ g.beginPath(); g.moveTo(x+dx,y+dy); g.quadraticCurveTo(x+dx+Math.cos(ang)*len*0.5+1,y+dy+Math.sin(ang)*len*0.5,x+dx+Math.cos(ang)*len,y+dy+Math.sin(ang)*len); g.stroke(); } }
-  return c;
-}
-var HAIR=null;
-function cowhide(canvas,opt){
-  canvas.classList.add("cow");
-  var ctx=canvas.getContext("2d"), lastW=0, lastH=0, timer=null;
-  var rgb=opt.rgb||[34,24,17], alpha=opt.alpha||0.13, cover=opt.cover||0.3, scale=opt.scale||300, seed=opt.seed||0;
-  function render(){
-    var rc=canvas.getBoundingClientRect(), W=rc.width, H=rc.height; if(!W||!H) return;
-    if(Math.abs(W-lastW)<2&&Math.abs(H-lastH)<120) return; lastW=W; lastH=H;
-    var dpr=Math.min(1.5,window.devicePixelRatio||1); canvas.width=W*dpr; canvas.height=H*dpr;
-    var s=W<700?0.6:0.5, w=Math.ceil(W*s), h=Math.ceil(H*s), n=w*h, v=new Float32Array(n), f=1/scale, k=0;
-    for(var j=0;j<h;j++){ var y=j/s; for(var i=0;i<w;i++,k++){ var x=i/s;
-      var qx=fbm(x*f*0.7+seed,y*f*0.7,1.7), qy=fbm(x*f*0.7+5.2,y*f*0.7+seed,2.9);
-      var u=x*f*0.8+qx*2.2+seed, t=y*f*1.15+qy*2.2;
-      var val=noise3(u,t,0.5)*0.62+noise3(u*2.3,t*2.3,1.1)*0.26+noise3(u*6.2,t*6.2,2.3)*0.06;
-      val+=(noise3(x*0.22,y*0.22,3.3)-0.5)*0.022+(noise3(x*0.05,y*0.05,4.1)-0.5)*0.03;           /* ragged, hairy edges */
-      v[k]=val; } }
-    var sorted=Array.prototype.slice.call(v.filter(function(_,i){return (i%7)===0;})).sort(function(a,b){return a-b;});
-    var th=sorted[Math.floor(sorted.length*(1-cover))], soft=0.016;
-    var off=document.createElement("canvas"); off.width=w; off.height=h; var oc=off.getContext("2d"), img=oc.createImageData(w,h), d=img.data;
-    for(k=0;k<n;k++){ var a=(v[k]-(th-soft))/(soft*2); a=a<0?0:a>1?1:a; a=a*a*(3-2*a);
-      var depth=Math.min(1,(v[k]-th)*7); if(depth<0) depth=0;                /* patches a touch deeper toward the middle */
-      var m=k*4; d[m]=rgb[0]; d[m+1]=rgb[1]; d[m+2]=rgb[2]; d[m+3]=Math.round(255*a*(0.82+0.18*depth)); }
-    oc.putImageData(img,0,0);
-    ctx.setTransform(1,0,0,1,0,0); ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.imageSmoothingEnabled=true; ctx.imageSmoothingQuality="high"; try{ ctx.filter="blur("+(1.1*dpr).toFixed(1)+"px)"; }catch(e){} ctx.drawImage(off,0,0,canvas.width,canvas.height); try{ ctx.filter="none"; }catch(e){}
-    /* hair grain inside the patches only */
-    if(!HAIR) HAIR=hairTile();
-    ctx.globalCompositeOperation="source-atop"; ctx.setTransform(dpr*0.8,0,0,dpr*0.8,0,0); ctx.fillStyle=ctx.createPattern(HAIR,"repeat"); ctx.fillRect(0,0,W/0.8,H/0.8);
-    ctx.globalCompositeOperation="source-over"; ctx.setTransform(1,0,0,1,0,0);
-    canvas.style.opacity=alpha; }
-  canvas.style.opacity=0; canvas.style.transition="opacity 1.2s ease";
-  window.addEventListener("resize",function(){ clearTimeout(timer); timer=setTimeout(render,250); });
-  if("IntersectionObserver" in window){ var io=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ render(); } },{rootMargin:"400px"}); io.observe(canvas); } else render();
+/* ---------- cowhide: texture layers drift only while on screen ---------- */
+function cowLayers(){
+  $$(".bg-canvas.cow").forEach(function(el){
+    if(!("IntersectionObserver" in window)){ el.classList.add("lit","on"); return; }
+    new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) el.classList.add("lit"); el.classList.toggle("on",e.isIntersecting); }); },{rootMargin:"300px"}).observe(el);
+  });
 }
 
 /* ---------- sticky stack: pin what fits, recede what is covered ---------- */
@@ -954,7 +927,7 @@ function initCoin(logoImg){
   var camZ=5.0, view=tr(0,0,-camZ);
   var lx=new Spring(0,{tension:80,friction:18}), ly=new Spring(0,{tension:80,friction:18});
   var drag=null, heroScroll=0;
-  function size(){ var r=cv.getBoundingClientRect(), d=Math.min(2,window.devicePixelRatio||1); cv.width=Math.max(1,Math.round(r.width*d)); cv.height=Math.max(1,Math.round(r.height*d)); gl.viewport(0,0,cv.width,cv.height); }
+  function size(){ var r=cv.getBoundingClientRect(), d=Math.min(1.5,window.devicePixelRatio||1); cv.width=Math.max(1,Math.round(r.width*d)); cv.height=Math.max(1,Math.round(r.height*d)); gl.viewport(0,0,cv.width,cv.height); }
   size(); window.addEventListener("resize",size);
   window.addEventListener("pointermove",function(e){ var r=cv.getBoundingClientRect(); coin.px=clamp((e.clientX-(r.left+r.width/2))/(window.innerWidth/2),-1,1); coin.py=clamp((e.clientY-(r.top+r.height/2))/(window.innerHeight/2),-1,1); if(drag){ coin.spinExtra=drag.base+(e.clientX-drag.x)*0.012; } },{passive:true});
   cv.addEventListener("pointerdown",function(e){ drag={x:e.clientX,base:coin.spinExtra}; cv.style.cursor="grabbing"; });
@@ -973,7 +946,7 @@ function initCoin(logoImg){
     gl.uniformMatrix4fv(uM,false,new Float32Array(M)); gl.uniformMatrix4fv(uVP,false,new Float32Array(VP));
     gl.uniform1f(uBurn,coin.burn); gl.uniform3f(uCam,0,0,camZ); gl.uniform2f(uLight,lx.v,ly.v);
     gl.drawArrays(gl.TRIANGLES,0,count);
-    if(!coin.ok && coin.burn>0.9 && (coin.checks||0)<240){ coin.checks=(coin.checks||0)+1; if(coin.checks%6===1){ try{ var pw=cv.width, ph=cv.height, px=new Uint8Array(pw*ph*4); gl.readPixels(0,0,pw,ph,gl.RGBA,gl.UNSIGNED_BYTE,px); var hits=0; for(var q=3;q<px.length;q+=4*97){ if(px[q]>0) hits++; } if(hits>40){ coin.ok=true; coinEl.classList.add("glok"); } }catch(e){} } }
+    if(!coin.ok && coin.burn>0.9 && (coin.checks||0)<240){ coin.checks=(coin.checks||0)+1; if(coin.checks%6===1){ try{ var pw=cv.width, ph=cv.height, px=new Uint8Array(16*16*4), hits=0; for(var gx=1;gx<4;gx++) for(var gy=1;gy<4;gy++){ gl.readPixels(Math.floor(pw*gx/4)-8,Math.floor(ph*gy/4)-8,16,16,gl.RGBA,gl.UNSIGNED_BYTE,px); for(var q=3;q<px.length;q+=4){ if(px[q]>0){ hits++; break; } } } if(hits>=3){ coin.ok=true; coinEl.classList.add("glok"); } }catch(e){} } }
     shadow.style.transform="translateY("+(bob*-40).toFixed(1)+"px) scaleX("+(0.9+Math.abs(Math.cos(coin.rotY.v))*0.12).toFixed(3)+")";
     shadow.style.opacity=(0.85-bob*2).toFixed(2);
   }
@@ -1038,7 +1011,7 @@ function halftone(canvas){
   function pickX(){ /* keep bubbles mostly to the right and the far left edge, clear of the copy */
     var u=Math.random(); if(mobile) return u<0.8? rnd(0.8,0.98)*W : rnd(0.01,0.05)*W;
     return u<0.82? rnd(0.56,0.97)*W : rnd(0.015,0.07)*W; }
-  function size(){ var r=canvas.getBoundingClientRect(); dpr=Math.min(2,window.devicePixelRatio||1); W=r.width;H=r.height; canvas.width=W*dpr; canvas.height=H*dpr; mobile=W<700;
+  function size(){ var r=canvas.getBoundingClientRect(); W=r.width;H=r.height; mobile=W<700; dpr=Math.min(mobile?1.5:1.25,window.devicePixelRatio||1); canvas.width=W*dpr; canvas.height=H*dpr;
     streams=[]; var ns=mobile?4:12; for(var i=0;i<ns;i++) streams.push({x:pickX(), every:rnd(70,190), acc:Math.random()*200, r0:rnd(0.9,1.7), amp:rnd(0.6,2.2), fq:rnd(0.004,0.009)});
     floaters=[]; var nf=mobile?8:16; for(var k=0;k<nf;k++){ var far=Math.random()<0.45; floaters.push({x:pickX(), y:Math.random()*H, r:far?rnd(9,22):rnd(3,8), v:far?rnd(8,16):rnd(16,34), far:far, ph:Math.random()*6.28, amp:rnd(4,14), a:far?rnd(0.35,0.6):rnd(0.7,0.95)}); }
     beads=[]; streams.forEach(function(st){ for(var yy=H; yy>0; yy-=rnd(10,26)) beads.push({sx:st.x, x:st.x, y:yy, r0:st.r0*rnd(0.85,1.15), age:Math.random()*5000, amp:st.amp, fq:st.fq, ph:Math.random()*6.28}); });
@@ -1146,7 +1119,7 @@ function lasso(){
   var host=$("#lasso-target"), back=$("#lasso-back"), front=$("#lasso-front"), h2=$("#diff-h"); if(!host||!back||!front) return;
   var cb=back.getContext("2d"), cf=front.getContext("2d"), dpr=1, box={x:0,y:0,w:0,h:0};
   function fit(r,hr){
-    dpr=Math.min(2,window.devicePixelRatio||1);
+    dpr=Math.min(1.5,window.devicePixelRatio||1);
     var x0=-Math.max(40,r.left-hr.left+40), y0=-r.height*1.4, x1=Math.max(r.width,hr.right-r.left)+60, y1=r.height*2.2;
     var w=Math.ceil(x1-x0), h=Math.ceil(y1-y0);
     if(w===box.w&&h===box.h&&Math.round(x0)===box.x) return;
@@ -1319,9 +1292,7 @@ var logo=new Image(); logo.src=$(".veil .dim").src;
 function bootCoin(){ try{ initCoin(logo); }catch(e){ coinEl.classList.add("nogl"); coinReady=true; } startCoin(); tick(); }
 if(logo.complete) bootCoin(); else { logo.onload=bootCoin; logo.onerror=function(){ coinEl.classList.add("nogl"); coinReady=true; tick(); }; }
 tick();
-cowhide($("#hero-contours"),{rgb:[34,24,17],alpha:0.13,cover:0.30,seed:0});
-cowhide($("#book-contours"),{rgb:[34,24,17],alpha:0.10,cover:0.28,seed:13});
-cowhide($("#sign-contours"),{rgb:[246,239,227],alpha:0.07,cover:0.28,seed:27});
+cowLayers();
 halftone($("#halftone")); seam($("#seam")); lasso(); rail(); riseLogo();
 pinCheck(); recede();
 if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ pinCheck(); });
@@ -1340,12 +1311,15 @@ if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){
     return {pl:pl,img:pl.querySelector("img"),k:kind,S:SHAPES[kind],cur:0,max:0,done:false};
   });
   function ease(t){ return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2; }
-  var last=0;
+  var last=0, running=false, onScreen=0;
+  function kick(){ if(!running){ running=true; last=0; requestAnimationFrame(frame); } }
+  if("IntersectionObserver" in window){ var io=new IntersectionObserver(function(es){ es.forEach(function(e){ e.target._on=e.isIntersecting; }); onScreen=items.filter(function(it){return it.pl._on&&!it.done;}).length; if(onScreen) kick(); },{rootMargin:"80px"}); items.forEach(function(it){ io.observe(it.pl); }); } else { items.forEach(function(it){ it.pl._on=true; }); kick(); }
   function frame(now){
     var vh=window.innerHeight, dt=last?Math.min(64,now-last):16; last=now;
     var k=1-Math.pow(0.86,dt/16.67);                       /* same smoothness at 60Hz, 120Hz or a slow laptop */
     items.forEach(function(it){
       if(it.done) return;
+      if(!it.pl._on) return;
       var r=it.pl.getBoundingClientRect(); if(r.bottom<-50||r.top>vh+50) return;
       /* starts the moment the top of the photo enters the screen, fully open by the time it's well in view */
       var span=Math.min(vh*0.62, r.height+vh*0.2);
@@ -1367,9 +1341,9 @@ if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){
       if(it.k==="shoe") it.pl.classList.toggle("solid",gr>0.22);
       if(t>=1){ it.done=true; it.pl.classList.add("done"); }
     });
-    requestAnimationFrame(frame);
+    var busy=items.some(function(it){ return !it.done && it.pl._on; });
+    if(busy) requestAnimationFrame(frame); else running=false;
   }
-  requestAnimationFrame(frame);
 })();
 </script>
 <script>
@@ -1381,7 +1355,10 @@ if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){
   document.addEventListener("keydown",function(e){
     var k=(e.key||"").toLowerCase();
     if((e.ctrlKey||e.metaKey)&&(k==="c"||k==="a"||k==="x"||k==="s"||k==="u"||k==="p")&&!isField(e.target)) e.preventDefault();
+    if((e.ctrlKey||e.metaKey)&&(k==="+"||k==="="||k==="-"||k==="_"||k==="0")) e.preventDefault();      /* keyboard zoom */
   },{capture:true});
+  window.addEventListener("wheel",function(e){ if(e.ctrlKey) e.preventDefault(); },{passive:false});   /* ctrl+wheel and trackpad pinch zoom */
+  ["gesturestart","gesturechange","gestureend"].forEach(function(g){ document.addEventListener(g,function(e){ e.preventDefault(); },{passive:false}); });   /* Safari pinch */
 })();
 </script>
 </body>

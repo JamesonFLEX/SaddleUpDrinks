@@ -1,7 +1,7 @@
 /* Saddle Up Drinks — app/offline support.
    Network first for everything, so visitors always get the live files.
    The saved copy is only used when there's no internet. Bump VERSION when you upload changes. */
-var VERSION = "saddleup-v15";
+var VERSION = "saddleup-v16";
 
 self.addEventListener("install", function (e) {
   // Save the page for offline use, but never let a failed download block the update.
