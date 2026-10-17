@@ -1212,11 +1212,12 @@ var prog=new Spring(0,{tension:10,friction:30,eps:0.001}), target=0, lifted=fals
 var imgs=$$("img").filter(function(i){return !i.complete && i.loading!=="lazy";}), total=imgs.length+2, done=0;
 function tick(){ done++; target=clamp(done/total,0,1)*0.92; }
 imgs.forEach(function(i){ i.addEventListener("load",tick,{once:true}); i.addEventListener("error",tick,{once:true}); });
-var t0=performance.now();
+var t0=performance.now(), fontsIn=!document.fonts;
+if(document.fonts){ document.fonts.ready.then(function(){ fontsIn=true; }); Promise.all([document.fonts.load('500 1em "Cormorant Garamond"'),document.fonts.load('300 1em Jost')]).then(function(){ fontsIn=true; },function(){ fontsIn=true; }); }
 animate(function(t,dt){
   prog.t=target; prog.step(dt); var v=clamp(prog.v,0,1);
   fill.style.clipPath="inset("+((1-v)*100).toFixed(2)+"% 0 0 0)"; meter.style.width=(v*100).toFixed(2)+"%"; lbl.textContent="Saddling up · "+Math.round(v*100)+"%";
-  if(!lifted && ((coinReady && t-t0>450) || t-t0>1300)){ lifted=true; target=1; prog.k=170; prog.c=26; lift(); }
+  if(!lifted && ((coinReady && fontsIn && t-t0>450) || t-t0>1600)){ lifted=true; target=1; prog.k=170; prog.c=26; lift(); }
   return lifted && prog.rest();
 });
 function lift(){
@@ -1239,9 +1240,7 @@ document.addEventListener("keydown",function(e){ if(e.key==="Escape" && !menu.hi
 
 /* ---------- installable app ---------- */
 if("serviceWorker" in navigator){
-  var hadSW=!!navigator.serviceWorker.controller, reloaded=false;
-  navigator.serviceWorker.addEventListener("controllerchange",function(){ if(hadSW&&!reloaded){ reloaded=true; location.reload(); } });
-  window.addEventListener("load",function(){ navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).then(function(r){ r.update(); }).catch(function(){}); });
+  window.addEventListener("load",function(){ setTimeout(function(){ navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).catch(function(){}); },3000); });
 }
 var deferredInstall=null, installBtn=$("#install-btn"), iosTip=$("#ios-tip");
 var standalone=window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone===true;
