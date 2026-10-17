@@ -1,5 +1,5 @@
 /* Saddle Up Drinks — offline support. Bump VERSION whenever you upload changed files. */
-var VERSION = "saddleup-v7";
+var VERSION = "saddleup-v8";
 var CORE = ["./", "index.html", "logo.webp", "hero.webp", "fancy-ash.webp", "bartending.webp", "bubbly.webp",
   "saddle-up-bar.webp", "slushy.webp", "coffee.webp", "decor.webp", "why-licensed.webp", "why-alcohol.webp",
   "why-seamless.webp", "why-inclusive.webp", "favicon.ico", "favicon-32.png", "apple-touch-icon.png",
