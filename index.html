@@ -136,13 +136,13 @@ p{margin:0}
 .xadd::after{background:var(--pitch)}
 .xadd:hover,.xadd.on{color:var(--navy);filter:drop-shadow(0 4px 14px rgba(255,190,110,.55));transform:translateY(-2px)}
 .xadd:hover::after,.xadd.on::after{background:linear-gradient(180deg,#F7CB86,#E0A458 60%,#C4853F)}
-.lasso{position:absolute;left:0;top:0;overflow:visible;pointer-events:none}
+.lasso{position:absolute;left:0;top:0;width:0;height:0;pointer-events:none}
 .lasso.back{z-index:0} .lasso.front{z-index:2}
 .lasso-wrap{cursor:pointer}
 .lasso-wrap em{position:relative;z-index:1}
 
 
-.install-row{display:flex;justify-content:center;margin-top:44px}.install-row:not(:has(:not([hidden]))){margin-top:0}
+.install-row{display:flex;justify-content:center;margin-top:96px}.install-row:not(:has(:not([hidden]))){margin-top:0}
 .install{display:flex;align-items:center;gap:14px;width:min(100%,360px);padding:12px 16px;background:rgba(224,164,88,.1);border:1px dashed rgba(224,164,88,.6);color:var(--on-dark);font:inherit;text-align:left;cursor:pointer;transition:background .2s}
 .install:hover{background:rgba(224,164,88,.2)}
 .install .badge{width:44px;height:44px}
@@ -356,13 +356,17 @@ p{margin:0}
 .plate.wg.hs img{-webkit-mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cdefs%3E%3Cfilter%20id%3D%22f%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%3CfeGaussianBlur%20stdDeviation%3D%221.4%22/%3E%3C/filter%3E%3Cmask%20id%3D%22m%22%3E%3Cpath%20d%3D%22M50%2022%20V95%20A50%2050%200%200%200%20150%2095%20V22%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%2236%22/%3E%3Crect%20x%3D%2228%22%20y%3D%2210%22%20width%3D%2244%22%20height%3D%2216%22%20rx%3D%223%22%20fill%3D%22%23fff%22/%3E%3Crect%20x%3D%22128%22%20y%3D%2210%22%20width%3D%2244%22%20height%3D%2216%22%20rx%3D%223%22%20fill%3D%22%23fff%22/%3E%3Ccircle%20cx%3D%22144.1%22%20cy%3D%22118.5%22%20r%3D%225.5%22%20fill%3D%22%23000%22/%3E%3Ccircle%20cx%3D%22125.0%22%20cy%3D%22138.3%22%20r%3D%225.5%22%20fill%3D%22%23000%22/%3E%3Ccircle%20cx%3D%2275.0%22%20cy%3D%22138.3%22%20r%3D%225.5%22%20fill%3D%22%23000%22/%3E%3Ccircle%20cx%3D%2255.9%22%20cy%3D%22118.5%22%20r%3D%225.5%22%20fill%3D%22%23000%22/%3E%3Cellipse%20cx%3D%2250%22%20cy%3D%2252%22%20rx%3D%225%22%20ry%3D%226.5%22%20fill%3D%22%23000%22/%3E%3Cellipse%20cx%3D%2250%22%20cy%3D%2278%22%20rx%3D%225%22%20ry%3D%226.5%22%20fill%3D%22%23000%22/%3E%3Cellipse%20cx%3D%22150%22%20cy%3D%2252%22%20rx%3D%225%22%20ry%3D%226.5%22%20fill%3D%22%23000%22/%3E%3Cellipse%20cx%3D%22150%22%20cy%3D%2278%22%20rx%3D%225%22%20ry%3D%226.5%22%20fill%3D%22%23000%22/%3E%3C/mask%3E%3C/defs%3E%3Cg%20filter%3D%22url%28%23f%29%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23000%22%20mask%3D%22url%28%23m%29%22/%3E%3C/g%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cdefs%3E%3Cfilter%20id%3D%22f%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%3CfeGaussianBlur%20stdDeviation%3D%221.4%22/%3E%3C/filter%3E%3Cmask%20id%3D%22m%22%3E%3Cpath%20d%3D%22M50%2022%20V95%20A50%2050%200%200%200%20150%2095%20V22%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%2236%22/%3E%3Crect%20x%3D%2228%22%20y%3D%2210%22%20width%3D%2244%22%20height%3D%2216%22%20rx%3D%223%22%20fill%3D%22%23fff%22/%3E%3Crect%20x%3D%22128%22%20y%3D%2210%22%20width%3D%2244%22%20height%3D%2216%22%20rx%3D%223%22%20fill%3D%22%23fff%22/%3E%3Ccircle%20cx%3D%22144.1%22%20cy%3D%22118.5%22%20r%3D%225.5%22%20fill%3D%22%23000%22/%3E%3Ccircle%20cx%3D%22125.0%22%20cy%3D%22138.3%22%20r%3D%225.5%22%20fill%3D%22%23000%22/%3E%3Ccircle%20cx%3D%2275.0%22%20cy%3D%22138.3%22%20r%3D%225.5%22%20fill%3D%22%23000%22/%3E%3Ccircle%20cx%3D%2255.9%22%20cy%3D%22118.5%22%20r%3D%225.5%22%20fill%3D%22%23000%22/%3E%3Cellipse%20cx%3D%2250%22%20cy%3D%2252%22%20rx%3D%225%22%20ry%3D%226.5%22%20fill%3D%22%23000%22/%3E%3Cellipse%20cx%3D%2250%22%20cy%3D%2278%22%20rx%3D%225%22%20ry%3D%226.5%22%20fill%3D%22%23000%22/%3E%3Cellipse%20cx%3D%22150%22%20cy%3D%2252%22%20rx%3D%225%22%20ry%3D%226.5%22%20fill%3D%22%23000%22/%3E%3Cellipse%20cx%3D%22150%22%20cy%3D%2278%22%20rx%3D%225%22%20ry%3D%226.5%22%20fill%3D%22%23000%22/%3E%3C/mask%3E%3C/defs%3E%3Cg%20filter%3D%22url%28%23f%29%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23000%22%20mask%3D%22url%28%23m%29%22/%3E%3C/g%3E%3C/svg%3E")}
 .plate.wg.hs.solid img{-webkit-mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cdefs%3E%3Cfilter%20id%3D%22f%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%3CfeGaussianBlur%20stdDeviation%3D%221.4%22/%3E%3C/filter%3E%3Cmask%20id%3D%22m%22%3E%3Cpath%20d%3D%22M50%2022%20V95%20A50%2050%200%200%200%20150%2095%20V22%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%2236%22/%3E%3Crect%20x%3D%2228%22%20y%3D%2210%22%20width%3D%2244%22%20height%3D%2216%22%20rx%3D%223%22%20fill%3D%22%23fff%22/%3E%3Crect%20x%3D%22128%22%20y%3D%2210%22%20width%3D%2244%22%20height%3D%2216%22%20rx%3D%223%22%20fill%3D%22%23fff%22/%3E%3C/mask%3E%3C/defs%3E%3Cg%20filter%3D%22url%28%23f%29%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23000%22%20mask%3D%22url%28%23m%29%22/%3E%3C/g%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cdefs%3E%3Cfilter%20id%3D%22f%22%20x%3D%22-10%25%22%20y%3D%22-10%25%22%20width%3D%22120%25%22%20height%3D%22120%25%22%3E%3CfeGaussianBlur%20stdDeviation%3D%221.4%22/%3E%3C/filter%3E%3Cmask%20id%3D%22m%22%3E%3Cpath%20d%3D%22M50%2022%20V95%20A50%2050%200%200%200%20150%2095%20V22%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%2236%22/%3E%3Crect%20x%3D%2228%22%20y%3D%2210%22%20width%3D%2244%22%20height%3D%2216%22%20rx%3D%223%22%20fill%3D%22%23fff%22/%3E%3Crect%20x%3D%22128%22%20y%3D%2210%22%20width%3D%2244%22%20height%3D%2216%22%20rx%3D%223%22%20fill%3D%22%23fff%22/%3E%3C/mask%3E%3C/defs%3E%3Cg%20filter%3D%22url%28%23f%29%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23000%22%20mask%3D%22url%28%23m%29%22/%3E%3C/g%3E%3C/svg%3E")}
 .plate.wg.done img{-webkit-mask-image:none;mask-image:none}
+/* no visible frame before the reveal: just the page background, border fades in once the photo is open */
+.plate.wg{background:transparent}
+.plate.wg::after{opacity:0;transition:opacity .6s ease}
+.plate.wg.done::after{opacity:1}
 /* no-copy: block text selection + long-press menu; form fields stay usable */
 html,body{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-touch-callout:none}
 img{-webkit-user-drag:none;user-drag:none}
 input,textarea,select,[contenteditable]{-webkit-user-select:text;-moz-user-select:text;user-select:text;-webkit-touch-callout:default}
 </style>
-<link rel="preload" as="image" href="logo.webp?v=10" fetchpriority="high">
-<link rel="preload" as="image" href="hero.webp?v=10">
+<link rel="preload" as="image" href="logo.webp?v=13" fetchpriority="high">
+<link rel="preload" as="image" href="hero.webp?v=13">
 <script>
 /* if any photo fails to load, retry it straight from the server (up to 2 times) */
 document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!=="IMG")return;var n=+(t.dataset.retry||0);if(n>=2)return;t.dataset.retry=n+1;var u=t.getAttribute("src").split("&r=")[0];setTimeout(function(){t.src=u+(u.indexOf("?")<0?"?":"&")+"r="+Date.now();},400*(n+1));},true);
@@ -372,14 +376,14 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
 <div id="saddle-up">
 
 <div class="veil" id="veil" aria-hidden="true">
-  <div class="mark"><img class="dim" src="logo.webp?v=10" alt=""><img class="fill" id="veil-fill" src="logo.webp?v=10" alt=""></div>
+  <div class="mark"><img class="dim" src="logo.webp?v=13" alt=""><img class="fill" id="veil-fill" src="logo.webp?v=13" alt=""></div>
   <div class="lbl" id="veil-lbl">Saddling up · 0%</div>
   <div class="meter"><i id="veil-meter"></i></div>
 </div>
 
 <header class="mast">
   <div class="mast-in">
-    <a class="brand" href="#top" aria-label="Saddle Up Drinks, back to top"><span class="badge"><img src="logo.webp?v=10" alt=""></span><b>Saddle Up Drinks</b></a>
+    <a class="brand" href="#top" aria-label="Saddle Up Drinks, back to top"><span class="badge"><img src="logo.webp?v=13" alt=""></span><b>Saddle Up Drinks</b></a>
     <nav class="links" aria-label="Sections"><a href="#difference">Why us</a><a href="#offerings">Offerings</a><a href="#book">Plan your bar</a></nav>
     <div class="mast-r">
       <div class="socials"><a class="soc" data-social="instagram" href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a><a class="soc" data-social="facebook" href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21h3z"/></svg></a></div>
@@ -390,7 +394,7 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
 </header>
 <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
   <div class="menu-in">
-    <div class="menu-top"><span class="badge"><img src="logo.webp?v=10" alt=""></span><button class="burger open" id="menu-close" type="button" aria-label="Close menu"><i></i><i></i><i></i></button></div>
+    <div class="menu-top"><span class="badge"><img src="logo.webp?v=13" alt=""></span><button class="burger open" id="menu-close" type="button" aria-label="Close menu"><i></i><i></i><i></i></button></div>
     <nav class="menu-links" aria-label="Quick links">
       <a href="#top" data-close><small>Home</small>The bar rides in</a>
       <a href="#difference" data-close><small>Why us</small>The Saddle Up difference</a>
@@ -423,7 +427,7 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
             <div class="coin" id="coin">
               <div class="coin-shadow" id="coin-shadow"></div>
               <canvas id="coin-gl" aria-label="The Saddle Up Drinks horseshoe logo, spinning in 3D" role="img"></canvas>
-              <div class="fallback"><img fetchpriority="high" src="logo.webp?v=10" alt="Saddle Up Drinks logo"></div>
+              <div class="fallback"><img fetchpriority="high" src="logo.webp?v=13" alt="Saddle Up Drinks logo"></div>
             </div>
             <div class="panels">
               <div class="bracket p-dark"><span class="eyebrow">Licensed &amp; insured</span>Catering liquor license through ABC. We supply the alcohol.</div>
@@ -446,16 +450,16 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
         <canvas class="seam" id="seam" aria-hidden="true"></canvas>
         <div class="wrap">
           <div class="eyebrow">The Saddle Up difference</div>
-          <h2 id="diff-h"><span data-reveal="words" data-stagger="60">Most mobile bars can't pour the drinks.</span> <br><span class="lasso-wrap" id="lasso-target" title="Throw the lasso"><svg class="lasso back" id="lasso-back" aria-hidden="true"></svg><em data-reveal="words" data-delay="420">We can.</em><svg class="lasso front" id="lasso-front" aria-hidden="true"></svg></span></h2>
+          <h2 id="diff-h"><span data-reveal="words" data-stagger="60">Most mobile bars can't pour the drinks.</span> <br><span class="lasso-wrap" id="lasso-target" title="Throw the lasso"><canvas class="lasso back" id="lasso-back" aria-hidden="true"></canvas><em data-reveal="words" data-delay="420">We can.</em><canvas class="lasso front" id="lasso-front" aria-hidden="true"></canvas></span></h2>
           <div class="copy">
             <p data-reveal="words" data-stagger="8" data-delay="200">Unlike most mobile bar companies, we hold a <b>catering liquor license through ABC.</b> This means we can not only provide you with the alcohol but also have the ability to order specific inventory from the top alcohol distributors.</p>
             <p data-reveal="words" data-stagger="12" data-delay="400">We are flexible and can work with you to ensure we meet your vision for the perfect event!</p>
           </div>
           <div class="pillars">
-            <article class="pillar"><div class="ph"><img src="why-licensed.webp?v=10" alt="Bartenders serving guests from the trailer" loading="lazy"></div><div class="tx"><h3>Licensed and Insured</h3><p>General liability insurance and RBS Certified Bartenders.</p></div></article>
-            <article class="pillar"><div class="ph"><img src="why-alcohol.webp?v=10" alt="Shelves of craft beer, wine and liquor inside the trailer" loading="lazy"></div><div class="tx"><h3>We Can Supply the Alcohol</h3><p>Hand-picked craft beer, wine and liquor under our liquor license and event-based permit.</p></div></article>
-            <article class="pillar"><div class="ph"><img src="why-seamless.webp?v=10" alt="Guests at the Saddle Up trailer at an outdoor event" loading="lazy"></div><div class="tx"><h3>Seamless and Stress-free</h3><p>We handle everything from start to finish. Let us do the work for you.</p></div></article>
-            <article class="pillar"><div class="ph"><img src="why-inclusive.webp?v=10" alt="Custom bar menu sign on the counter" loading="lazy"></div><div class="tx"><h3>All Inclusive Experience</h3><p>Trailer, staff, barware, ice, garnishes, cups, liquor, beer, wine, champagne, soda and a photo backdrop.</p></div></article>
+            <article class="pillar"><div class="ph"><img src="why-licensed.webp?v=13" alt="Bartenders serving guests from the trailer" loading="lazy"></div><div class="tx"><h3>Licensed and Insured</h3><p>General liability insurance and RBS Certified Bartenders.</p></div></article>
+            <article class="pillar"><div class="ph"><img src="why-alcohol.webp?v=13" alt="Shelves of craft beer, wine and liquor inside the trailer" loading="lazy"></div><div class="tx"><h3>We Can Supply the Alcohol</h3><p>Hand-picked craft beer, wine and liquor under our liquor license and event-based permit.</p></div></article>
+            <article class="pillar"><div class="ph"><img src="why-seamless.webp?v=13" alt="Guests at the Saddle Up trailer at an outdoor event" loading="lazy"></div><div class="tx"><h3>Seamless and Stress-free</h3><p>We handle everything from start to finish. Let us do the work for you.</p></div></article>
+            <article class="pillar"><div class="ph"><img src="why-inclusive.webp?v=13" alt="Custom bar menu sign on the counter" loading="lazy"></div><div class="tx"><h3>All Inclusive Experience</h3><p>Trailer, staff, barware, ice, garnishes, cups, liquor, beer, wine, champagne, soda and a photo backdrop.</p></div></article>
           </div>
         </div>
       </section>
@@ -471,13 +475,13 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
       </div>
       <div class="rows" id="rows">
         <div class="rail" aria-hidden="true"><div class="thread" id="thread"></div><div class="marker" id="marker"></div></div>
-        <article class="row"><div class="plate"><img src="fancy-ash.webp?v=10" alt="Wood-panel bar with a greenery front set up outdoors" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">Alcohol included</div><h3>Fancy Ash</h3><p>Luxury mobile bartending done right. Beer, Wine, Champagne, 3 signature drinks, plus non-alcoholic beverages and two Bartenders.</p><ul><li>Includes all necessary bartending equipment and alcohol</li><li>Disposable glassware, garnishes, ice, custom designed menu</li><li>Neon bar light, full set up and clean up</li><li>You can add a luxury seating arrangement</li></ul><a class="xadd" href="#book" data-add="Fancy Ash"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
-<article class="row"><div class="plate"><img src="bartending.webp?v=10" alt="Guests ordering from a bartender at the trailer" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">4-hour service</div><h3>Bartending Service</h3><p>Professional Bartending Service. 4 hour service, 2 bartenders, custom designed menu.</p><ul><li>Cups, straws, napkins</li><li>Fresh juice &amp; infused syrups</li><li>Fresh garnishes and ice</li></ul><a class="xadd" href="#book" data-add="Bartending Service"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
-<article class="row"><div class="plate"><img src="bubbly.webp?v=10" alt="Champagne wall beside a floral Love in Bloom backdrop" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">Champagne wall</div><h3>Bubbly Bar</h3><p>Champagne wall for your guests enjoyment.</p><ul><li>Glasses</li><li>Four juices, fruit and garnish</li><li>Custom designed menu</li></ul><a class="xadd" href="#book" data-add="Bubbly Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
-<article class="row"><div class="plate"><img src="saddle-up-bar.webp?v=10" alt="The Saddle Up horse-trailer bar under string lights" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">2 bartenders</div><h3>The Saddle Up Bar</h3><p>Mobile Bar including 2 Bartenders. Choose this option for bartending service only with the Saddle Up Bar Trailer.</p><ul><li>The Saddle Up Bar Trailer</li><li>2 Bartenders</li><li>Bartending service only</li></ul><a class="xadd" href="#book" data-add="The Saddle Up Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
-<article class="row"><div class="plate"><img src="slushy.webp?v=10" alt="Double barrel slushy machine with tropical garnishes" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">6-hour rental</div><h3>The Slushy Bar</h3><p>Six hour rental with a double barrel slushy machine. Alcohol included.</p><ul><li>Garnish tray &amp; custom cocktail menu</li><li>100 count 5-ounce cups</li><li>Delivery, set-up, and breakdown</li></ul><a class="xadd" href="#book" data-add="The Slushy Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
-<article class="row"><div class="plate"><img src="coffee.webp?v=10" alt="The trailer set up as a gourmet coffee bar with fall decor" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">150 drinks</div><h3>Gourmet Coffee Bar</h3><p>Up to 150 drinks, 4 hour service, Custom Decor and Signage.</p><ul><li>Custom Cup Stickers</li><li>Complimentary Water Station</li><li>Add 1 a la carte pastry or a Signature Cocktail</li></ul><a class="xadd" href="#book" data-add="Gourmet Coffee Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
-<article class="row"><div class="plate"><img src="decor.webp?v=10" alt="Mr and Mrs sign on a greenery and white rose flower wall" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">Your theme</div><h3>Customized Decor</h3><p>Customized decor tailored to your special event.</p><ul><li>Designed around your theme</li><li>Pairs with any package</li></ul><a class="xadd" href="#book" data-add="Customized Decor"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+        <article class="row"><div class="plate"><img src="fancy-ash.webp?v=13" alt="Wood-panel bar with a greenery front set up outdoors" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">Alcohol included</div><h3>Fancy Ash</h3><p>Luxury mobile bartending done right. Beer, Wine, Champagne, 3 signature drinks, plus non-alcoholic beverages and two Bartenders.</p><ul><li>Includes all necessary bartending equipment and alcohol</li><li>Disposable glassware, garnishes, ice, custom designed menu</li><li>Neon bar light, full set up and clean up</li><li>You can add a luxury seating arrangement</li></ul><a class="xadd" href="#book" data-add="Fancy Ash"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+<article class="row"><div class="plate"><img src="bartending.webp?v=13" alt="Guests ordering from a bartender at the trailer" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">4-hour service</div><h3>Bartending Service</h3><p>Professional Bartending Service. 4 hour service, 2 bartenders, custom designed menu.</p><ul><li>Cups, straws, napkins</li><li>Fresh juice &amp; infused syrups</li><li>Fresh garnishes and ice</li></ul><a class="xadd" href="#book" data-add="Bartending Service"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+<article class="row"><div class="plate"><img src="bubbly.webp?v=13" alt="Champagne wall beside a floral Love in Bloom backdrop" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">Champagne wall</div><h3>Bubbly Bar</h3><p>Champagne wall for your guests enjoyment.</p><ul><li>Glasses</li><li>Four juices, fruit and garnish</li><li>Custom designed menu</li></ul><a class="xadd" href="#book" data-add="Bubbly Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+<article class="row"><div class="plate"><img src="saddle-up-bar.webp?v=13" alt="The Saddle Up horse-trailer bar under string lights" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">2 bartenders</div><h3>The Saddle Up Bar</h3><p>Mobile Bar including 2 Bartenders. Choose this option for bartending service only with the Saddle Up Bar Trailer.</p><ul><li>The Saddle Up Bar Trailer</li><li>2 Bartenders</li><li>Bartending service only</li></ul><a class="xadd" href="#book" data-add="The Saddle Up Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+<article class="row"><div class="plate"><img src="slushy.webp?v=13" alt="Double barrel slushy machine with tropical garnishes" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">6-hour rental</div><h3>The Slushy Bar</h3><p>Six hour rental with a double barrel slushy machine. Alcohol included.</p><ul><li>Garnish tray &amp; custom cocktail menu</li><li>100 count 5-ounce cups</li><li>Delivery, set-up, and breakdown</li></ul><a class="xadd" href="#book" data-add="The Slushy Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+<article class="row"><div class="plate"><img src="coffee.webp?v=13" alt="The trailer set up as a gourmet coffee bar with fall decor" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">150 drinks</div><h3>Gourmet Coffee Bar</h3><p>Up to 150 drinks, 4 hour service, Custom Decor and Signage.</p><ul><li>Custom Cup Stickers</li><li>Complimentary Water Station</li><li>Add 1 a la carte pastry or a Signature Cocktail</li></ul><a class="xadd" href="#book" data-add="Gourmet Coffee Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
+<article class="row"><div class="plate"><img src="decor.webp?v=13" alt="Mr and Mrs sign on a greenery and white rose flower wall" loading="lazy"></div><div class="rtx"><div class="spec" data-reveal="letters" data-stagger="38">Your theme</div><h3>Customized Decor</h3><p>Customized decor tailored to your special event.</p><ul><li>Designed around your theme</li><li>Pairs with any package</li></ul><a class="xadd" href="#book" data-add="Customized Decor"><span class="xadd-l">Add to my event</span><span aria-hidden="true">→</span></a></div></article>
 
       </div>
     </div>
@@ -492,7 +496,7 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
       <div class="eyebrow">Plan your bar</div>
       <h2 id="book-h" data-reveal="words" data-stagger="60">Your date won't <em>hold itself.</em></h2>
       <p>Four quick steps and your request lands with the Saddle Up family. We'll come back with a custom menu and quote for your event.</p>
-      <div class="bplate"><img src="hero.webp?v=10" alt="The Saddle Up trailer bar dressed with greenery and florals" loading="lazy"></div>
+      <div class="bplate"><img src="hero.webp?v=13" alt="The Saddle Up trailer bar dressed with greenery and florals" loading="lazy"></div>
       <div class="phone"><span>Rather talk now?</span><a href="tel:9162247557">916-224-7557</a></div>
     </div>
     <div class="fun"><div class="panel-wrap"><div class="panel">
@@ -595,8 +599,8 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
         <div><h4>Explore</h4><nav aria-label="Footer"><a href="#difference" data-reveal="letters" data-stagger="22">Why us</a><a href="#offerings" data-reveal="letters" data-stagger="22" data-delay="120">Offerings</a><a href="#book" data-reveal="letters" data-stagger="22" data-delay="240">Plan your bar</a></nav></div>
         <div class="contact"><h4>Contact</h4><a href="tel:9162247557">916-224-7557</a><a href="mailto:Saddleupdrinks@gmail.com" style="font-size:20px">Saddleupdrinks@gmail.com</a><p>Serving the greater Sacramento area.</p></div>
       </div>
-      <div class="rise" id="rise"><div class="halo" aria-hidden="true"></div><div class="spin3d" id="spin3d" role="img" aria-label="Saddle Up Drinks logo, drag to spin"><img class="l" src="logo.webp?v=10" alt="" aria-hidden="true" style="transform:translateZ(4px)"><img class="l" src="logo.webp?v=10" alt="" aria-hidden="true" style="transform:translateZ(2.7px)"><img class="l" src="logo.webp?v=10" alt="" aria-hidden="true" style="transform:translateZ(1.3px)"><img class="l" src="logo.webp?v=10" alt="" aria-hidden="true" style="transform:translateZ(0px)"><img class="l" src="logo.webp?v=10" alt="" aria-hidden="true" style="transform:translateZ(-1.3px)"><img class="l" src="logo.webp?v=10" alt="" aria-hidden="true" style="transform:translateZ(-2.7px)"><img class="l" src="logo.webp?v=10" alt="" aria-hidden="true" style="transform:translateZ(-4px)"><img class="f" src="logo.webp?v=10" alt=""><img class="b" src="logo.webp?v=10" alt=""></div><span class="spin-hint">Drag to spin</span></div>
-      <div class="install-row"><button class="install" id="install-btn" type="button" hidden><span class="badge"><img src="logo.webp?v=10" alt=""></span><span><small>Saddle Up app</small>Install on this phone</span></button><p class="ios-tip" id="ios-tip" hidden>Add the Saddle Up app to your phone: tap <b>Share</b>, then <b>Add to Home Screen</b>.</p></div>
+      <div class="rise" id="rise"><div class="halo" aria-hidden="true"></div><div class="spin3d" id="spin3d" role="img" aria-label="Saddle Up Drinks logo, drag to spin"><img class="l" src="logo.webp?v=13" alt="" aria-hidden="true" style="transform:translateZ(4px)"><img class="l" src="logo.webp?v=13" alt="" aria-hidden="true" style="transform:translateZ(2.7px)"><img class="l" src="logo.webp?v=13" alt="" aria-hidden="true" style="transform:translateZ(1.3px)"><img class="l" src="logo.webp?v=13" alt="" aria-hidden="true" style="transform:translateZ(0px)"><img class="l" src="logo.webp?v=13" alt="" aria-hidden="true" style="transform:translateZ(-1.3px)"><img class="l" src="logo.webp?v=13" alt="" aria-hidden="true" style="transform:translateZ(-2.7px)"><img class="l" src="logo.webp?v=13" alt="" aria-hidden="true" style="transform:translateZ(-4px)"><img class="f" src="logo.webp?v=13" alt=""><img class="b" src="logo.webp?v=13" alt=""></div><span class="spin-hint">Drag to spin</span></div>
+      <div class="install-row"><button class="install" id="install-btn" type="button" hidden><span class="badge"><img src="logo.webp?v=13" alt=""></span><span><small>Saddle Up app</small>Install on this phone</span></button><p class="ios-tip" id="ios-tip" hidden>Add the Saddle Up app to your phone: tap <b>Share</b>, then <b>Add to Home Screen</b>.</p></div>
       <div class="legal"><span>© 2026 Saddle Up Drinks · Greater Sacramento, CA</span><span>Please drink responsibly. 21+ for alcoholic service.</span></div>
     </div>
   </div>
@@ -830,36 +834,48 @@ function noise3(x,y,z){ var X=Math.floor(x),Y=Math.floor(y),Z=Math.floor(z); var
   return L(L(L(hash3(X,Y,Z),hash3(X+1,Y,Z),fx),L(hash3(X,Y+1,Z),hash3(X+1,Y+1,Z),fx),fy), L(L(hash3(X,Y,Z+1),hash3(X+1,Y,Z+1),fx),L(hash3(X,Y+1,Z+1),hash3(X+1,Y+1,Z+1),fx),fy),fz); }
 function fbm(x,y,z){ return noise3(x,y,z)*0.65+noise3(x*2.1,y*2.1,z*1.3)*0.35; }
 
-/* ---------- contour field (marching squares) ---------- */
-var MS=[[],[[3,2]],[[2,1]],[[3,1]],[[0,1]],[[3,2],[0,1]],[[0,2]],[[3,0]],[[3,0]],[[0,2]],[[3,0],[2,1]],[[0,1]],[[3,1]],[[2,1]],[[3,2]],[]];
-function contours(canvas,opt){
-  var ctx=canvas.getContext("2d"), W=0,H=0,dpr=1,cols=0,rows=0,vals=null;
-  var cell=opt.cell||22, levels=opt.levels||[.3,.38,.46,.54,.62,.7];
-  function size(){ var r=canvas.getBoundingClientRect(); dpr=Math.min(1.5,window.devicePixelRatio||1); W=r.width;H=r.height; canvas.width=Math.max(1,W*dpr);canvas.height=Math.max(1,H*dpr); cols=Math.ceil(W/cell)+1; rows=Math.ceil(H/cell)+1; vals=new Float32Array(cols*rows); }
-  function draw(time){
-    if(!W) size();
-    var z=time*0.00004*(opt.speed||1), sc=opt.scale||0.0024;
-    for(var j=0;j<rows;j++) for(var i=0;i<cols;i++) vals[j*cols+i]=fbm(i*cell*sc,j*cell*sc+z*2,z);
-    ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,W,H); ctx.lineWidth=opt.width||1; ctx.strokeStyle=opt.color;
-    ctx.beginPath();
-    for(var L=0;L<levels.length;L++){ var lv=levels[L];
-      for(j=0;j<rows-1;j++) for(i=0;i<cols-1;i++){
-        var a=vals[j*cols+i], b=vals[j*cols+i+1], c=vals[(j+1)*cols+i+1], d=vals[(j+1)*cols+i];
-        var k=(a>=lv?8:0)|(b>=lv?4:0)|(c>=lv?2:0)|(d>=lv?1:0); if(k===0||k===15) continue;
-        var x=i*cell,y=j*cell, segs=MS[k];
-        for(var s=0;s<segs.length;s++){ var p0=edge(segs[s][0]),p1=edge(segs[s][1]); ctx.moveTo(p0[0],p0[1]); ctx.lineTo(p1[0],p1[1]); }
-      }
-    }
-    ctx.stroke();
-    function edge(e){ var t;
-      if(e===0){ t=(lv-a)/(b-a); return [x+t*cell,y]; }
-      if(e===1){ t=(lv-b)/(c-b); return [x+cell,y+t*cell]; }
-      if(e===2){ t=(lv-d)/(c-d); return [x+t*cell,y+cell]; }
-      t=(lv-a)/(d-a); return [x,y+t*cell]; }
-  }
-  window.addEventListener("resize",function(){W=0;});
-  if(RM){ draw(0); return; }
-  runInView(canvas,function(t){draw(t);},30);
+/* ---------- cowhide: soft, organic cow-hide patches with hair texture (rendered once per size) ---------- */
+function hairTile(dark){
+  var S=192, c=document.createElement("canvas"); c.width=c.height=S; var g=c.getContext("2d"), seed=dark?11:23;
+  function r(){ seed=(seed*16807)%2147483647; return seed/2147483647; }
+  g.lineCap="round";
+  for(var i=0;i<1400;i++){ var x=r()*S, y=r()*S, len=3+r()*7, ang=-0.55+(r()-0.5)*0.5, lt=r()<0.5;
+    g.strokeStyle=lt?"rgba(255,250,240,"+(0.10+r()*0.18)+")":"rgba(0,0,0,"+(0.10+r()*0.22)+")"; g.lineWidth=0.5+r()*0.6;
+    for(var dx=-S;dx<=S;dx+=S) for(var dy=-S;dy<=S;dy+=S){ g.beginPath(); g.moveTo(x+dx,y+dy); g.quadraticCurveTo(x+dx+Math.cos(ang)*len*0.5+1,y+dy+Math.sin(ang)*len*0.5,x+dx+Math.cos(ang)*len,y+dy+Math.sin(ang)*len); g.stroke(); } }
+  return c;
+}
+var HAIR=null;
+function cowhide(canvas,opt){
+  var ctx=canvas.getContext("2d"), lastW=0, lastH=0, timer=null;
+  var rgb=opt.rgb||[34,24,17], alpha=opt.alpha||0.13, cover=opt.cover||0.3, scale=opt.scale||300, seed=opt.seed||0;
+  function render(){
+    var rc=canvas.getBoundingClientRect(), W=rc.width, H=rc.height; if(!W||!H) return;
+    if(Math.abs(W-lastW)<2&&Math.abs(H-lastH)<120) return; lastW=W; lastH=H;
+    var dpr=Math.min(1.5,window.devicePixelRatio||1); canvas.width=W*dpr; canvas.height=H*dpr;
+    var s=W<700?0.6:0.5, w=Math.ceil(W*s), h=Math.ceil(H*s), n=w*h, v=new Float32Array(n), f=1/scale, k=0;
+    for(var j=0;j<h;j++){ var y=j/s; for(var i=0;i<w;i++,k++){ var x=i/s;
+      var qx=fbm(x*f*0.7+seed,y*f*0.7,1.7), qy=fbm(x*f*0.7+5.2,y*f*0.7+seed,2.9);
+      var u=x*f*0.8+qx*2.2+seed, t=y*f*1.15+qy*2.2;
+      var val=noise3(u,t,0.5)*0.62+noise3(u*2.3,t*2.3,1.1)*0.26+noise3(u*6.2,t*6.2,2.3)*0.06;
+      val+=(noise3(x*0.22,y*0.22,3.3)-0.5)*0.022+(noise3(x*0.05,y*0.05,4.1)-0.5)*0.03;           /* ragged, hairy edges */
+      v[k]=val; } }
+    var sorted=Array.prototype.slice.call(v.filter(function(_,i){return (i%7)===0;})).sort(function(a,b){return a-b;});
+    var th=sorted[Math.floor(sorted.length*(1-cover))], soft=0.016;
+    var off=document.createElement("canvas"); off.width=w; off.height=h; var oc=off.getContext("2d"), img=oc.createImageData(w,h), d=img.data;
+    for(k=0;k<n;k++){ var a=(v[k]-(th-soft))/(soft*2); a=a<0?0:a>1?1:a; a=a*a*(3-2*a);
+      var depth=Math.min(1,(v[k]-th)*7); if(depth<0) depth=0;                /* patches a touch deeper toward the middle */
+      var m=k*4; d[m]=rgb[0]; d[m+1]=rgb[1]; d[m+2]=rgb[2]; d[m+3]=Math.round(255*a*(0.82+0.18*depth)); }
+    oc.putImageData(img,0,0);
+    ctx.setTransform(1,0,0,1,0,0); ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.imageSmoothingEnabled=true; ctx.imageSmoothingQuality="high"; try{ ctx.filter="blur("+(1.1*dpr).toFixed(1)+"px)"; }catch(e){} ctx.drawImage(off,0,0,canvas.width,canvas.height); try{ ctx.filter="none"; }catch(e){}
+    /* hair grain inside the patches only */
+    if(!HAIR) HAIR=hairTile();
+    ctx.globalCompositeOperation="source-atop"; ctx.setTransform(dpr*0.8,0,0,dpr*0.8,0,0); ctx.fillStyle=ctx.createPattern(HAIR,"repeat"); ctx.fillRect(0,0,W/0.8,H/0.8);
+    ctx.globalCompositeOperation="source-over"; ctx.setTransform(1,0,0,1,0,0);
+    canvas.style.opacity=alpha; }
+  canvas.style.opacity=0; canvas.style.transition="opacity 1.2s ease";
+  window.addEventListener("resize",function(){ clearTimeout(timer); timer=setTimeout(render,250); });
+  if("IntersectionObserver" in window){ var io=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ render(); } },{rootMargin:"400px"}); io.observe(canvas); } else render();
 }
 
 /* ---------- sticky stack: pin what fits, recede what is covered ---------- */
@@ -955,36 +971,81 @@ function startCoin(){
   animate(function(t){ var p=clamp((t-t0)/1900,0,1); coin.burn=1.32*(1-Math.pow(1-p,2.2)); return p>=1; });
 }
 
-/* ---------- halftone with reticle (difference sheet) ---------- */
+/* ---------- champagne: realistic rising bubbles (difference sheet) ---------- */
+function makeBubbleSprite(S,soft){
+  var c=document.createElement("canvas"); c.width=c.height=S; var g=c.getContext("2d"), m=S/2, r=S/2-2;
+  if(soft){ try{ g.filter="blur("+(S*0.05).toFixed(1)+"px)"; }catch(e){} }
+  var b=g.createRadialGradient(m,m,0,m,m,r);
+  b.addColorStop(0,"rgba(255,244,214,0.035)"); b.addColorStop(0.62,"rgba(255,240,205,0.05)");
+  b.addColorStop(0.80,"rgba(70,52,24,0.07)"); b.addColorStop(0.89,"rgba(255,232,190,0.30)");
+  b.addColorStop(0.955,"rgba(255,250,236,0.80)"); b.addColorStop(1,"rgba(255,255,255,0)");
+  g.fillStyle=b; g.beginPath(); g.arc(m,m,r,0,6.2832); g.fill();
+  /* light focused through the bottom of the bubble */
+  var cy=m+r*0.52, cg=g.createRadialGradient(m,cy,0,m,cy,r*0.5);
+  cg.addColorStop(0,"rgba(255,236,190,0.42)"); cg.addColorStop(1,"rgba(255,236,190,0)");
+  g.save(); g.translate(m,cy); g.scale(1,0.42); g.translate(-m,-cy); g.fillStyle=cg; g.beginPath(); g.arc(m,cy,r*0.5,0,6.2832); g.fill(); g.restore();
+  /* window reflection, top-left */
+  g.save(); g.translate(m-r*0.36,m-r*0.40); g.rotate(-0.65); g.scale(1,0.6);
+  var sg=g.createRadialGradient(0,0,0,0,0,r*0.26); sg.addColorStop(0,"rgba(255,255,255,0.97)"); sg.addColorStop(0.45,"rgba(255,255,255,0.55)"); sg.addColorStop(1,"rgba(255,255,255,0)");
+  g.fillStyle=sg; g.beginPath(); g.arc(0,0,r*0.26,0,6.2832); g.fill(); g.restore();
+  g.fillStyle="rgba(255,255,255,0.95)"; g.beginPath(); g.arc(m-r*0.42,m-r*0.44,r*0.07,0,6.2832); g.fill();
+  /* small secondary glint, bottom-right */
+  var s2=g.createRadialGradient(m+r*0.42,m+r*0.36,0,m+r*0.42,m+r*0.36,r*0.12);
+  s2.addColorStop(0,"rgba(255,248,230,0.55)"); s2.addColorStop(1,"rgba(255,248,230,0)");
+  g.fillStyle=s2; g.beginPath(); g.arc(m+r*0.42,m+r*0.36,r*0.12,0,6.2832); g.fill();
+  return c;
+}
+function makeBeadSprite(S){
+  var c=document.createElement("canvas"); c.width=c.height=S; var g=c.getContext("2d"), m=S/2, r=S/2-1;
+  var b=g.createRadialGradient(m,m,0,m,m,r);
+  b.addColorStop(0,"rgba(255,246,222,0.10)"); b.addColorStop(0.6,"rgba(255,242,212,0.14)"); b.addColorStop(0.8,"rgba(255,236,196,0.45)");
+  b.addColorStop(0.92,"rgba(255,252,242,0.98)"); b.addColorStop(1,"rgba(255,255,255,0)");
+  g.fillStyle=b; g.beginPath(); g.arc(m,m,r,0,6.2832); g.fill();
+  g.fillStyle="rgba(255,255,255,0.98)"; g.beginPath(); g.arc(m-r*0.36,m-r*0.38,r*0.2,0,6.2832); g.fill();
+  var cg=g.createRadialGradient(m,m+r*0.5,0,m,m+r*0.5,r*0.35); cg.addColorStop(0,"rgba(255,232,180,0.6)"); cg.addColorStop(1,"rgba(255,232,180,0)");
+  g.fillStyle=cg; g.beginPath(); g.arc(m,m+r*0.5,r*0.35,0,6.2832); g.fill();
+  return c;
+}
+var BEAD=null; function bead(){ return BEAD||(BEAD=makeBeadSprite(64)); }
 function halftone(canvas){
-  var ctx=canvas.getContext("2d"), W=0,H=0,dpr=1, mx=-1, my=-1, active=false, sec=canvas.parentElement;
-  function size(){ var r=canvas.getBoundingClientRect(); dpr=Math.min(1.5,window.devicePixelRatio||1); W=r.width;H=r.height; canvas.width=W*dpr; canvas.height=H*dpr; }
-  sec.addEventListener("pointermove",function(e){ var r=canvas.getBoundingClientRect(); mx=e.clientX-r.left; my=e.clientY-r.top; active=true; });
-  sec.addEventListener("pointerleave",function(){ active=false; });
+  var ctx=canvas.getContext("2d"), W=0,H=0,dpr=1, sec=canvas.parentElement, mx=-9999,my=-9999;
+  var SHARP=makeBubbleSprite(128,false), SOFT=makeBubbleSprite(128,true);
+  var streams=[], beads=[], floaters=[], mobile=false, glow=null, holes=[], holesAt=0;
+  /* keep the words readable: bubbles fade almost out wherever there is text */
+  function measure(){ var cr=canvas.getBoundingClientRect(); holes=[].slice.call(sec.querySelectorAll(".eyebrow,h2 span,h2 em,.copy p")).map(function(el){ var r=el.getBoundingClientRect(); return [r.left-cr.left-10,r.top-cr.top-8,r.right-cr.left+10,r.bottom-cr.top+8]; }); }
+  function veil(x,y){ for(var i=0;i<holes.length;i++){ var h=holes[i]; if(x>h[0]&&x<h[2]&&y>h[1]&&y<h[3]) return 0.1; } return 1; }
+  function rnd(a,b){ return a+Math.random()*(b-a); }
+  function pickX(){ /* keep bubbles mostly to the right and the far left edge, clear of the copy */
+    var u=Math.random(); if(mobile) return u<0.8? rnd(0.8,0.98)*W : rnd(0.01,0.05)*W;
+    return u<0.82? rnd(0.56,0.97)*W : rnd(0.015,0.07)*W; }
+  function size(){ var r=canvas.getBoundingClientRect(); dpr=Math.min(2,window.devicePixelRatio||1); W=r.width;H=r.height; canvas.width=W*dpr; canvas.height=H*dpr; mobile=W<700;
+    streams=[]; var ns=mobile?4:12; for(var i=0;i<ns;i++) streams.push({x:pickX(), every:rnd(70,190), acc:Math.random()*200, r0:rnd(0.9,1.7), amp:rnd(0.6,2.2), fq:rnd(0.004,0.009)});
+    floaters=[]; var nf=mobile?8:16; for(var k=0;k<nf;k++){ var far=Math.random()<0.45; floaters.push({x:pickX(), y:Math.random()*H, r:far?rnd(9,22):rnd(3,8), v:far?rnd(8,16):rnd(16,34), far:far, ph:Math.random()*6.28, amp:rnd(4,14), a:far?rnd(0.35,0.6):rnd(0.7,0.95)}); }
+    beads=[]; streams.forEach(function(st){ for(var yy=H; yy>0; yy-=rnd(10,26)) beads.push({sx:st.x, x:st.x, y:yy, r0:st.r0*rnd(0.85,1.15), age:Math.random()*5000, amp:st.amp, fq:st.fq, ph:Math.random()*6.28}); });
+    glow=ctx.createRadialGradient(W*0.82,H*1.02,0,W*0.82,H*1.02,Math.max(W,H)*0.7);
+    glow.addColorStop(0,"rgba(224,164,88,0.16)"); glow.addColorStop(0.5,"rgba(224,164,88,0.05)"); glow.addColorStop(1,"rgba(224,164,88,0)"); }
+  sec.addEventListener("pointermove",function(e){ var r=canvas.getBoundingClientRect(); mx=e.clientX-r.left; my=e.clientY-r.top; });
+  sec.addEventListener("pointerleave",function(){ mx=my=-9999; });
   window.addEventListener("resize",function(){W=0;});
-  var rx=new Spring(0,{tension:140,friction:30}), ry=new Spring(0,{tension:140,friction:30});
+  function push(b){ var dx=b.x-mx, dy=b.y-my, d2=dx*dx+dy*dy; if(d2<14400){ var f=(1-Math.sqrt(d2)/120)*1.6; b.dx=(b.dx||0)+dx/Math.sqrt(d2+1)*f; } if(b.dx){ b.dx*=0.94; } return b.dx||0; }
   function draw(t,dt){
-    if(!W) size();
-    var s=W<700?12:15, cols=Math.ceil(W/s), rows=Math.ceil(H/s), z=t*0.00005;
-    if(!active){ mx=W*(0.76+0.14*Math.sin(t*0.00021)); my=H*(0.42+0.22*Math.sin(t*0.00017+1.2)); }
-    rx.t=mx; ry.t=my; rx.step(dt); ry.step(dt);
-    var ci=Math.round(rx.v/s), cj=Math.round(ry.v/s);
+    if(!W) size(); if(t-holesAt>800){ measure(); holesAt=t; } dt=Math.min(50,dt||16); var s=dt/1000;
     ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,W,H);
-    ctx.fillStyle="rgba(185,174,156,.42)"; ctx.beginPath();
-    var sq=[];
-    for(var j=0;j<rows;j++) for(var i=0;i<cols;i++){
-      var x=i*s+s/2, y=j*s+s/2;
-      var f=fbm(x*0.004,y*0.004,z); var mask=clamp((x/W)*1.2-0.15,0,1)*clamp(1-Math.abs(y/H-0.5)*1.4,0,1);
-      var r=s*0.36*Math.pow(clamp(f*1.25-0.25,0,1),1.4)*(0.25+0.75*mask);
-      var di=Math.abs(i-ci), dj=Math.abs(j-cj);
-      var arm=(di===0&&dj<=14)||(dj===0&&di<=14), chq=di<=3&&dj<=3&&((i+j)&1)===0; if(arm||chq){ sq.push(x,y,Math.max(r,s*0.16),chq?0.9:0.5*(1-Math.max(di,dj)/15)); continue; }
-      if(r<0.35) continue; ctx.moveTo(x+r,y); ctx.arc(x,y,r,0,6.283);
-    }
-    ctx.fill();
-    for(var q=0;q<sq.length;q+=4){ var rr=sq[q+2]; ctx.fillStyle="rgba(255,199,122,"+sq[q+3].toFixed(2)+")"; ctx.fillRect(sq[q]-rr,sq[q+1]-rr,rr*2,rr*2); }
+    ctx.fillStyle=glow; ctx.fillRect(0,0,W,H);
+    /* out-of-focus bubbles drifting behind */
+    floaters.forEach(function(f){ f.y-=f.v*s; if(f.y<-40){ f.y=H+40; f.x=pickX(); }
+      var x=f.x+Math.sin(t*0.0007+f.ph)*f.amp+push(f); ctx.globalAlpha=f.a*veil(x,f.y); ctx.drawImage(f.far?SOFT:SHARP,x-f.r,f.y-f.r,f.r*2,f.r*2); });
+    /* perlage: fine streams from nucleation points, beads grow and speed up as they rise */
+    streams.forEach(function(st){ st.acc+=dt; while(st.acc>st.every){ st.acc-=st.every*rnd(0.7,1.3); beads.push({sx:st.x, x:st.x, y:H+4, r0:st.r0*rnd(0.85,1.15), age:0, amp:st.amp, fq:st.fq, ph:Math.random()*6.28}); } });
+    var keep=[];
+    for(var i=0;i<beads.length;i++){ var b=beads[i]; var h=(H-b.y)/H; b.age+=dt;
+      b.y-=(34+h*150)*s; var r=b.r0*(1+h*1.7);
+      b.x=b.sx+Math.sin(b.age*b.fq+b.ph)*b.amp*(0.4+h)+push(b);
+      if(b.y<-8) continue; keep.push(b);
+      r*=1.35; ctx.globalAlpha=Math.min(0.95,0.5+h*0.5)*veil(b.x,b.y); ctx.drawImage(bead(),b.x-r,b.y-r,r*2,r*2); }
+    beads=keep; ctx.globalAlpha=1;
   }
-  if(RM){ draw(0,16); return; }
-  runInView(canvas,draw,30);
+  runInView(canvas,draw,60);
 }
 
 /* ---------- the drink seam: the cream pours off as you scroll, bubbles and glasses rise ---------- */
@@ -1017,9 +1078,9 @@ function seam(canvas){
     for(x=0;x<=W;x+=8){ y=level+Math.sin(x*0.011+t*0.0018)*7+Math.sin(x*0.027-t*0.0012)*3.5+3; if(x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y); } ctx.stroke();
     /* champagne bubbles rising up into the surface */
     var fade=1-clamp((p-0.75)/0.25,0,1);
-    ctx.fillStyle="rgba(246,239,227,"+(0.75*fade).toFixed(3)+")"; ctx.beginPath();
-    bubbles.forEach(function(bb){ var prog=((t*bb.sp*0.06+bb.ph*1000)%1000)/1000; var by=H-prog*(H-Math.max(0,level)); var bx=bb.x+Math.sin(prog*10+bb.wob)*4; if(by<level+4) return; ctx.moveTo(bx+bb.r,by); ctx.arc(bx,by,bb.r,0,6.283); });
-    ctx.fill();
+    ctx.globalAlpha=0.95*fade; var BD=bead();
+    bubbles.forEach(function(bb){ var prog=((t*bb.sp*0.06+bb.ph*1000)%1000)/1000; var by=H-prog*(H-Math.max(0,level)); var bx=bb.x+Math.sin(prog*10+bb.wob)*4; if(by<level+4) return; var rr=bb.r*1.5*(0.7+prog*0.5); ctx.drawImage(BD,bx-rr,by-rr,rr*2,rr*2); });
+    ctx.globalAlpha=1;
     /* cocktail glasses lifting out as it drains */
     ctx.lineWidth=2.4; ctx.lineCap="round"; ctx.lineJoin="round";
     icons.forEach(function(ic,i){ var q=clamp((p-ic.d)/0.7,0,1), al=Math.min(1,Math.sin(Math.PI*q)*1.8); if(al<=0.01) return;
@@ -1029,17 +1090,51 @@ function seam(canvas){
   runInView(sec,draw,30);
 }
 
-/* ---------- 3D lasso: twirls beside the line, flies over and cinches around "We can." as you scroll ---------- */
+/* ---------- 3D lasso: a real-looking twisted rope that circles and cinches around "We can." as you scroll ---------- */
+function drawRope(ctx,pts,w,o){
+  o=o||{}; var n=pts.length; if(n<2) return;
+  var dpr=o.dpr||1, dark=o.dark||0, phase=o.phase||0;
+  var L=[0]; for(var i=1;i<n;i++){ L[i]=L[i-1]+Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]); }
+  function path(dy){ ctx.beginPath(); ctx.moveTo(pts[0][0],pts[0][1]+(dy||0)); for(var i=1;i<n;i++) ctx.lineTo(pts[i][0],pts[i][1]+(dy||0)); }
+  ctx.lineCap="round"; ctx.lineJoin="round";
+  /* cast shadow on the page */
+  ctx.save(); ctx.shadowColor="rgba(0,0,0,"+(0.55-dark*0.25)+")"; ctx.shadowBlur=w*1.6*dpr; ctx.shadowOffsetX=w*0.35*dpr; ctx.shadowOffsetY=w*1.1*dpr;
+  path(); ctx.strokeStyle="#3b2412"; ctx.lineWidth=w; ctx.stroke(); ctx.restore();
+  /* round body: dark edges, lit top (light from above-left) */
+  var bands=[[0.86,"#5c3a1d",-0.04],[0.68,"#7b5130",-0.08],[0.50,"#99693d",-0.12],[0.32,"#b8874f",-0.16],[0.14,"#d8ab72",-0.22]];
+  for(var k=0;k<bands.length;k++){ path(bands[k][2]*w); ctx.strokeStyle=bands[k][1]; ctx.lineWidth=w*bands[k][0]; ctx.stroke(); }
+  /* three-strand twist: a groove and a lit ridge every strand, leaning along the rope */
+  var pitch=w*0.95, j=1, s=((phase%pitch)+pitch)%pitch, hw=w*0.47, lean=w*0.42;
+  ctx.lineCap="round";
+  while(s<L[n-1]){
+    while(j<n-1&&L[j]<s) j++;
+    var a=pts[j-1], b=pts[j], seg=L[j]-L[j-1]||1, f=(s-L[j-1])/seg;
+    var px=a[0]+(b[0]-a[0])*f, py=a[1]+(b[1]-a[1])*f, tx=(b[0]-a[0])/seg, ty=(b[1]-a[1])/seg, nx=-ty, ny=tx;
+    var x1=px+nx*hw-tx*lean, y1=py+ny*hw-ty*lean, x2=px-nx*hw+tx*lean, y2=py-ny*hw+ty*lean, cx=px+tx*w*0.12, cy=py+ty*w*0.12;
+    ctx.beginPath(); ctx.moveTo(x1,y1); ctx.quadraticCurveTo(cx,cy,x2,y2); ctx.strokeStyle="rgba(28,16,6,.78)"; ctx.lineWidth=Math.max(0.9,w*0.14); ctx.stroke();
+    var ox=tx*w*0.2, oy=ty*w*0.2;
+    ctx.beginPath(); ctx.moveTo(x1+ox*0.6,y1+oy*0.6); ctx.quadraticCurveTo(cx+ox,cy+oy,x2+ox*1.2,y2+oy*1.2); ctx.strokeStyle="rgba(255,226,170,.30)"; ctx.lineWidth=Math.max(0.6,w*0.09); ctx.stroke();
+    /* loose fibers: stable per strand, so they ride along with the twist */
+    var id=Math.floor((s-phase)/pitch), hsh=((id*2654435761)>>>0)%1000/1000;
+    if(hsh>0.8){ var side=hsh>0.9?1:-1, len=w*(0.15+(hsh-0.8)*1.6), bx=px+nx*side*hw*0.95, by=py+ny*side*hw*0.95;
+      ctx.beginPath(); ctx.moveTo(bx,by); ctx.quadraticCurveTo(bx+nx*side*len*0.6+tx*len*0.5,by+ny*side*len*0.6+ty*len*0.5,bx+nx*side*len+tx*len*0.2,by+ny*side*len+ty*len*0.2);
+      ctx.strokeStyle="rgba(214,176,124,.28)"; ctx.lineWidth=0.5; ctx.stroke(); }
+    s+=pitch;
+  }
+  /* far side of the loop sits in shadow */
+  if(dark>0){ path(); ctx.strokeStyle="rgba(8,14,22,"+dark+")"; ctx.lineWidth=w*1.04; ctx.stroke(); }
+}
 function lasso(){
   var host=$("#lasso-target"), back=$("#lasso-back"), front=$("#lasso-front"), h2=$("#diff-h"); if(!host||!back||!front) return;
-  var NS="http://www.w3.org/2000/svg";
-  function mk(svg){ var o={}; ["out","body","twist"].forEach(function(k){ var p=document.createElementNS(NS,"path"); p.setAttribute("fill","none"); p.setAttribute("stroke-linecap","round"); p.setAttribute("stroke-linejoin","round"); svg.appendChild(p); o[k]=p; });
-    o.out.setAttribute("stroke","#2A190D"); o.body.setAttribute("stroke","#8A5A33"); o.twist.setAttribute("stroke","#E2B57A"); o.twist.setAttribute("stroke-dasharray","3 6"); return o; }
-  var B=mk(back), T=mk(front), F=mk(front);
-  var knot=document.createElementNS(NS,"ellipse"); knot.setAttribute("fill","#6B4226"); knot.setAttribute("stroke","#2A190D"); knot.setAttribute("stroke-width","1.5"); front.appendChild(knot);
-  function setW(o,w){ o.out.setAttribute("stroke-width",(w+3).toFixed(2)); o.body.setAttribute("stroke-width",w.toFixed(2)); o.twist.setAttribute("stroke-width",(w*0.45).toFixed(2)); }
-  setW(B,4.2); setW(F,5.6); setW(T,4.8);
-  function setD(o,d,off){ o.out.setAttribute("d",d); o.body.setAttribute("d",d); o.twist.setAttribute("d",d); o.twist.style.strokeDashoffset=off; }
+  var cb=back.getContext("2d"), cf=front.getContext("2d"), dpr=1, box={x:0,y:0,w:0,h:0};
+  function fit(r,hr){
+    dpr=Math.min(2,window.devicePixelRatio||1);
+    var x0=-Math.max(40,r.left-hr.left+40), y0=-r.height*1.4, x1=Math.max(r.width,hr.right-r.left)+60, y1=r.height*2.2;
+    var w=Math.ceil(x1-x0), h=Math.ceil(y1-y0);
+    if(w===box.w&&h===box.h&&Math.round(x0)===box.x) return;
+    box={x:Math.round(x0),y:Math.round(y0),w:w,h:h};
+    [back,front].forEach(function(c){ c.style.left=box.x+"px"; c.style.top=box.y+"px"; c.style.width=w+"px"; c.style.height=h+"px"; c.width=w*dpr; c.height=h*dpr; });
+  }
   var S=new Spring(0,{tension:110,friction:24,eps:0.0005}), spin=0, lastY=window.scrollY, boost=0, throwAt=-1, px=9999, py=9999, near=0;
   function ease(x){ return x<0.5?2*x*x:1-Math.pow(-2*x+2,2)/2; }
   function lerp(a,b,t){ return a+(b-a)*t; }
@@ -1047,6 +1142,7 @@ function lasso(){
   window.addEventListener("pointermove",function(e){ var r=host.getBoundingClientRect(); px=e.clientX-(r.left+r.width/2); py=e.clientY-(r.top+r.height/2); },{passive:true});
   function draw(t,dt){
     var r=host.getBoundingClientRect(), hr=h2.getBoundingClientRect(), vh=window.innerHeight;
+    fit(r,hr);
     var w=r.width, h=r.height, cy0=h*0.52;
     var scrollS=clamp((vh*0.92-r.top)/(vh*0.55),0,1), target=scrollS;
     if(throwAt>0){ var tp=clamp((t-throwAt)/2600,0,1); target=Math.min(scrollS,tp); if(tp>=1) throwAt=-1; }
@@ -1064,20 +1160,33 @@ function lasso(){
     if(!RM) spin+=dt*(0.0085+boost)*(1-a*0.97);
     var uk=lerp(spin,Math.round(spin/6.2832)*6.2832,a);
     R+=Math.sin(t*0.012)*2.2*near*b;
-    var f=650, N=120, pts=[];
+    var f=650, N=140, pts=[];
     for(var i=0;i<=N;i++){ var u=uk+i/N*6.2832, X=R*Math.cos(u), Z=R*Math.sin(u); var y=-Z*Math.sin(tilt), z=Z*Math.cos(tilt), k=f/(f+z); pts.push([cx+X*k, cy+y*k, z]); }
-    var bd="", fd="", prev=null;
-    for(i=0;i<pts.length;i++){ var q=pts[i], isB=q[2]>0, seg=q[0].toFixed(1)+" "+q[1].toFixed(1);
-      if(prev!==isB){ var start=i>0?(pts[i-1][0].toFixed(1)+" "+pts[i-1][1].toFixed(1)):seg; if(isB) bd+="M"+start+"L"+seg; else fd+="M"+start+"L"+seg; }
-      else { if(isB) bd+="L"+seg; else fd+="L"+seg; }
-      prev=isB; }
-    var off=(-spin*24).toFixed(1);
-    setD(B,bd,off); setD(F,fd,off);
-    var kp=pts[0], ax=Math.min(hr.right-r.left-4, w+Rt*2+60), ay=cy0-h*0.55, sag=(1-b)*26+5;
-    var mx=(kp[0]+ax)/2, my=(kp[1]+ay)/2+sag;
-    setD(T,"M"+kp[0].toFixed(1)+" "+kp[1].toFixed(1)+"Q"+mx.toFixed(1)+" "+my.toFixed(1)+" "+ax.toFixed(1)+" "+ay.toFixed(1),off);
-    knot.setAttribute("cx",kp[0].toFixed(1)); knot.setAttribute("cy",kp[1].toFixed(1)); knot.setAttribute("rx","5.5"); knot.setAttribute("ry","4");
-    var vis=s>0.02?"1":"0"; back.style.opacity=vis; front.style.opacity=vis;
+    /* split the loop into the part behind the words and the part in front */
+    var backs=[], fronts=[], cur=null, curB=null;
+    for(i=0;i<pts.length;i++){ var q=pts[i], isB=q[2]>0;
+      if(isB!==curB){ if(cur&&cur.length) (curB?backs:fronts).push(cur); cur=i>0?[pts[i-1]]:[]; curB=isB; }
+      cur.push(q); }
+    if(cur&&cur.length) (curB?backs:fronts).push(cur);
+    var rw=clamp(h*0.085,3.6,8.5), phase=-spin*24;
+    var vis=s>0.02;
+    [cb,cf].forEach(function(c){ c.setTransform(dpr,0,0,dpr,0,0); c.clearRect(0,0,box.w,box.h); c.translate(-box.x,-box.y); });
+    if(vis){
+      backs.forEach(function(p){ drawRope(cb,p,rw*0.82,{dpr:dpr,dark:0.38,phase:phase}); });
+      var kp=pts[0], ax=Math.min(hr.right-r.left-4, w+Rt*2+60), ay=cy0-h*0.55, sag=(1-b)*26+5;
+      var mx=(kp[0]+ax)/2, my=(kp[1]+ay)/2+sag, tail=[];
+      for(i=0;i<=40;i++){ var tt=i/40, it=1-tt; tail.push([it*it*kp[0]+2*it*tt*mx+tt*tt*ax, it*it*kp[1]+2*it*tt*my+tt*tt*ay]); }
+      drawRope(cf,tail,rw*0.9,{dpr:dpr,phase:phase});
+      /* frayed end of the tail */
+      var e=tail[40], e2=tail[38], tx=(e[0]-e2[0]), ty=(e[1]-e2[1]), tl=Math.hypot(tx,ty)||1; tx/=tl; ty/=tl;
+      cf.lineCap="round"; for(var fi=-3;fi<=3;fi++){ var ang=fi*0.18, ex=tx*Math.cos(ang)-ty*Math.sin(ang), ey=tx*Math.sin(ang)+ty*Math.cos(ang);
+        cf.beginPath(); cf.moveTo(e[0],e[1]); cf.quadraticCurveTo(e[0]+ex*rw*0.9,e[1]+ey*rw*0.9+1,e[0]+ex*rw*(1.6+Math.abs(fi)*0.15),e[1]+ey*rw*(1.6+Math.abs(fi)*0.15)+2);
+        cf.strokeStyle=fi%2?"rgba(196,150,96,.75)":"rgba(140,98,58,.8)"; cf.lineWidth=0.9; cf.stroke(); }
+      fronts.forEach(function(p){ drawRope(cf,p,rw,{dpr:dpr,phase:phase}); });
+      /* the honda: small eye the loop runs through */
+      var eye=[]; for(i=0;i<=28;i++){ var ea=i/28*6.2832; eye.push([kp[0]+Math.cos(ea)*rw*1.15, kp[1]+Math.sin(ea)*rw*0.85]); }
+      drawRope(cf,eye,rw*0.62,{dpr:dpr,phase:phase});
+    }
   }
   if(RM){ draw(performance.now(),16); window.addEventListener("resize",function(){ draw(performance.now(),16); }); return; }
   runInView(host,draw,60);
@@ -1168,9 +1277,9 @@ var logo=new Image(); logo.src=$(".veil .dim").src;
 function bootCoin(){ try{ initCoin(logo); }catch(e){ coinEl.classList.add("nogl"); coinReady=true; } tick(); }
 if(logo.complete) bootCoin(); else { logo.onload=bootCoin; logo.onerror=function(){ coinEl.classList.add("nogl"); coinReady=true; tick(); }; }
 tick();
-contours($("#hero-contours"),{color:"rgba(20,36,45,.10)",cell:20,levels:[.3,.36,.42,.48,.54,.6,.66,.72]});
-contours($("#book-contours"),{color:"rgba(20,36,45,.08)",cell:22});
-contours($("#sign-contours"),{color:"rgba(255,255,255,.10)",cell:22,speed:1.4});
+cowhide($("#hero-contours"),{rgb:[34,24,17],alpha:0.13,cover:0.30,seed:0});
+cowhide($("#book-contours"),{rgb:[34,24,17],alpha:0.10,cover:0.28,seed:13});
+cowhide($("#sign-contours"),{rgb:[246,239,227],alpha:0.07,cover:0.28,seed:27});
 halftone($("#halftone")); seam($("#seam")); lasso(); rail(); riseLogo();
 pinCheck(); recede();
 if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ pinCheck(); });
