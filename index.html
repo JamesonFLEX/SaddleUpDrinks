@@ -238,8 +238,7 @@ p{margin:0}
 @media (hover:hover){.rows:hover .row:not(:hover){opacity:.38}}
 .row:nth-child(odd) .plate{order:2}
 .plate{position:relative;aspect-ratio:4/3;overflow:hidden;clip-path:polygon(22px 0,100% 0,100% calc(100% - 22px),calc(100% - 22px) 100%,0 100%,0 22px);background:#1a2a31;will-change:transform}
-.plate img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;transition:transform 1.4s var(--ease-entrance),clip-path .7s var(--ease-plate);clip-path:inset(10% 10% 10% 10%)}
-.row.in .plate img{clip-path:inset(0 0 0 0)}
+.plate img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;transition:transform 1.4s var(--ease-entrance)}
 .row:hover .plate img{transform:scale(1.05)}
 .plate::after{content:"";position:absolute;inset:0;border:1px solid rgba(224,164,88,.22);pointer-events:none}
 .rtx{position:relative;will-change:transform}
@@ -355,6 +354,16 @@ p{margin:0}
   .panel-wrap::before,.panel-wrap::after{animation:none}
   .plate img{clip-path:none;transition:none}
 }
+/* ---------- covered wagon rolls across each offering photo and pulls it open ---------- */
+.plate.wg img{-webkit-mask-image:linear-gradient(var(--wd,90deg),#000 0,#000 var(--wa,0%),transparent var(--wb,0%));mask-image:linear-gradient(var(--wd,90deg),#000 0,#000 var(--wa,0%),transparent var(--wb,0%))}
+.plate.wg.done img{-webkit-mask-image:none;mask-image:none}
+.wagon{position:absolute;left:0;bottom:3%;width:clamp(140px,38%,250px);z-index:2;pointer-events:none;will-change:transform;filter:drop-shadow(0 10px 14px rgba(0,0,0,.55))}
+.wagon svg{display:block;width:100%;height:auto;overflow:visible}
+.wagon.rev svg{transform:scaleX(-1)}
+.wagon .shadow{position:absolute;left:8%;right:8%;bottom:-4px;height:10px;border-radius:50%;background:radial-gradient(rgba(0,0,0,.5),transparent 70%)}
+.dust{position:absolute;z-index:1;width:18px;height:18px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(236,214,178,.75),rgba(236,214,178,0) 70%)}
+.plate.wg::before{content:"";position:absolute;left:0;right:0;bottom:3%;height:2px;z-index:1;background:linear-gradient(90deg,transparent,rgba(224,164,88,.35),transparent);opacity:var(--trail,0);pointer-events:none}
+@media (prefers-reduced-motion:reduce){.wagon,.dust{display:none}.plate.wg img{-webkit-mask-image:none;mask-image:none}}
 /* no-copy: block text selection + long-press menu; form fields stay usable */
 html,body{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-touch-callout:none}
 img{-webkit-user-drag:none;user-drag:none}
@@ -1163,6 +1172,56 @@ contours($("#sign-contours"),{color:"rgba(255,255,255,.10)",cell:22,speed:1.4});
 halftone($("#halftone")); seam($("#seam")); lasso(); rail(); riseLogo();
 pinCheck(); recede();
 if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ pinCheck(); });
+})();
+</script>
+<script>
+/* covered wagon: scroll-scrubbed, pulls each offering photo open behind it */
+(function(){
+  if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var SVG="<svg viewBox=\"0 0 220 128\" aria-hidden=\"true\"><g class=\"bob\"><path d=\"M182 84 L218 74\" stroke=\"#5A3A22\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M30 90 L184 90 L178 66 L36 66 Z\" fill=\"#7A4A2A\" stroke=\"#2A190D\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><path d=\"M40 78 H176 M40 72 H178\" stroke=\"#5A3520\" stroke-width=\"1.5\"/><path d=\"M38 68 C34 18 58 6 108 6 C158 6 182 18 178 68 Z\" fill=\"#F6EFE3\" stroke=\"#2A190D\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><path d=\"M38 68 C34 18 58 6 108 6 C158 6 182 18 178 68\" fill=\"none\" stroke=\"#E0A458\" stroke-width=\"1.2\" opacity=\".0\"/><path d=\"M70 66 C66 26 76 12 84 9 M108 66 V6 M146 66 C150 26 140 12 132 9\" fill=\"none\" stroke=\"#CDBB9C\" stroke-width=\"2.2\"/><path d=\"M44 66 C40 30 60 14 76 10\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3\" opacity=\".55\" stroke-linecap=\"round\"/><text x=\"108\" y=\"50\" text-anchor=\"middle\" font-family=\"Georgia,serif\" font-style=\"italic\" font-size=\"15\" fill=\"#A4462A\">Saddle Up</text></g><g class=\"wh w1\" transform=\"translate(62 98)\"><circle r=\"27\" fill=\"none\" stroke=\"#2A190D\" stroke-width=\"7\"/><circle r=\"27\" fill=\"none\" stroke=\"#E0A458\" stroke-width=\"3\"/><g stroke=\"#8A5A33\" stroke-width=\"3\"><path d=\"M-25 0H25M0 -25V25M-17.7 -17.7L17.7 17.7M17.7 -17.7L-17.7 17.7\"/></g><circle r=\"5\" fill=\"#E0A458\" stroke=\"#2A190D\" stroke-width=\"2\"/></g><g class=\"wh w2\" transform=\"translate(160 104)\"><circle r=\"21\" fill=\"none\" stroke=\"#2A190D\" stroke-width=\"6\"/><circle r=\"21\" fill=\"none\" stroke=\"#E0A458\" stroke-width=\"2.6\"/><g stroke=\"#8A5A33\" stroke-width=\"2.6\"><path d=\"M-19 0H19M0 -19V19M-13.4 -13.4L13.4 13.4M13.4 -13.4L-13.4 13.4\"/></g><circle r=\"4\" fill=\"#E0A458\" stroke=\"#2A190D\" stroke-width=\"2\"/></g></svg><div class=\"shadow\"></div>";
+  var plates=[].slice.call(document.querySelectorAll(".offer .plate"));
+  var items=plates.map(function(pl,i){
+    pl.classList.add("wg");
+    var w=document.createElement("div"); w.className="wagon"+(i%2?" rev":""); w.innerHTML=SVG; if(i%2){ var tx=w.querySelector("text"); tx.setAttribute("transform","translate(216 0) scale(-1 1)"); } pl.appendChild(w);
+    return {pl:pl,w:w,rev:i%2===1,cur:0,max:0,lastX:null,odo:0,w1:w.querySelector(".w1"),w2:w.querySelector(".w2"),bob:w.querySelector(".bob"),done:false};
+  });
+  function puff(it,x,pw,ww){
+    var d=document.createElement("div"); d.className="dust";
+    var px=it.rev? x+ww*0.80 : x+ww*0.18;
+    d.style.left=px+"px"; d.style.bottom="2%"; it.pl.appendChild(d);
+    var dx=(it.rev?1:-1)*(18+Math.random()*26), s=1.4+Math.random()*1.6;
+    var a=d.animate([{transform:"translate(0,0) scale(.6)",opacity:.9},{transform:"translate("+dx+"px,"+(-14-Math.random()*16)+"px) scale("+s+")",opacity:0}],{duration:900+Math.random()*500,easing:"cubic-bezier(.2,0,0,1)"});
+    a.onfinish=function(){ d.remove(); };
+  }
+  function frame(){
+    var vh=window.innerHeight;
+    items.forEach(function(it){
+      if(it.done) return;
+      var r=it.pl.getBoundingClientRect(); if(r.bottom<-50||r.top>vh+50) return;
+      var p=(vh*0.98-r.bottom)/(vh*0.42); p=Math.max(0,Math.min(1,p));
+      it.max=Math.max(it.max,p);
+      it.cur+=(it.max-it.cur)*0.11; if(it.max>=1&&it.cur>0.997) it.cur=1;
+      var pw=r.width, ww=it.w.offsetWidth, t=it.cur;
+      var x=it.rev? pw-(pw+ww*1.05)*t : -ww*1.05+(pw+ww*1.05)*t; /* left edge of wagon */
+      var edge, a, b;
+      if(!it.rev){ edge=(x+ww*0.55)/pw*100; it.pl.style.setProperty("--wd","90deg"); }
+      else { edge=(pw-(x+ww*0.45))/pw*100; it.pl.style.setProperty("--wd","270deg"); }
+      if(t>=1) edge=200;
+      it.pl.style.setProperty("--wa",Math.max(0,edge-9).toFixed(2)+"%");
+      it.pl.style.setProperty("--wb",Math.max(0,edge).toFixed(2)+"%");
+      it.pl.style.setProperty("--trail",(t>0&&t<1?0.9:0).toString());
+      var dx=it.lastX===null?0:Math.abs(x-it.lastX); it.lastX=x; it.odo+=dx;
+      var ang=it.odo/27*57.3, bob=Math.sin(it.odo/9)*1.4+Math.sin(it.odo/23)*0.8;
+      it.w1.setAttribute("transform","translate(62 98) rotate("+ang.toFixed(1)+")");
+      it.w2.setAttribute("transform","translate(160 104) rotate("+(ang*27/21).toFixed(1)+")");
+      it.bob.setAttribute("transform","translate(0 "+bob.toFixed(2)+")");
+      it.w.style.transform="translate3d("+x.toFixed(1)+"px,0,0) rotate("+(Math.sin(it.odo/31)*0.8).toFixed(2)+"deg)";
+      if(dx>0.6){ it.dacc=(it.dacc||0)+dx; if(it.dacc>16){ it.dacc=0; puff(it,x,pw,ww); } }
+      if(t>=1){ it.done=true; it.pl.classList.add("done"); it.w.style.display="none"; }
+    });
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
 })();
 </script>
 <script>
