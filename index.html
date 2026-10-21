@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-bfa6R9xsb1VTQv+IDQHQYh/pCZzBFUR55YHbois4dW8=' 'sha256-owpOKlSdgCxcu9RiqLOOyrmP8D6zWfhlz3voVneJMck=' 'sha256-LpizyipeqmIuntED2Si1osr/49kSeQr/Fl6RbHCc64I=' 'sha256-acGJrxw4bOiOzJy1ufwkON4tfE/ci1gVDBDk4P+Zb1c=' 'sha256-i9TChSt8zpVij4gkkrIQQCPsEudr6j0MRwtyNbnTzdY='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; manifest-src 'self'; worker-src 'self'; frame-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-bfa6R9xsb1VTQv+IDQHQYh/pCZzBFUR55YHbois4dW8=' 'sha256-owpOKlSdgCxcu9RiqLOOyrmP8D6zWfhlz3voVneJMck=' 'sha256-LpizyipeqmIuntED2Si1osr/49kSeQr/Fl6RbHCc64I=' 'sha256-NKoPuSEwck1hhQfO6odlmznOSKtbL/fysEJCX/hDo6A=' 'sha256-i9TChSt8zpVij4gkkrIQQCPsEudr6j0MRwtyNbnTzdY='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; manifest-src 'self'; worker-src 'self'; frame-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <link rel="preload" as="image" href="logo.webp?v=21" fetchpriority="high">
@@ -435,9 +435,9 @@ p{margin:0}
 .gal h2 em{color:var(--rust)}
 .gstage{position:relative;height:clamp(330px,40vw,470px);margin-top:26px;perspective:1300px;touch-action:pan-y;cursor:grab;user-select:none}
 .gstage:active{cursor:grabbing}
-.gring{position:absolute;left:50%;top:50%;width:var(--gw);height:calc(var(--gw) * 1.3);margin:calc(var(--gw) * -.65) 0 0 calc(var(--gw) * -.5);transform-style:preserve-3d;will-change:transform}
-.gcard{position:absolute;inset:0;margin:0;overflow:hidden;border-radius:4px;background:#1a2a31;box-shadow:0 18px 40px rgba(14,26,32,.28);clip-path:polygon(16px 0,100% 0,100% calc(100% - 16px),calc(100% - 16px) 100%,0 100%,0 16px);backface-visibility:hidden}
-.gcard img{width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
+.gring{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;will-change:transform}
+.gcard{position:absolute;margin:0;overflow:hidden;border-radius:3px;background:#1a2a31;box-shadow:0 18px 40px rgba(14,26,32,.28);backface-visibility:hidden}
+.gcard img{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none;-webkit-user-drag:none}
 .gctl{display:flex;justify-content:center;align-items:center;gap:22px;margin-top:20px}
 .gbtn{width:46px;height:46px;border:1px solid rgba(20,36,45,.25);background:var(--paper);color:var(--ink);font-size:18px;cursor:pointer;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px)}
 .gbtn:hover{background:var(--brass)}
@@ -683,7 +683,7 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
 <section class="gal" id="gallery" aria-labelledby="gal-h">
   <div class="wrap gal-head"><div class="eyebrow">Moments from the trailer</div><h2 id="gal-h">Raise a glass to <em>good times.</em></h2></div>
   <div class="gstage" id="gstage" aria-roledescription="carousel" aria-label="Photo gallery, drag to spin">
-    <div class="gring" id="gring"><figure class="gcard"><img src="gal-serving.webp?v=22" alt="A Saddle Up bartender handing a drink to a guest at the trailer window" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard"><img src="gal-bouquets.webp?v=22" alt="Three guests holding bouquets they made at the flower bloom bar" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard"><img src="gal-saddle-up-bar.webp?v=22" alt="The Saddle Up trailer bar under string lights" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard"><img src="gal-cups.webp?v=22" alt="Signature cocktails in Saddle Up branded cups with flower garnishes" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard"><img src="gal-decor.webp?v=22" alt="Mr and Mrs sign on a greenery and white rose flower wall" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard"><img src="gal-charcuterie.webp?v=22" alt="Charcuterie box with a thank-you sticker on the lid" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard"><img src="gal-bubbly.webp?v=22" alt="Champagne wall beside a floral backdrop" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard"><img src="gal-hero.webp?v=22" alt="The Saddle Up trailer dressed with greenery and florals" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard"><img src="gal-fancy-ash.webp?v=22" alt="Wood-panel bar with a greenery front set up outdoors" loading="lazy" decoding="async" draggable="false"></figure></div>
+    <div class="gring" id="gring"><figure class="gcard" data-ar="1.4363"><img width="800" height="557" src="gal-serving.webp?v=26" alt="A Saddle Up bartender handing a drink to a guest at the trailer window" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="0.7500"><img width="600" height="800" src="gal-bouquets.webp?v=26" alt="Three guests holding bouquets they made at the flower bloom bar" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="0.7762"><img width="621" height="800" src="gal-saddle-up-bar.webp?v=26" alt="The Saddle Up trailer bar under string lights" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="1.5094"><img width="800" height="530" src="gal-cups.webp?v=26" alt="Signature cocktails in Saddle Up branded cups with flower garnishes" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="0.7975"><img width="638" height="800" src="gal-decor.webp?v=26" alt="Mr and Mrs sign on a greenery and white rose flower wall" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="1.5123"><img width="800" height="529" src="gal-charcuterie.webp?v=26" alt="Charcuterie box with a thank-you sticker on the lid" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="0.7438"><img width="595" height="800" src="gal-bubbly.webp?v=26" alt="Champagne wall beside a floral backdrop" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="1.3333"><img width="800" height="600" src="gal-hero.webp?v=26" alt="The Saddle Up trailer dressed with greenery and florals" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="0.6600"><img width="528" height="800" src="gal-fancy-ash.webp?v=26" alt="Wood-panel bar with a greenery front set up outdoors" loading="lazy" decoding="async" draggable="false"></figure></div>
   </div>
   <div class="gctl"><button type="button" class="gbtn" id="gprev" aria-label="Previous photo">&larr;</button><span class="ghint">Drag to spin</span><button type="button" class="gbtn" id="gnext" aria-label="Next photo">&rarr;</button></div>
 </section>
@@ -1045,24 +1045,35 @@ if(!standalone && /iphone|ipad|ipod/i.test(navigator.userAgent) && !/crios|fxios
   },60);
 })();
 
-/* ---------- 3D photo carousel: slow spin, drag/flick, arrows; runs only on screen ---------- */
+/* ---------- 3D photo carousel: each window sized to its photo (nothing cropped); slow spin, drag/flick, arrows; runs only on screen ---------- */
 (function(){
   var stage=$("#gstage"), ring=$("#gring"); if(!stage) return;
-  var cards=$$(".gcard",ring), n=cards.length, step=360/n, ang=0, vel=0, drag=null, lastX=0, lastT=0, target=null;
-  function layout(){ var w=Math.min(300,Math.max(170,window.innerWidth*(window.innerWidth<700?0.48:0.2))); stage.style.setProperty("--gw",w+"px");
-    var r=Math.round((w/2)/Math.tan(Math.PI/n)+w*0.18); cards.forEach(function(c,i){ c.style.transform="rotateY("+(i*step)+"deg) translateZ("+r+"px)"; }); ring.dataset.r=r; }
+  var cards=$$(".gcard",ring), n=cards.length, ang=0, vel=0, drag=null, lastX=0, lastT=0, target=null, centers=[], R=0;
+  function layout(){
+    var h=Math.round(Math.min(380,Math.max(230,stage.clientHeight*0.82))), gap=Math.round(h*0.09), ws=[], total=0;
+    cards.forEach(function(c){ var w=Math.round(h*parseFloat(c.getAttribute("data-ar")||"0.75")); ws.push(w); total+=w+gap; });
+    R=Math.max(h*0.9,Math.round(total/(2*Math.PI)));
+    var acc=0; centers=[];
+    cards.forEach(function(c,i){ var w=ws[i], a=(acc+w/2)/total*360; acc+=w+gap; centers.push(a);
+      c.style.width=w+"px"; c.style.height=h+"px"; c.style.left=(-w/2)+"px"; c.style.top=(-h/2)+"px";
+      c.style.transform="rotateY("+a.toFixed(2)+"deg) translateZ("+R+"px)"; });
+  }
   layout(); window.addEventListener("resize",layout);
   stage.addEventListener("pointerdown",function(e){ drag=true; target=null; lastX=e.clientX; lastT=performance.now(); try{stage.setPointerCapture(e.pointerId);}catch(_){} });
-  stage.addEventListener("pointermove",function(e){ if(!drag) return; var now=performance.now(), dx=e.clientX-lastX; ang+=dx*0.25; vel=dx*0.25/Math.max(8,now-lastT); lastX=e.clientX; lastT=now; });
+  stage.addEventListener("pointermove",function(e){ if(!drag) return; var now=performance.now(), dx=e.clientX-lastX; ang+=dx*0.22; vel=dx*0.22/Math.max(8,now-lastT); lastX=e.clientX; lastT=now; });
   function up(){ drag=null; } stage.addEventListener("pointerup",up); stage.addEventListener("pointercancel",up);
-  function go(d){ target=(target===null?Math.round(ang/step)*step:target)+d*step; vel=0; }
+  function go(d){ /* snap to the next/previous photo's center */
+    var cur=((-(target===null?ang:target))%360+360)%360, best=0, bd=1e9;
+    centers.forEach(function(c,i){ var dd=Math.abs(((c-cur)%360+540)%360-180); if(dd<bd){bd=dd;best=i;} });
+    var nxt=centers[(best+(d<0?1:-1)+n)%n], base=(target===null?ang:target), diff=((-nxt-base)%360+540)%360-180;
+    if(Math.abs(diff)<1) diff=d<0?-360/n:360/n; target=base+diff; vel=0; }
   $("#gprev").addEventListener("click",function(){ go(1); }); $("#gnext").addEventListener("click",function(){ go(-1); });
   runInView(stage,function(t,dt){
     if(!drag){
       if(target!==null){ ang+=(target-ang)*Math.min(1,dt*0.008); if(Math.abs(target-ang)<0.05){ ang=target; target=null; } }
       else { vel+=(-0.012-vel)*Math.min(1,dt*0.002); ang+=vel*dt; }
     }
-    ring.style.transform="translateZ(-"+ring.dataset.r+"px) rotateY("+ang.toFixed(2)+"deg)";
+    ring.style.transform="translateZ(-"+R+"px) rotateY("+ang.toFixed(2)+"deg)";
   },60);
 })();
 
