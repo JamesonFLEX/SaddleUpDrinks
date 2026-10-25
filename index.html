@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-bfa6R9xsb1VTQv+IDQHQYh/pCZzBFUR55YHbois4dW8=' 'sha256-owpOKlSdgCxcu9RiqLOOyrmP8D6zWfhlz3voVneJMck=' 'sha256-LpizyipeqmIuntED2Si1osr/49kSeQr/Fl6RbHCc64I=' 'sha256-CecnUP3yYkK6GZru5mFrlJm1tNDdPqlVnhT62JgbXI4=' 'sha256-i9TChSt8zpVij4gkkrIQQCPsEudr6j0MRwtyNbnTzdY='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; manifest-src 'self'; worker-src 'self'; frame-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-bfa6R9xsb1VTQv+IDQHQYh/pCZzBFUR55YHbois4dW8=' 'sha256-owpOKlSdgCxcu9RiqLOOyrmP8D6zWfhlz3voVneJMck=' 'sha256-lhTxtD+yLTUYE1s7Peln4N7BfMN//uu2O4SLzrjE9Wc=' 'sha256-CecnUP3yYkK6GZru5mFrlJm1tNDdPqlVnhT62JgbXI4=' 'sha256-i9TChSt8zpVij4gkkrIQQCPsEudr6j0MRwtyNbnTzdY='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; manifest-src 'self'; worker-src 'self'; frame-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<link rel="preload" as="image" href="logo.webp?v=21" fetchpriority="high">
-<link rel="preload" as="image" href="cow-dark.webp?v=21">
+<link rel="preload" as="image" href="logo.webp?v=29" fetchpriority="high">
+<link rel="preload" as="image" href="cow-dark.webp?v=29">
 <link rel="canonical" href="https://saddleupdrinks.com/">
 <meta name="theme-color" content="#0E1A20">
 <meta name="mobile-web-app-capable" content="yes">
@@ -183,8 +183,8 @@ p{margin:0}
 .bg-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
 .bg-canvas.cow{inset:-22%;width:144%;height:144%;background-repeat:no-repeat;background-position:center;background-size:cover;opacity:0;transition:opacity 1s ease;animation:cowdrift 46s ease-in-out infinite alternate;animation-play-state:paused}
 .bg-canvas.cow.on{opacity:var(--cow-o,.13);animation-play-state:running;will-change:transform}
-.cow-d.lit{background-image:url("cow-dark.webp?v=21")}
-.cow-l.lit{background-image:url("cow-light.webp?v=21")}
+.cow-d.lit{background-image:url("cow-dark.webp?v=29")}
+.cow-l.lit{background-image:url("cow-light.webp?v=29")}
 #hero-contours{--cow-o:.15}#book-contours{--cow-o:.11}#sign-contours{--cow-o:.11}
 #book-contours.cow{animation-duration:58s;animation-direction:alternate-reverse}
 #sign-contours.cow{animation-duration:52s}
@@ -457,6 +457,44 @@ p{margin:0}
 .glb-nav:hover,.glb-x:hover{background:var(--brass);color:var(--navy)}
 .glb-count{position:absolute;bottom:max(16px,env(safe-area-inset-bottom));left:0;right:0;text-align:center;color:rgba(255,255,255,.6);font-size:12px;letter-spacing:.24em}
 @media (max-width:639px){.glb-nav{top:auto;bottom:max(14px,env(safe-area-inset-bottom));margin:0}.glb-prev{left:16px}.glb-next{right:16px}.glb-fig img{max-width:94vw;max-height:72vh}}
+
+/* ---------- restructure: 3 services, setups, make-it-yours menu, grouped form ---------- */
+.pillars{grid-template-columns:repeat(3,minmax(0,1fr))}
+.panels{grid-template-columns:1fr!important}
+.setups,.mky{margin-top:90px}
+.sub-h{font-family:var(--f-display);font-weight:500;font-size:clamp(34px,3.6vw,52px);line-height:1.05;margin:12px 0 26px;color:var(--on-dark)}
+.sub-h em{color:var(--brass)}
+.setup-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.setup{margin:0;background:rgba(255,255,255,.04);border:1px solid rgba(224,164,88,.2)}
+.setup img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.setup figcaption{padding:16px 18px 18px;color:var(--on-dark-muted);font-size:15px;line-height:1.6}
+.setup figcaption b{display:block;font-family:var(--f-display);font-weight:500;font-size:24px;color:var(--on-dark);margin-bottom:4px}
+.mky-intro{color:var(--on-dark-muted);font-size:17px;max-width:40em;margin:-8px 0 26px}
+.mgroup{border-top:1px solid rgba(224,164,88,.25)}
+.mgroup:last-of-type{border-bottom:1px solid rgba(224,164,88,.25)}
+.mgroup summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:20px 0;font-family:var(--f-display);font-size:clamp(24px,2.4vw,30px);color:var(--on-dark)}
+.mgroup summary::-webkit-details-marker{display:none}
+.mgroup summary::after{content:"+";font-family:var(--f-body);font-size:24px;color:var(--brass);margin-left:12px}
+.mgroup[open] summary::after{content:"−"}
+.mcount{margin-left:auto;font-family:var(--f-body);font-size:12px;letter-spacing:.2em;color:var(--on-dark-muted)}
+.mbody{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px;padding:4px 0 28px}
+.mthumbs{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;align-content:start}
+.mthumbs img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.mlist{list-style:none;padding:0;margin:0;display:grid;gap:18px}
+.mi-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.mi-top b{font-weight:500;font-size:17px;color:var(--on-dark)}
+.tag{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border:1px solid rgba(224,164,88,.55);color:var(--brass-hi)}
+.mlist p{margin:4px 0 0;color:var(--on-dark-muted);font-size:15px;line-height:1.6}
+.mky-cta{margin-top:30px}
+.fgroup{margin-top:24px}
+.flabel{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.flabel span{letter-spacing:.06em;text-transform:none;opacity:.7;margin-left:6px}
+.asub{font-size:13px;color:var(--ink);margin:14px 0 8px;font-weight:500}
+.chips3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.chips-sm{grid-template-columns:repeat(2,minmax(0,1fr))}
+.chip.sm{min-height:44px;font-size:14px;padding:9px 14px}
+.chip[hidden],.fgroup[hidden]{display:none!important}
+@media (max-width:767px){.pillars{grid-template-columns:1fr}.setup-grid,.mbody{grid-template-columns:1fr}.mthumbs{grid-template-columns:repeat(3,minmax(0,1fr))}.chips3{grid-template-columns:1fr 1fr}}
 /* no-copy: block text selection + long-press menu; form fields stay usable */
 html,body{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-touch-callout:none}
 img{-webkit-user-drag:none;user-drag:none}
@@ -471,14 +509,14 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
 <div id="saddle-up">
 
 <div class="veil" id="veil" aria-hidden="true">
-  <div class="mark"><img decoding="async" class="dim" src="logo.webp?v=21" alt=""><img decoding="async" class="fill" id="veil-fill" src="logo.webp?v=21" alt=""></div>
+  <div class="mark"><img decoding="async" class="dim" src="logo.webp?v=29" alt=""><img decoding="async" class="fill" id="veil-fill" src="logo.webp?v=29" alt=""></div>
   <div class="lbl" id="veil-lbl">Saddling up · 0%</div>
   <div class="meter"><i id="veil-meter"></i></div>
 </div>
 
 <header class="mast">
   <div class="mast-in">
-    <a class="brand" href="#top" aria-label="Saddle Up Drinks, back to top"><span class="badge"><img decoding="async" src="logo.webp?v=21" alt=""></span><b>Saddle Up Drinks</b></a>
+    <a class="brand" href="#top" aria-label="Saddle Up Drinks, back to top"><span class="badge"><img decoding="async" src="logo.webp?v=29" alt=""></span><b>Saddle Up Drinks</b></a>
     <nav class="links" aria-label="Sections"><a href="#difference">Why us</a><a href="#offerings">Offerings</a><a href="#book">Plan your bar</a></nav>
     <div class="mast-r">
       <div class="socials"><a class="soc" data-social="instagram" href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a><a class="soc" data-social="facebook" href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21h3z"/></svg></a></div>
@@ -489,7 +527,7 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
 </header>
 <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
   <div class="menu-in">
-    <div class="menu-top"><span class="badge"><img decoding="async" src="logo.webp?v=21" alt=""></span><button class="burger open" id="menu-close" type="button" aria-label="Close menu"><i></i><i></i><i></i></button></div>
+    <div class="menu-top"><span class="badge"><img decoding="async" src="logo.webp?v=29" alt=""></span><button class="burger open" id="menu-close" type="button" aria-label="Close menu"><i></i><i></i><i></i></button></div>
     <nav class="menu-links" aria-label="Quick links">
       <a href="#top" data-close><small>Home</small>The bar rides in</a>
       <a href="#difference" data-close><small>Why us</small>The Saddle Up difference</a>
@@ -515,18 +553,17 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
           <div>
             <div class="eyebrow" data-reveal="words" data-on="load" data-delay="100">Luxury mobile bar · Greater Sacramento</div>
             <h1 data-reveal="letters" data-on="load" data-delay="250" data-stagger="28"><span class="ln">The bar</span><span class="ln"><em>rides in</em></span><span class="ln">for your event.</span></h1>
-            <p class="lede" data-reveal="words" data-on="load" data-delay="900" data-stagger="14">Saddle Up Drinks is a family owned and operated horse trailer that has been converted to a full functioning luxury bar serving the greater Sacramento area. A unique bar experience unlike any other.</p>
-            <div class="actions"><a class="cta lg" href="#book">Plan your bar <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="ghost" href="#offerings">See offerings</a></div>
+            <p class="lede" data-reveal="words" data-on="load" data-delay="900" data-stagger="14">A family-owned luxury mobile bar serving Greater Sacramento. From signature cocktails to coffee and matcha, we bring thoughtful details and polished service to weddings, corporate events, and private celebrations.</p>
+            <div class="actions"><a class="cta lg" href="#book">Check your date <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="ghost" href="#offerings">Explore our services</a></div>
           </div>
           <div class="coinbox">
             <div class="coin" id="coin">
               <div class="coin-shadow" id="coin-shadow"></div>
               
-              <div class="css3d" id="coin-css" role="img" aria-label="Saddle Up Drinks logo, drag to spin"><img class="l" src="logo.webp?v=21" alt="" aria-hidden="true" style="transform:translateZ(6px)"><img class="l" src="logo.webp?v=21" alt="" aria-hidden="true" style="transform:translateZ(4px)"><img class="l" src="logo.webp?v=21" alt="" aria-hidden="true" style="transform:translateZ(2px)"><img class="l" src="logo.webp?v=21" alt="" aria-hidden="true" style="transform:translateZ(0px)"><img class="l" src="logo.webp?v=21" alt="" aria-hidden="true" style="transform:translateZ(-2px)"><img class="l" src="logo.webp?v=21" alt="" aria-hidden="true" style="transform:translateZ(-4px)"><img class="l" src="logo.webp?v=21" alt="" aria-hidden="true" style="transform:translateZ(-6px)"><img class="f" src="logo.webp?v=21" alt="Saddle Up Drinks logo" fetchpriority="high"><img class="b" src="logo.webp?v=21" alt=""></div>
+              <div class="css3d" id="coin-css" role="img" aria-label="Saddle Up Drinks logo, drag to spin"><img class="l" src="logo.webp?v=29" alt="" aria-hidden="true" style="transform:translateZ(6px)"><img class="l" src="logo.webp?v=29" alt="" aria-hidden="true" style="transform:translateZ(4px)"><img class="l" src="logo.webp?v=29" alt="" aria-hidden="true" style="transform:translateZ(2px)"><img class="l" src="logo.webp?v=29" alt="" aria-hidden="true" style="transform:translateZ(0px)"><img class="l" src="logo.webp?v=29" alt="" aria-hidden="true" style="transform:translateZ(-2px)"><img class="l" src="logo.webp?v=29" alt="" aria-hidden="true" style="transform:translateZ(-4px)"><img class="l" src="logo.webp?v=29" alt="" aria-hidden="true" style="transform:translateZ(-6px)"><img class="f" src="logo.webp?v=29" alt="Saddle Up Drinks logo" fetchpriority="high"><img class="b" src="logo.webp?v=29" alt=""></div>
             </div>
             <div class="panels">
-              <div class="bracket p-dark"><span class="eyebrow">Licensed &amp; insured</span>More than a beautiful bar. Our ABC catering liquor license allows us to supply the alcohol, while our insured team brings custom menus, thoughtful details, and polished service tailored to your celebration.</div>
-              <a class="bracket p-line" href="#book"><span class="eyebrow">Plan your bar</span>Start with your perfect bar, then make the celebration yours. Explore trailer and portable bars, coffee and matcha, bubbly and frozen drinks, or a self-serve canned drink station. Add a flower bloom bar, late-night ramen, charcuterie cups, and custom styling tailored to your event.<span class="go">Tell us the date, we&#8217;ll bring the bar. &rarr;</span></a>
+              <a class="bracket p-line" href="#book"><span class="eyebrow">Plan your bar</span>Choose your bar experience, add the finishing touches, and tell us your date.<span class="go">Tell us the date, we&#8217;ll bring the bar. &rarr;</span></a>
             </div>
           </div>
         </div>
@@ -545,16 +582,15 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
         
         <div class="wrap">
           <div class="eyebrow">The Saddle Up difference</div>
-          <h2 id="diff-h">A complete bar experience. <em>One less thing to worry about.</em></h2>
+          <h2 id="diff-h">More than a <em>beautiful bar.</em></h2>
           <div class="copy">
-            <p>Our <b>ABC catering license</b> allows us to provide the alcohol for your event and order specific selections from leading alcohol and spirits distributors, giving you a more seamless experience from planning to the final pour.</p>
-            <p>We&#8217;re flexible and can work with you to bring your event vision to life&#8212;from weddings and private celebrations to morning meetings, corporate team events, grand openings, and so much more.</p>
+            <p>Our <b>ABC catering liquor license</b> allows us to supply the alcohol for a complete bar experience. Prefer to provide your own? Our mobile bartending services bring the same thoughtful hospitality to your celebration.</p>
           </div>
           <div class="pillars">
-            <article class="pillar"><div class="ph"><img decoding="async" src="why-licensed.webp?v=21" alt="Bartenders serving guests from the trailer" loading="lazy"></div><div class="tx"><h3>Licensed and Insured</h3><p>General liability insurance, an ABC catering license, and RBS-certified bartenders.</p></div></article>
-            <article class="pillar"><div class="ph"><img decoding="async" src="why-alcohol.webp?v=21" alt="Shelves of craft beer, wine and liquor inside the trailer" loading="lazy"></div><div class="tx"><h3>Your drink choice, delivered.</h3><p>Craft beers, wine, champagne, liquor, and spirits, supplied under our liquor license and event-based permit.</p></div></article>
-            <article class="pillar"><div class="ph"><img decoding="async" src="why-seamless.webp?v=21" alt="Guests at the Saddle Up trailer at an outdoor event" loading="lazy"></div><div class="tx"><h3>Seamless and Stress-Free</h3><p>Let us make your event even more special without the added hassle. We handle everything from setup to cleanup.</p></div></article>
-            <article class="pillar"><div class="ph"><img decoding="async" src="why-inclusive.webp?v=21" alt="Custom bar menu sign on the counter" loading="lazy"></div><div class="tx"><h3>All-Inclusive Experience</h3><p>A trailer or mobile bar, experienced and certified bartenders, barware, ice, garnishes, cups, custom drinks, branded cups, and beautiful photo opportunities with our luxury converted horse trailer or mobile bar setups.</p></div></article>
+            <article class="pillar"><div class="ph"><img decoding="async" src="why-licensed.webp?v=29" alt="Bartenders serving guests from the trailer" loading="lazy"></div><div class="tx"><h3>Licensed &amp; Insured</h3><p>General liability insurance, an ABC catering license, and RBS-certified bartenders.</p></div></article>
+            <article class="pillar"><div class="ph"><img decoding="async" src="why-alcohol.webp?v=29" alt="Shelves of craft beer, wine and liquor inside the trailer" loading="lazy"></div><div class="tx"><h3>Made for Your Occasion</h3><p>Personalized drink menus and thoughtful details tailored to your guests and celebration.</p></div></article>
+            <article class="pillar"><div class="ph"><img decoding="async" src="why-seamless.webp?v=29" alt="Guests at the Saddle Up trailer at an outdoor event" loading="lazy"></div><div class="tx"><h3>Seamless Service</h3><p>From setup to cleanup, we take care of the bar so you can enjoy your event.</p></div></article>
+            
           </div>
         </div>
       </section>
@@ -566,23 +602,30 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
     <div class="wrap">
       <div class="head">
         <div><div class="eyebrow">Luxury mobile bar</div><h2 id="off-h" style="margin-top:16px" data-reveal="words" data-stagger="70">Our unique <em>offerings.</em></h2></div>
-        <p>It&#8217;s the little details that make guests feel truly welcomed&#8212;a favorite drink, a thoughtful bite, a bouquet to take home. That&#8217;s why we offer more than drinks. From our signature trailer to portable bars and inviting self-serve stations, we bring together flexible setups and personal touches to complement your space and occasion. Every offering is an opportunity to make your guests feel cared for and give them something lovely to remember.<span class="from">Packages starting at $600.</span></p>
+        <p>It&#8217;s the little details that make guests feel truly welcomed. Choose your bar experience, then make the celebration uniquely yours.<span class="from">Packages starting at $600.</span></p>
       </div>
       <div class="rows" id="rows">
         <div class="rail" aria-hidden="true"><div class="thread" id="thread"></div><div class="marker" id="marker"></div></div>
-        <article class="row"><div class="plate"><img decoding="async" src="off-full-bar.webp?v=21" alt="Inside the Saddle Up trailer bar with a signature drinks sign, dried citrus and a pampas arrangement" loading="lazy" style="object-position:center"></div><div class="rtx"><div class="spec">Alcohol included</div><h3>The Signature Full Bar</h3><p>The full bar experience, brought to you. Beer, wine, champagne, and three signature drinks, served by two bartenders with a custom-designed menu and every detail handled from setup to cleanup.</p><ul><li>Alcohol included</li><li>Two bartenders</li><li>Custom menu, ice, garnishes &amp; disposable glassware</li><li>Full setup &amp; cleanup</li></ul><a class="xadd" href="#book" data-add="The Signature Full Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">&rarr;</span></a></div></article>
-<article class="row"><div class="plate"><img decoding="async" src="off-portable-bar.webp?v=21" alt="Two Saddle Up bartenders smiling behind a wooden portable bar with a tray of flowers" loading="lazy" style="object-position:center 30%"></div><div class="rtx"><div class="spec">When space is limited</div><h3>Bartenders &amp; Portable Bar</h3><p>A beautifully styled bar and a team ready to pour. Enjoy service from two bartenders with fresh juices, infused syrups, garnishes, and ice&#8212;without needing space for the trailer.</p><ul><li>Two bartenders</li><li>Fresh juices, infused syrups, garnishes &amp; ice</li><li>Cups, straws, napkins &amp; a custom menu</li></ul><a class="xadd" href="#book" data-add="Bartenders & Portable Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">&rarr;</span></a></div></article>
-<article class="row"><div class="plate"><img decoding="async" src="off-bubbly.webp?v=21" alt="Greenery champagne wall lined with glasses under a &#8220;But first champagne&#8221; neon sign" loading="lazy" style="object-position:center 35%"></div><div class="rtx"><div class="spec">A toast-worthy addition</div><h3>The Bubbly Bar</h3><p>Make the toast part of the experience. Our champagne wall comes with glasses, four juices, fruit, garnish, and a custom-designed menu.</p><a class="xadd" href="#book" data-add="The Bubbly Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">&rarr;</span></a></div></article>
-<article class="row"><div class="plate"><img decoding="async" src="off-trailer.webp?v=21" alt="The white Saddle Up horse-trailer bar with greenery, florals and a bar menu easel" loading="lazy" style="object-position:center"></div><div class="rtx"><div class="spec">Our signature trailer</div><h3>The Saddle Up Trailer Bar</h3><p>Our converted horse trailer brings the bar&#8212;and the atmosphere&#8212;to your celebration. Includes the Saddle Up trailer and two bartenders for bartending service.</p><ul><li>Saddle Up bar trailer</li><li>Two bartenders</li><li>Custom-designed menu</li><li>Bartending service; alcohol is separate</li></ul><a class="xadd" href="#book" data-add="The Saddle Up Trailer Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">&rarr;</span></a></div></article>
-<article class="row"><div class="plate"><img decoding="async" src="off-frozen.webp?v=21" alt="Three glass drink dispensers with clear cups on a wood and metal bar under a fringed white umbrella" loading="lazy" style="object-position:center 60%"></div><div class="rtx"><div class="spec">Alcohol included</div><h3>The Frozen Drink Bar</h3><p>Something cool for your celebration. Our frozen drink bar includes alcohol, a garnish tray, a custom cocktail menu, and cups, with delivery, setup, and breakdown included.</p><a class="xadd" href="#book" data-add="The Frozen Drink Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">&rarr;</span></a></div></article>
-<article class="row"><div class="plate"><img decoding="async" src="off-coffee.webp?v=21" alt="The Saddle Up trailer set up as a coffee bar with menus and fall decor" loading="lazy" style="object-position:center"></div><div class="rtx"><div class="spec">On its own or added on</div><h3>The Gourmet Coffee &amp; Matcha Bar</h3><p>Coffee and matcha belong at every gathering. Book a coffee and matcha bar on its own or add it to any package&#8212;for morning meetings, celebrations, and a little pick-me-up along the way.</p><ul><li>Available as a standalone booking</li><li>Add to any package</li><li>Ask about custom cup stickers and event signage</li></ul><a class="xadd" href="#book" data-add="The Gourmet Coffee & Matcha Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">&rarr;</span></a></div></article>
-<article class="row"><div class="plate"><img decoding="async" src="off-decor.webp?v=21" alt="Saddle Up Drinks sign hanging from the trailer with pampas styling and a portable bar behind" loading="lazy" style="object-position:center 30%"></div><div class="rtx"><div class="spec">Made to match your event</div><h3>Custom Decor &amp; Styling</h3><p>Bring the whole look together with custom decor and styling tailored to your event. Add the finishing touches that make the bar feel like part of your celebration.</p><a class="xadd" href="#book" data-add="Custom Decor & Styling"><span class="xadd-l">Add to my event</span><span aria-hidden="true">&rarr;</span></a></div></article>
-<article class="row"><div class="plate"><img decoding="async" src="off-small-bar.webp?v=21" alt="Small slatted wood portable bar with an &#8220;Open Bar&#8221; runner and bar signs" loading="lazy" style="object-position:center 60%"></div><div class="rtx"><div class="spec">A flexible setup option</div><h3>Small Portable Bar</h3><p>A smaller bar setup with plenty of personality. Ask about our small portable bar for your venue, event layout, or an additional serving area.</p><a class="xadd" href="#book" data-add="Small Portable Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">&rarr;</span></a></div></article>
-<article class="row"><div class="plate"><img decoding="async" src="off-bloom.webp?v=21" alt="Flower bloom bar table surrounded by buckets of fresh flowers" loading="lazy" style="object-position:center"></div><div class="rtx"><div class="spec">Make your own bouquet</div><h3>Flower Bloom Bar</h3><p>A little creativity, a lot of color, and something lovely to take home. Guests create their own bouquets at our flower bloom bar. Add it to any package.</p><a class="xadd" href="#book" data-add="Flower Bloom Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">&rarr;</span></a></div></article>
-<article class="row"><div class="plate"><img decoding="async" src="off-canned.webp?v=21" alt="Baskets of Saddle Up canned coffee and matcha drinks on ice beside a Coffee and Matcha Bar sign" loading="lazy" style="object-position:center bottom"></div><div class="rtx"><div class="spec">Grab, sip &amp; enjoy</div><h3>Self-Serve Canned Drinks Station</h3><p>An easy, beautifully presented drink station guests can enjoy at their own pace. Choose a self-serve canned-drink package and let us help you plan the selection for your event.</p><a class="xadd" href="#book" data-add="Self-Serve Canned Drinks Station"><span class="xadd-l">Add to my event</span><span aria-hidden="true">&rarr;</span></a></div></article>
-<article class="row"><div class="plate"><img decoding="async" src="off-ramen.webp?v=21" alt="Self-serve noodle cup bar with toppings, sauces and a hot water dispenser" loading="lazy" style="object-position:center 55%"></div><div class="rtx"><div class="spec">A late-night favorite</div><h3>Late Night Bites: Ramen Bar</h3><p>Keep the celebration going with a warm, satisfying bite. Our self-serve ramen bar lets guests grab a noodle cup and make it their own with toppings and sauces.</p><a class="xadd" href="#book" data-add="Late Night Bites: Ramen Bar"><span class="xadd-l">Add to my event</span><span aria-hidden="true">&rarr;</span></a></div></article>
-<article class="row"><div class="plate"><img decoding="async" src="off-charcuterie.webp?v=21" alt="Individual charcuterie box with cheese, salami, fruit and nuts" loading="lazy" style="object-position:center"></div><div class="rtx"><div class="spec">A little bite between sips</div><h3>Charcuterie Cups</h3><p>Add individual charcuterie cups to your event for an easy bite between drinks, conversations, and celebrations. Ask us about adding them to your package.</p><a class="xadd" href="#book" data-add="Charcuterie Cups"><span class="xadd-l">Add to my event</span><span aria-hidden="true">&rarr;</span></a></div></article>
-
+        <article class="row"><div class="plate"><img decoding="async" src="off-full-bar.webp?v=29" alt="Inside the Saddle Up trailer bar with a signature drinks sign, dried citrus and a pampas arrangement" loading="lazy" style="object-position:center"></div><div class="rtx"><div class="spec">Alcohol included</div><h3>Full-Service Bar Experience</h3><p>The full bar experience, brought to you. Saddle Up provides beer, wine, champagne, and three signature drinks, served by two bartenders with a custom-designed menu and every detail handled from setup to cleanup.</p><ul><li>Alcohol included</li><li>Two bartenders</li><li>Custom menu, ice, garnishes &amp; disposable drinkware</li></ul><a class="xadd" href="#book" data-svc="Full-Service Bar Experience"><span class="xadd-l">Plan your bar</span><span aria-hidden="true">&rarr;</span></a></div></article>
+<article class="row"><div class="plate"><img decoding="async" src="off-portable-bar.webp?v=29" alt="Two Saddle Up bartenders smiling behind a wooden portable bar with a tray of flowers" loading="lazy" style="object-position:center 30%"></div><div class="rtx"><div class="spec">You provide the alcohol</div><h3>Mobile Bartending Services</h3><p>A beautifully styled bar and a team ready to pour. You provide your preferred alcohol, while our two bartenders bring fresh juices, infused syrups, garnishes, ice, and a custom menu for your celebration.</p><ul><li>Two bartenders</li><li>Mixers, garnishes &amp; ice</li><li>Cups, straws, napkins &amp; custom menu</li></ul><a class="xadd" href="#book" data-svc="Mobile Bartending Services"><span class="xadd-l">Plan your bar</span><span aria-hidden="true">&rarr;</span></a></div></article>
+<article class="row"><div class="plate"><img decoding="async" src="off-coffee.webp?v=29" alt="The Saddle Up trailer set up as a coffee bar with menus and fall decor" loading="lazy" style="object-position:center"></div><div class="rtx"><div class="spec">Book on its own or add to your event</div><h3>Gourmet Coffee &amp; Matcha Bar</h3><p>Coffee and matcha belong at every gathering. Bring customizable flavors and a beautifully styled bar to morning meetings, celebrations, or a little pick-me-up along the way.</p><ul><li>Customizable flavors</li><li>Standalone bookings available</li><li>Branded cups &amp; signage available</li></ul><a class="xadd" href="#book" data-svc="Gourmet Coffee & Matcha Bar"><span class="xadd-l">Plan your coffee &amp; matcha bar</span><span aria-hidden="true">&rarr;</span></a></div></article>
+      </div>
+<div class="setups">
+        <div class="eyebrow">Bar setup choices</div>
+        <h3 class="sub-h">Your bar. <em>Your setting.</em></h3>
+        <div class="setup-grid">
+          <figure class="setup"><img src="off-trailer.webp?v=29" alt="The white Saddle Up horse-trailer bar with greenery and florals" loading="lazy" decoding="async"><figcaption><b>The Saddle Up Trailer</b>Our signature converted horse trailer brings the bar and the atmosphere to your celebration.</figcaption></figure>
+          <figure class="setup"><img src="off-small-bar.webp?v=29" alt="Small slatted wood portable bar with an Open Bar runner" loading="lazy" decoding="async"><figcaption><b>Portable Bar</b>A beautifully styled, flexible setup for intimate spaces, indoor venues, or an additional serving area.</figcaption></figure>
+        </div>
+      </div>
+<div class="mky" id="make-it-yours">
+        <div class="eyebrow">Make it yours</div>
+        <h3 class="sub-h">The finishing <em>touches.</em></h3>
+        <p class="mky-intro">A favorite drink, a thoughtful bite, a bouquet to take home. Add the finishing touches that make your celebration yours.</p>
+        <details class="mgroup" open><summary><span>Additional Drink Experiences</span><span class="mcount">3</span></summary><div class="mbody"><div class="mthumbs"><img src="off-bubbly.webp?v=29" alt="Champagne wall with glasses under a neon sign" loading="lazy" decoding="async"><img src="off-frozen.webp?v=29" alt="Drink dispensers under a fringed white umbrella" loading="lazy" decoding="async"><img src="off-canned.webp?v=29" alt="Baskets of Saddle Up canned coffee and matcha drinks" loading="lazy" decoding="async"></div><ul class="mlist"><li><div class="mi-top"><b>Bubbly Bar</b></div><p>Make the toast part of the experience with our champagne wall, glasses, four juices, fruit, garnishes, and a custom menu.</p></li><li><div class="mi-top"><b>Frozen Drink Bar</b><span class="tag">Alcohol included</span></div><p>Something cool for your celebration, complete with a custom cocktail menu, garnish tray, cups, delivery, setup, and breakdown.</p></li><li><div class="mi-top"><b>Self-Serve Canned Drinks Station</b><span class="tag">Self-serve</span></div><p>An easy, beautifully presented drink station guests can enjoy at their own pace, with a selection planned around your event.</p></li></ul></div></details>
+        <details class="mgroup"><summary><span>Bites &amp; Guest Experiences</span><span class="mcount">3</span></summary><div class="mbody"><div class="mthumbs"><img src="off-bloom.webp?v=29" alt="Flower bloom bar table surrounded by buckets of fresh flowers" loading="lazy" decoding="async"><img src="off-ramen.webp?v=29" alt="Self-serve noodle cup bar with toppings and sauces" loading="lazy" decoding="async"><img src="off-charcuterie.webp?v=29" alt="Individual charcuterie box with cheese, salami, fruit and nuts" loading="lazy" decoding="async"></div><ul class="mlist"><li><div class="mi-top"><b>Flower Bloom Bar</b></div><p>A little creativity, a lot of color, and something lovely to take home. Guests create their own bouquets at our flower bloom bar.</p></li><li><div class="mi-top"><b>Late-Night Ramen Bar</b><span class="tag">Self-serve</span></div><p>Keep the celebration going with a warm, satisfying bite. Guests make their own noodle cups with toppings and sauces at this self-serve station.</p></li><li><div class="mi-top"><b>Charcuterie Cups</b></div><p>Individual charcuterie cups for an easy bite between drinks, conversations, and celebrations.</p></li></ul></div></details>
+        <details class="mgroup"><summary><span>Styling &amp; Personalization</span><span class="mcount">2</span></summary><div class="mbody"><div class="mthumbs"><img src="off-decor.webp?v=29" alt="Saddle Up Drinks sign hanging from the trailer with pampas styling" loading="lazy" decoding="async"></div><ul class="mlist"><li><div class="mi-top"><b>Custom Decor &amp; Styling</b></div><p>Bring the whole look together with finishing touches tailored to your celebration.</p></li><li><div class="mi-top"><b>Branded Cups &amp; Event Signage</b></div><p>Personalize the experience with custom cup stickers and signage for your celebration or corporate event.</p></li></ul></div></details>
+        <div class="mky-cta"><a class="cta" href="#book">Customize your event <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       </div>
     </div>
   </section>
@@ -596,7 +639,7 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
       <div class="eyebrow">Plan your bar</div>
       <h2 id="book-h">Tell us the date, <em>we&#8217;ll bring the bar.</em></h2>
       <p>Four quick steps and your request lands with the Saddle Up family. We'll come back with a custom menu and quote for your event.</p>
-      <div class="bplate"><img decoding="async" src="book-side.webp?v=21" alt="Wine-barrel cocktail tables under umbrellas with the Saddle Up trailer bar behind" loading="lazy"></div><div class="faq"><details><summary>How much does a booking cost?</summary><p>Packages start at $600, with a $600 minimum booking. Your quote will reflect your selected services, event details, and any add-ons.</p></details><details><summary>How do I reserve my date?</summary><p>A $200 deposit holds your date. The remaining balance is due one week before your event.</p></details><details><summary>How far in advance should I book?</summary><p>There is no fixed booking deadline. If your date is available, we welcome last-minute requests too.</p></details><details><summary>Service area</summary><p>We serve Sacramento and surrounding areas. Travel within 50 miles is included. For events farther away, we provide a travel quote based on distance.</p></details><details><summary>Can I book just the coffee and matcha bar?</summary><p>Yes. Book the Gourmet Coffee Bar on its own or add it to any package.</p></details><details><summary>What if the trailer does not fit?</summary><p>We can bring a portable bar setup instead. The trailer needs about 17 feet of space; share your venue details so we can plan the setup.</p></details><details><summary>What about power and rain?</summary><p>Share your venue&#8217;s power details when you inquire so we can confirm the setup. A generator is available for an additional $75. The trailer is enclosed, and we will discuss the event layout and weather plan with you.</p></details><details><summary>Can I arrange a tasting?</summary><p>Yes, tastings are available. Ask us about options when planning your event.</p></details><details><summary>Can you help with a corporate event?</summary><p>Yes. Ask about coffee, matcha, and bar service, branded cups, insurance certificates, and formal invoices.</p></details></div>
+      <div class="bplate"><img decoding="async" src="book-side.webp?v=29" alt="Wine-barrel cocktail tables under umbrellas with the Saddle Up trailer bar behind" loading="lazy"></div><div class="faq"><details><summary>Who provides the alcohol?</summary><p>With our Full-Service Bar Experience, Saddle Up provides the alcohol. With Mobile Bartending Services, you purchase and provide the alcohol, and our team handles the bar service.</p></details><details><summary>How much does a booking cost?</summary><p>Packages start at $600, with a $600 minimum booking. Your quote will reflect your selected services, event details, and any add-ons.</p></details><details><summary>How do I reserve my date?</summary><p>A $200 deposit holds your date. The remaining balance is due one week before your event.</p></details><details><summary>How far in advance should I book?</summary><p>There is no fixed booking deadline. If your date is available, we welcome last-minute requests too.</p></details><details><summary>Service area</summary><p>We serve Sacramento and surrounding areas. Travel within 50 miles is included. For events farther away, we provide a travel quote based on distance.</p></details><details><summary>Can I book just the coffee and matcha bar?</summary><p>Yes. Book the Gourmet Coffee Bar on its own or add it to any package.</p></details><details><summary>What if the trailer does not fit?</summary><p>We can bring a portable bar setup instead. The trailer needs about 17 feet of space; share your venue details so we can plan the setup.</p></details><details><summary>What about power and rain?</summary><p>Share your venue&#8217;s power details when you inquire so we can confirm the setup. A generator is available for an additional $75. The trailer is enclosed, and we will discuss the event layout and weather plan with you.</p></details><details><summary>Can I arrange a tasting?</summary><p>Yes, tastings are available. Ask us about options when planning your event.</p></details><details><summary>Can you help with a corporate event?</summary><p>Yes. Ask about coffee, matcha, and bar service, branded cups, insurance certificates, and formal invoices.</p></details></div>
       <div class="phone"><span>Rather talk now?</span><a href="tel:9162247557">916-224-7557</a></div>
     </div>
     <div class="fun"><div class="panel-wrap"><div class="panel">
@@ -622,21 +665,34 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
 
 <div class="screen" data-s="2" hidden>
 <h3 class="q">Choose your experience</h3>
-<p class="qs">Select one or more — mix and match is welcome.</p>
+<p class="qs">Pick your main service, then your setup and any extras.</p>
 <div class="chips">
-<button type="button" class="chip pk" data-group="pkg" data-val="The Signature Full Bar" aria-pressed="false"><span style="display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 10px">The Signature Full Bar<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></span><small>Alcohol included</small></button>
-<button type="button" class="chip pk" data-group="pkg" data-val="Bartenders & Portable Bar" aria-pressed="false"><span style="display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 10px">Bartenders &amp; Portable Bar<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></span><small>When space is limited</small></button>
-<button type="button" class="chip pk" data-group="pkg" data-val="The Bubbly Bar" aria-pressed="false"><span style="display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 10px">The Bubbly Bar<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></span><small>A toast-worthy addition</small></button>
-<button type="button" class="chip pk" data-group="pkg" data-val="The Saddle Up Trailer Bar" aria-pressed="false"><span style="display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 10px">The Saddle Up Trailer Bar<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></span><small>Our signature trailer</small></button>
-<button type="button" class="chip pk" data-group="pkg" data-val="The Frozen Drink Bar" aria-pressed="false"><span style="display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 10px">The Frozen Drink Bar<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></span><small>Alcohol included</small></button>
-<button type="button" class="chip pk" data-group="pkg" data-val="The Gourmet Coffee & Matcha Bar" aria-pressed="false"><span style="display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 10px">The Gourmet Coffee &amp; Matcha Bar<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></span><small>On its own or added on</small></button>
-<button type="button" class="chip pk" data-group="pkg" data-val="Custom Decor & Styling" aria-pressed="false"><span style="display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 10px">Custom Decor &amp; Styling<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></span><small>Made to match your event</small></button>
-<button type="button" class="chip pk" data-group="pkg" data-val="Small Portable Bar" aria-pressed="false"><span style="display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 10px">Small Portable Bar<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></span><small>A flexible setup option</small></button>
-<button type="button" class="chip pk" data-group="pkg" data-val="Flower Bloom Bar" aria-pressed="false"><span style="display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 10px">Flower Bloom Bar<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></span><small>Make your own bouquet</small></button>
-<button type="button" class="chip pk" data-group="pkg" data-val="Self-Serve Canned Drinks Station" aria-pressed="false"><span style="display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 10px">Self-Serve Canned Drinks Station<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></span><small>Grab, sip &amp; enjoy</small></button>
-<button type="button" class="chip pk" data-group="pkg" data-val="Late Night Bites: Ramen Bar" aria-pressed="false"><span style="display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 10px">Late Night Bites: Ramen Bar<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></span><small>A late-night favorite</small></button>
-<button type="button" class="chip pk" data-group="pkg" data-val="Charcuterie Cups" aria-pressed="false"><span style="display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 10px">Charcuterie Cups<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></span><small>A little bite between sips</small></button>
-<button type="button" class="chip pk" data-group="pkg" data-val="Not sure yet" aria-pressed="false"><span style="display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 10px">Not sure yet<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></span><small>Help me choose</small></button>
+<button type="button" class="chip pk" data-group="svc" data-val="Full-Service Bar Experience" aria-pressed="false"><span style="display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 10px">Full-Service Bar Experience<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></span><small>Alcohol included</small></button>
+<button type="button" class="chip pk" data-group="svc" data-val="Mobile Bartending Services" aria-pressed="false"><span style="display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 10px">Mobile Bartending Services<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></span><small>You provide the alcohol</small></button>
+<button type="button" class="chip pk" data-group="svc" data-val="Coffee & Matcha Bar" aria-pressed="false"><span style="display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 10px">Coffee &amp; Matcha Bar<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></span><small>On its own or with your event</small></button>
+<button type="button" class="chip pk" data-group="svc" data-val="Help me choose" aria-pressed="false"><span style="display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 10px">Help me choose<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></span><small>We&#8217;ll suggest the best fit</small></button>
+</div>
+<div class="fgroup" id="su-setup-wrap"><div class="flabel">Preferred setup</div><div class="chips chips3">
+<button type="button" class="chip" data-group="setup" data-val="Saddle Up Trailer" aria-pressed="false">Saddle Up Trailer<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></button>
+<button type="button" class="chip" data-group="setup" data-val="Portable Bar" aria-pressed="false">Portable Bar<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></button>
+<button type="button" class="chip" data-group="setup" data-val="Help me choose" aria-pressed="false">Help me choose<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></button>
+</div></div>
+<div class="fgroup"><div class="flabel">Make it yours <span>optional</span></div>
+<div class="asub">Drinks</div><div class="chips chips-sm">
+<button type="button" class="chip sm" id="addon-coffee" data-group="addon" data-val="Coffee & Matcha Bar" aria-pressed="false">Coffee &amp; Matcha Bar<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></button>
+<button type="button" class="chip sm" data-group="addon" data-val="Bubbly Bar" aria-pressed="false">Bubbly Bar<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></button>
+<button type="button" class="chip sm" data-group="addon" data-val="Frozen Drink Bar" aria-pressed="false">Frozen Drink Bar<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></button>
+<button type="button" class="chip sm" data-group="addon" data-val="Self-Serve Canned Drinks" aria-pressed="false">Self-Serve Canned Drinks<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></button>
+</div>
+<div class="asub">Bites &amp; experiences</div><div class="chips chips-sm">
+<button type="button" class="chip sm" data-group="addon" data-val="Flower Bloom Bar" aria-pressed="false">Flower Bloom Bar<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></button>
+<button type="button" class="chip sm" data-group="addon" data-val="Late-Night Ramen Bar" aria-pressed="false">Late-Night Ramen Bar<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></button>
+<button type="button" class="chip sm" data-group="addon" data-val="Charcuterie Cups" aria-pressed="false">Charcuterie Cups<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></button>
+</div>
+<div class="asub">Styling</div><div class="chips chips-sm">
+<button type="button" class="chip sm" data-group="addon" data-val="Custom Decor & Styling" aria-pressed="false">Custom Decor &amp; Styling<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></button>
+<button type="button" class="chip sm" data-group="addon" data-val="Branded Cups & Signage" aria-pressed="false">Branded Cups &amp; Signage<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></button>
+</div>
 </div>
 <div class="nav-row"><button type="button" class="back" data-prev>Back</button><button type="button" class="btn" data-next="2" disabled>Continue</button></div>
 </div>
@@ -698,7 +754,7 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
 <section class="gal" id="gallery" aria-labelledby="gal-h">
   <div class="wrap gal-head"><div class="eyebrow">Moments from the trailer</div><h2 id="gal-h">Raise a glass to <em>good times.</em></h2></div>
   <div class="gstage" id="gstage" aria-roledescription="carousel" aria-label="Photo gallery, drag to spin">
-    <div class="gring" id="gring"><figure class="gcard" data-ar="1.4363"><img width="800" height="557" src="gal-serving.webp?v=26" alt="A Saddle Up bartender handing a drink to a guest at the trailer window" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="0.7500"><img width="600" height="800" src="gal-bouquets.webp?v=26" alt="Three guests holding bouquets they made at the flower bloom bar" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="0.7762"><img width="621" height="800" src="gal-saddle-up-bar.webp?v=26" alt="The Saddle Up trailer bar under string lights" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="1.5094"><img width="800" height="530" src="gal-cups.webp?v=26" alt="Signature cocktails in Saddle Up branded cups with flower garnishes" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="0.7975"><img width="638" height="800" src="gal-decor.webp?v=26" alt="Mr and Mrs sign on a greenery and white rose flower wall" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="1.5123"><img width="800" height="529" src="gal-charcuterie.webp?v=26" alt="Charcuterie box with a thank-you sticker on the lid" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="0.7438"><img width="595" height="800" src="gal-bubbly.webp?v=26" alt="Champagne wall beside a floral backdrop" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="1.3333"><img width="800" height="600" src="gal-hero.webp?v=26" alt="The Saddle Up trailer dressed with greenery and florals" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="0.6600"><img width="528" height="800" src="gal-fancy-ash.webp?v=26" alt="Wood-panel bar with a greenery front set up outdoors" loading="lazy" decoding="async" draggable="false"></figure></div>
+    <div class="gring" id="gring"><figure class="gcard" data-ar="1.4363"><img width="800" height="557" src="gal-serving.webp?v=29" alt="A Saddle Up bartender handing a drink to a guest at the trailer window" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="0.7500"><img width="600" height="800" src="gal-bouquets.webp?v=29" alt="Three guests holding bouquets they made at the flower bloom bar" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="0.7762"><img width="621" height="800" src="gal-saddle-up-bar.webp?v=29" alt="The Saddle Up trailer bar under string lights" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="1.5094"><img width="800" height="530" src="gal-cups.webp?v=29" alt="Signature cocktails in Saddle Up branded cups with flower garnishes" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="0.7975"><img width="638" height="800" src="gal-decor.webp?v=29" alt="Mr and Mrs sign on a greenery and white rose flower wall" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="1.5123"><img width="800" height="529" src="gal-charcuterie.webp?v=29" alt="Charcuterie box with a thank-you sticker on the lid" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="0.7438"><img width="595" height="800" src="gal-bubbly.webp?v=29" alt="Champagne wall beside a floral backdrop" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="1.3333"><img width="800" height="600" src="gal-hero.webp?v=29" alt="The Saddle Up trailer dressed with greenery and florals" loading="lazy" decoding="async" draggable="false"></figure><figure class="gcard" data-ar="0.6600"><img width="528" height="800" src="gal-fancy-ash.webp?v=29" alt="Wood-panel bar with a greenery front set up outdoors" loading="lazy" decoding="async" draggable="false"></figure></div>
   </div>
   <div class="gctl"><button type="button" class="gbtn" id="gprev" aria-label="Previous photo">&larr;</button><span class="ghint">Drag to spin</span><button type="button" class="gbtn" id="gnext" aria-label="Next photo">&rarr;</button></div>
 </section>
@@ -718,8 +774,8 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
         <div><h4>Explore</h4><nav aria-label="Footer"><a href="#difference" data-reveal="letters" data-stagger="22">Why us</a><a href="#offerings" data-reveal="letters" data-stagger="22" data-delay="120">Offerings</a><a href="#book" data-reveal="letters" data-stagger="22" data-delay="240">Plan your bar</a></nav></div>
         <div class="contact"><h4>Contact</h4><a href="tel:9162247557">916-224-7557</a><a href="mailto:Saddleupdrinks@gmail.com" style="font-size:20px">Saddleupdrinks@gmail.com</a><p>Serving the greater Sacramento area.</p></div>
       </div>
-      <div class="rise" id="rise"><div class="halo" aria-hidden="true"></div><div class="spin3d" id="spin3d" role="img" aria-label="Saddle Up Drinks logo, drag to spin"><img class="l" src="logo.webp?v=21" alt="" aria-hidden="true" style="transform:translateZ(4px)"><img class="l" src="logo.webp?v=21" alt="" aria-hidden="true" style="transform:translateZ(2.7px)"><img class="l" src="logo.webp?v=21" alt="" aria-hidden="true" style="transform:translateZ(1.3px)"><img class="l" src="logo.webp?v=21" alt="" aria-hidden="true" style="transform:translateZ(0px)"><img class="l" src="logo.webp?v=21" alt="" aria-hidden="true" style="transform:translateZ(-1.3px)"><img class="l" src="logo.webp?v=21" alt="" aria-hidden="true" style="transform:translateZ(-2.7px)"><img class="l" src="logo.webp?v=21" alt="" aria-hidden="true" style="transform:translateZ(-4px)"><img class="f" src="logo.webp?v=21" alt=""><img class="b" src="logo.webp?v=21" alt=""></div><span class="spin-hint">Drag to spin</span></div>
-      <div class="install-row"><button class="install" id="install-btn" type="button" hidden><span class="badge"><img decoding="async" src="logo.webp?v=21" alt=""></span><span><small>Saddle Up app</small>Install on this phone</span></button><p class="ios-tip" id="ios-tip" hidden>Add the Saddle Up app to your phone: tap <b>Share</b>, then <b>Add to Home Screen</b>.</p></div>
+      <div class="rise" id="rise"><div class="halo" aria-hidden="true"></div><div class="spin3d" id="spin3d" role="img" aria-label="Saddle Up Drinks logo, drag to spin"><img class="l" src="logo.webp?v=29" alt="" aria-hidden="true" style="transform:translateZ(4px)"><img class="l" src="logo.webp?v=29" alt="" aria-hidden="true" style="transform:translateZ(2.7px)"><img class="l" src="logo.webp?v=29" alt="" aria-hidden="true" style="transform:translateZ(1.3px)"><img class="l" src="logo.webp?v=29" alt="" aria-hidden="true" style="transform:translateZ(0px)"><img class="l" src="logo.webp?v=29" alt="" aria-hidden="true" style="transform:translateZ(-1.3px)"><img class="l" src="logo.webp?v=29" alt="" aria-hidden="true" style="transform:translateZ(-2.7px)"><img class="l" src="logo.webp?v=29" alt="" aria-hidden="true" style="transform:translateZ(-4px)"><img class="f" src="logo.webp?v=29" alt=""><img class="b" src="logo.webp?v=29" alt=""></div><span class="spin-hint">Drag to spin</span></div>
+      <div class="install-row"><button class="install" id="install-btn" type="button" hidden><span class="badge"><img decoding="async" src="logo.webp?v=29" alt=""></span><span><small>Saddle Up app</small>Install on this phone</span></button><p class="ios-tip" id="ios-tip" hidden>Add the Saddle Up app to your phone: tap <b>Share</b>, then <b>Add to Home Screen</b>.</p></div>
       <div class="legal"><span>© 2026 Saddle Up Drinks · Greater Sacramento, CA</span><span>Please drink responsibly. 21+ for alcoholic service.</span></div>
     </div>
   </div>
@@ -744,7 +800,7 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
   var $ = function (sel) { return root.querySelector(sel); };
   var $$ = function (sel) { return Array.prototype.slice.call(root.querySelectorAll(sel)); };
 
-  var st = { step: 1, event: '', pkgs: [], guests: '', date: '', city: '', name: '', phone: '', email: '', notes: '' };
+  var st = { step: 1, event: '', svc: '', setup: '', addons: [], guests: '', date: '', city: '', name: '', phone: '', email: '', notes: '' };
 
   function dateText() {
     if (!st.date) return 'Flexible';
@@ -756,7 +812,9 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
     return [
       'Hi Saddle Up Drinks!', '', "I'd like a quote for my event:", '',
       'Occasion: ' + (st.event || '—'),
-      'Experience: ' + (st.pkgs.join(', ') || '—'),
+      'Experience: ' + (st.svc || '—'),
+      'Setup: ' + (st.setup || '—'),
+      'Add-ons: ' + (st.addons.join(', ') || '—'),
       'Date: ' + dateText(),
       'Guests: ' + (st.guests || '—'),
       'City / venue: ' + (st.city || '—'), '',
@@ -781,41 +839,48 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
   }
 
   function sync() {
+    var bar = /Bar Experience|Bartending|Help me/.test(st.svc);
+    var setups = SETUPS[st.svc] || [];
+    $('#su-setup-wrap').hidden = !setups.length;
+    $$('.chip[data-group="setup"]').forEach(function (b) { b.hidden = setups.indexOf(b.getAttribute('data-val')) === -1; });
+    if (st.setup && setups.indexOf(st.setup) === -1) st.setup = '';
+    var cof = $('#addon-coffee'); cof.hidden = !bar;
+    if (!bar) { var ci = st.addons.indexOf('Coffee & Matcha Bar'); if (ci !== -1) st.addons.splice(ci, 1); }
     $$('.chip[data-group]').forEach(function (b) {
       var g = b.getAttribute('data-group'), v = b.getAttribute('data-val');
-      var on = g === 'pkg' ? st.pkgs.indexOf(v) !== -1 : st[g === 'event' ? 'event' : 'guests'] === v;
+      var on = g === 'addon' ? st.addons.indexOf(v) !== -1 : st[g] === v;
       b.classList.toggle('on', on);
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
-    $$('.xadd[data-add]').forEach(function (a) {
-      var on = st.pkgs.indexOf(a.getAttribute('data-add')) !== -1;
-      a.classList.toggle('on', on);
-      a.querySelector('.xadd-l').textContent = on ? 'Added to your event' : 'Add to my event';
-    });
+    $$('.xadd[data-svc]').forEach(function (a) { a.classList.toggle('on', st.svc === a.getAttribute('data-svc')); });
     var n1 = $('[data-next="1"]'), n2 = $('[data-next="2"]'), n3 = $('[data-next="3"]');
-    n1.disabled = !st.event; n2.disabled = st.pkgs.length === 0; n3.disabled = !st.guests;
+    n1.disabled = !st.event; n2.disabled = !st.svc; n3.disabled = !st.guests;
     $('#su-send').disabled = !ready();
     $('#su-s-event').textContent = st.event || '—';
     $('#su-s-date').textContent = dateText();
-    $('#su-s-pkg').textContent = st.pkgs.join(', ') || '—';
+    $('#su-s-pkg').textContent = [st.svc, st.setup].concat(st.addons).filter(Boolean).join(' · ') || '—';
     $('#su-s-guests').textContent = st.guests || '—';
   }
 
-  function togglePkg(v, forceOn) {
-    var i = st.pkgs.indexOf(v);
-    if (i === -1) st.pkgs.push(v); else if (!forceOn) st.pkgs.splice(i, 1);
-  }
+  /* which setups each service offers — confirm with Ashley, then edit this list */
+  var SETUPS = {
+    'Full-Service Bar Experience': ['Saddle Up Trailer', 'Portable Bar', 'Help me choose'],
+    'Mobile Bartending Services': ['Saddle Up Trailer', 'Portable Bar', 'Help me choose'],
+    'Coffee & Matcha Bar': ['Saddle Up Trailer', 'Portable Bar', 'Help me choose'],
+    'Help me choose': ['Saddle Up Trailer', 'Portable Bar', 'Help me choose']
+  };
+  function toggleAddon(v) { var i = st.addons.indexOf(v); if (i === -1) st.addons.push(v); else st.addons.splice(i, 1); }
 
   root.addEventListener('click', function (e) {
     var chip = e.target.closest('.chip[data-group]');
     if (chip) {
       var g = chip.getAttribute('data-group'), v = chip.getAttribute('data-val');
-      if (g === 'pkg') togglePkg(v); else if (g === 'event') st.event = v; else st.guests = v;
+      if (g === 'addon') toggleAddon(v); else st[g] = v;
       sync(); return;
     }
-    var add = e.target.closest('.xadd[data-add]');
+    var add = e.target.closest('.xadd[data-svc]');
     if (add) {
-      togglePkg(add.getAttribute('data-add'), true);
+      st.svc = add.getAttribute('data-svc');
       if (st.step === 1 && st.event) show(2); else sync();
       return;
     }
@@ -823,7 +888,7 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
     if (nx && !nx.disabled) { show(st.step + 1); scrollPanel(); return; }
     if (e.target.closest('[data-prev]')) { show(Math.max(1, st.step - 1)); return; }
     if (e.target.closest('[data-reset]')) {
-      st = { step: 1, event: '', pkgs: [], guests: '', date: '', city: '', name: '', phone: '', email: '', notes: '' };
+      st = { step: 1, event: '', svc: '', setup: '', addons: [], guests: '', date: '', city: '', name: '', phone: '', email: '', notes: '' };
       $$('[data-f]').forEach(function (f) { f.value = ''; });
       show(1); return;
     }
@@ -860,7 +925,7 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
-        occasion: st.event, experience: st.pkgs.join(', '), date: dateText(), guests: st.guests,
+        occasion: st.event, experience: st.svc, setup: st.setup, add_ons: st.addons.join(', '), date: dateText(), guests: st.guests,
         city: st.city, name: st.name, phone: st.phone, email: st.email, notes: st.notes,
         _gotcha: '', _subject: 'Event quote request — ' + (st.event || 'Event') + ' — ' + dateText()
       })
