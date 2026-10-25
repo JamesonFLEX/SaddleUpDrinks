@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-bfa6R9xsb1VTQv+IDQHQYh/pCZzBFUR55YHbois4dW8=' 'sha256-owpOKlSdgCxcu9RiqLOOyrmP8D6zWfhlz3voVneJMck=' 'sha256-lhTxtD+yLTUYE1s7Peln4N7BfMN//uu2O4SLzrjE9Wc=' 'sha256-CecnUP3yYkK6GZru5mFrlJm1tNDdPqlVnhT62JgbXI4=' 'sha256-i9TChSt8zpVij4gkkrIQQCPsEudr6j0MRwtyNbnTzdY='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; manifest-src 'self'; worker-src 'self'; frame-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-bfa6R9xsb1VTQv+IDQHQYh/pCZzBFUR55YHbois4dW8=' 'sha256-owpOKlSdgCxcu9RiqLOOyrmP8D6zWfhlz3voVneJMck=' 'sha256-in85n5y3W307J8EF0e9eEyWR/q8QPhVd0S9B6W8ZB7A=' 'sha256-CecnUP3yYkK6GZru5mFrlJm1tNDdPqlVnhT62JgbXI4=' 'sha256-i9TChSt8zpVij4gkkrIQQCPsEudr6j0MRwtyNbnTzdY='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; manifest-src 'self'; worker-src 'self'; frame-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <link rel="preload" as="image" href="logo.webp?v=29" fetchpriority="high">
@@ -495,6 +495,20 @@ p{margin:0}
 .chip.sm{min-height:44px;font-size:14px;padding:9px 14px}
 .chip[hidden],.fgroup[hidden]{display:none!important}
 @media (max-width:767px){.pillars{grid-template-columns:1fr}.setup-grid,.mbody{grid-template-columns:1fr}.mthumbs{grid-template-columns:repeat(3,minmax(0,1fr))}.chips3{grid-template-columns:1fr 1fr}}
+
+/* ---------- save picks while browsing (no jump to the form) ---------- */
+.xpick{float:right;margin-left:10px;min-height:32px;padding:0 12px;border:1px solid rgba(224,164,88,.6);background:transparent;color:var(--brass-hi);font:inherit;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);transition:background .2s,color .2s}
+.mi-top .xpick{float:none;margin-left:auto}
+.xpick:hover,.xpick.on{background:var(--brass);color:var(--navy)}
+.tray{position:fixed;left:50%;bottom:max(16px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:90;display:flex;align-items:center;gap:12px;padding:10px 12px 10px 10px;background:var(--navy);color:var(--on-dark);text-decoration:none;font-size:14px;border:1px solid rgba(224,164,88,.55);border-radius:40px;box-shadow:0 14px 34px rgba(0,0,0,.35);white-space:nowrap}
+.tray[hidden]{display:none}
+.tray-n{min-width:30px;height:30px;border-radius:50%;background:var(--brass);color:var(--navy);display:grid;place-items:center;font-weight:500}
+.tray-go{color:var(--brass-hi);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding-left:10px;border-left:1px solid rgba(255,255,255,.15)}
+.tray.bump{animation:trayb .45s cubic-bezier(.2,0,0,1)}
+@keyframes trayb{0%{transform:translateX(-50%) scale(1)}40%{transform:translateX(-50%) scale(1.08)}100%{transform:translateX(-50%) scale(1)}}
+.picks{margin:-8px 0 20px;padding:12px 14px;border-radius:12px;background:rgba(224,164,88,.12);border:1px solid rgba(224,164,88,.4);font-size:14px;color:var(--ink);line-height:1.5}
+.picks small{display:block;color:var(--muted);margin-top:2px}
+@media (max-width:420px){.tray-t{display:none}}
 /* no-copy: block text selection + long-press menu; form fields stay usable */
 html,body{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-touch-callout:none}
 img{-webkit-user-drag:none;user-drag:none}
@@ -507,6 +521,7 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
 </head>
 <body>
 <div id="saddle-up">
+<a class="tray" id="su-tray" href="#book" hidden><span class="tray-n" id="su-tray-n">0</span><span class="tray-t" id="su-tray-t">saved for your quote</span><span class="tray-go">Plan your bar &rarr;</span></a>
 
 <div class="veil" id="veil" aria-hidden="true">
   <div class="mark"><img decoding="async" class="dim" src="logo.webp?v=29" alt=""><img decoding="async" class="fill" id="veil-fill" src="logo.webp?v=29" alt=""></div>
@@ -606,25 +621,25 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
       </div>
       <div class="rows" id="rows">
         <div class="rail" aria-hidden="true"><div class="thread" id="thread"></div><div class="marker" id="marker"></div></div>
-        <article class="row"><div class="plate"><img decoding="async" src="off-full-bar.webp?v=29" alt="Inside the Saddle Up trailer bar with a signature drinks sign, dried citrus and a pampas arrangement" loading="lazy" style="object-position:center"></div><div class="rtx"><div class="spec">Alcohol included</div><h3>Full-Service Bar Experience</h3><p>The full bar experience, brought to you. Saddle Up provides beer, wine, champagne, and three signature drinks, served by two bartenders with a custom-designed menu and every detail handled from setup to cleanup.</p><ul><li>Alcohol included</li><li>Two bartenders</li><li>Custom menu, ice, garnishes &amp; disposable drinkware</li></ul><a class="xadd" href="#book" data-svc="Full-Service Bar Experience"><span class="xadd-l">Plan your bar</span><span aria-hidden="true">&rarr;</span></a></div></article>
-<article class="row"><div class="plate"><img decoding="async" src="off-portable-bar.webp?v=29" alt="Two Saddle Up bartenders smiling behind a wooden portable bar with a tray of flowers" loading="lazy" style="object-position:center 30%"></div><div class="rtx"><div class="spec">You provide the alcohol</div><h3>Mobile Bartending Services</h3><p>A beautifully styled bar and a team ready to pour. You provide your preferred alcohol, while our two bartenders bring fresh juices, infused syrups, garnishes, ice, and a custom menu for your celebration.</p><ul><li>Two bartenders</li><li>Mixers, garnishes &amp; ice</li><li>Cups, straws, napkins &amp; custom menu</li></ul><a class="xadd" href="#book" data-svc="Mobile Bartending Services"><span class="xadd-l">Plan your bar</span><span aria-hidden="true">&rarr;</span></a></div></article>
-<article class="row"><div class="plate"><img decoding="async" src="off-coffee.webp?v=29" alt="The Saddle Up trailer set up as a coffee bar with menus and fall decor" loading="lazy" style="object-position:center"></div><div class="rtx"><div class="spec">Book on its own or add to your event</div><h3>Gourmet Coffee &amp; Matcha Bar</h3><p>Coffee and matcha belong at every gathering. Bring customizable flavors and a beautifully styled bar to morning meetings, celebrations, or a little pick-me-up along the way.</p><ul><li>Customizable flavors</li><li>Standalone bookings available</li><li>Branded cups &amp; signage available</li></ul><a class="xadd" href="#book" data-svc="Gourmet Coffee & Matcha Bar"><span class="xadd-l">Plan your coffee &amp; matcha bar</span><span aria-hidden="true">&rarr;</span></a></div></article>
+        <article class="row"><div class="plate"><img decoding="async" src="off-full-bar.webp?v=29" alt="Inside the Saddle Up trailer bar with a signature drinks sign, dried citrus and a pampas arrangement" loading="lazy" style="object-position:center"></div><div class="rtx"><div class="spec">Alcohol included</div><h3>Full-Service Bar Experience</h3><p>The full bar experience, brought to you. Saddle Up provides beer, wine, champagne, and three signature drinks, served by two bartenders with a custom-designed menu and every detail handled from setup to cleanup.</p><ul><li>Alcohol included</li><li>Two bartenders</li><li>Custom menu, ice, garnishes &amp; disposable drinkware</li></ul><a class="xadd" href="#book" data-svc="Full-Service Bar Experience" data-label="Plan your bar"><span class="xadd-l">Plan your bar</span><span aria-hidden="true">&rarr;</span></a></div></article>
+<article class="row"><div class="plate"><img decoding="async" src="off-portable-bar.webp?v=29" alt="Two Saddle Up bartenders smiling behind a wooden portable bar with a tray of flowers" loading="lazy" style="object-position:center 30%"></div><div class="rtx"><div class="spec">You provide the alcohol</div><h3>Mobile Bartending Services</h3><p>A beautifully styled bar and a team ready to pour. You provide your preferred alcohol, while our two bartenders bring fresh juices, infused syrups, garnishes, ice, and a custom menu for your celebration.</p><ul><li>Two bartenders</li><li>Mixers, garnishes &amp; ice</li><li>Cups, straws, napkins &amp; custom menu</li></ul><a class="xadd" href="#book" data-svc="Mobile Bartending Services" data-label="Plan your bar"><span class="xadd-l">Plan your bar</span><span aria-hidden="true">&rarr;</span></a></div></article>
+<article class="row"><div class="plate"><img decoding="async" src="off-coffee.webp?v=29" alt="The Saddle Up trailer set up as a coffee bar with menus and fall decor" loading="lazy" style="object-position:center"></div><div class="rtx"><div class="spec">Book on its own or add to your event</div><h3>Gourmet Coffee &amp; Matcha Bar</h3><p>Coffee and matcha belong at every gathering. Bring customizable flavors and a beautifully styled bar to morning meetings, celebrations, or a little pick-me-up along the way.</p><ul><li>Customizable flavors</li><li>Standalone bookings available</li><li>Branded cups &amp; signage available</li></ul><a class="xadd" href="#book" data-svc="Gourmet Coffee & Matcha Bar" data-label="Plan your coffee &amp; matcha bar"><span class="xadd-l">Plan your coffee &amp; matcha bar</span><span aria-hidden="true">&rarr;</span></a></div></article>
       </div>
 <div class="setups">
         <div class="eyebrow">Bar setup choices</div>
         <h3 class="sub-h">Your bar. <em>Your setting.</em></h3>
         <div class="setup-grid">
-          <figure class="setup"><img src="off-trailer.webp?v=29" alt="The white Saddle Up horse-trailer bar with greenery and florals" loading="lazy" decoding="async"><figcaption><b>The Saddle Up Trailer</b>Our signature converted horse trailer brings the bar and the atmosphere to your celebration.</figcaption></figure>
-          <figure class="setup"><img src="off-small-bar.webp?v=29" alt="Small slatted wood portable bar with an Open Bar runner" loading="lazy" decoding="async"><figcaption><b>Portable Bar</b>A beautifully styled, flexible setup for intimate spaces, indoor venues, or an additional serving area.</figcaption></figure>
+          <figure class="setup"><img src="off-trailer.webp?v=29" alt="The white Saddle Up horse-trailer bar with greenery and florals" loading="lazy" decoding="async"><figcaption><button type="button" class="xpick" data-pick="setup" data-val="Saddle Up Trailer" aria-pressed="false"><span class="xp-l">+ Add</span></button><b>The Saddle Up Trailer</b>Our signature converted horse trailer brings the bar and the atmosphere to your celebration.</figcaption></figure>
+          <figure class="setup"><img src="off-small-bar.webp?v=29" alt="Small slatted wood portable bar with an Open Bar runner" loading="lazy" decoding="async"><figcaption><button type="button" class="xpick" data-pick="setup" data-val="Portable Bar" aria-pressed="false"><span class="xp-l">+ Add</span></button><b>Portable Bar</b>A beautifully styled, flexible setup for intimate spaces, indoor venues, or an additional serving area.</figcaption></figure>
         </div>
       </div>
 <div class="mky" id="make-it-yours">
         <div class="eyebrow">Make it yours</div>
         <h3 class="sub-h">The finishing <em>touches.</em></h3>
         <p class="mky-intro">A favorite drink, a thoughtful bite, a bouquet to take home. Add the finishing touches that make your celebration yours.</p>
-        <details class="mgroup" open><summary><span>Additional Drink Experiences</span><span class="mcount">3</span></summary><div class="mbody"><div class="mthumbs"><img src="off-bubbly.webp?v=29" alt="Champagne wall with glasses under a neon sign" loading="lazy" decoding="async"><img src="off-frozen.webp?v=29" alt="Drink dispensers under a fringed white umbrella" loading="lazy" decoding="async"><img src="off-canned.webp?v=29" alt="Baskets of Saddle Up canned coffee and matcha drinks" loading="lazy" decoding="async"></div><ul class="mlist"><li><div class="mi-top"><b>Bubbly Bar</b></div><p>Make the toast part of the experience with our champagne wall, glasses, four juices, fruit, garnishes, and a custom menu.</p></li><li><div class="mi-top"><b>Frozen Drink Bar</b><span class="tag">Alcohol included</span></div><p>Something cool for your celebration, complete with a custom cocktail menu, garnish tray, cups, delivery, setup, and breakdown.</p></li><li><div class="mi-top"><b>Self-Serve Canned Drinks Station</b><span class="tag">Self-serve</span></div><p>An easy, beautifully presented drink station guests can enjoy at their own pace, with a selection planned around your event.</p></li></ul></div></details>
-        <details class="mgroup"><summary><span>Bites &amp; Guest Experiences</span><span class="mcount">3</span></summary><div class="mbody"><div class="mthumbs"><img src="off-bloom.webp?v=29" alt="Flower bloom bar table surrounded by buckets of fresh flowers" loading="lazy" decoding="async"><img src="off-ramen.webp?v=29" alt="Self-serve noodle cup bar with toppings and sauces" loading="lazy" decoding="async"><img src="off-charcuterie.webp?v=29" alt="Individual charcuterie box with cheese, salami, fruit and nuts" loading="lazy" decoding="async"></div><ul class="mlist"><li><div class="mi-top"><b>Flower Bloom Bar</b></div><p>A little creativity, a lot of color, and something lovely to take home. Guests create their own bouquets at our flower bloom bar.</p></li><li><div class="mi-top"><b>Late-Night Ramen Bar</b><span class="tag">Self-serve</span></div><p>Keep the celebration going with a warm, satisfying bite. Guests make their own noodle cups with toppings and sauces at this self-serve station.</p></li><li><div class="mi-top"><b>Charcuterie Cups</b></div><p>Individual charcuterie cups for an easy bite between drinks, conversations, and celebrations.</p></li></ul></div></details>
-        <details class="mgroup"><summary><span>Styling &amp; Personalization</span><span class="mcount">2</span></summary><div class="mbody"><div class="mthumbs"><img src="off-decor.webp?v=29" alt="Saddle Up Drinks sign hanging from the trailer with pampas styling" loading="lazy" decoding="async"></div><ul class="mlist"><li><div class="mi-top"><b>Custom Decor &amp; Styling</b></div><p>Bring the whole look together with finishing touches tailored to your celebration.</p></li><li><div class="mi-top"><b>Branded Cups &amp; Event Signage</b></div><p>Personalize the experience with custom cup stickers and signage for your celebration or corporate event.</p></li></ul></div></details>
+        <details class="mgroup" open><summary><span>Additional Drink Experiences</span><span class="mcount">3</span></summary><div class="mbody"><div class="mthumbs"><img src="off-bubbly.webp?v=29" alt="Champagne wall with glasses under a neon sign" loading="lazy" decoding="async"><img src="off-frozen.webp?v=29" alt="Drink dispensers under a fringed white umbrella" loading="lazy" decoding="async"><img src="off-canned.webp?v=29" alt="Baskets of Saddle Up canned coffee and matcha drinks" loading="lazy" decoding="async"></div><ul class="mlist"><li><div class="mi-top"><b>Bubbly Bar</b><button type="button" class="xpick" data-pick="addon" data-val="Bubbly Bar" aria-pressed="false"><span class="xp-l">+ Add</span></button></div><p>Make the toast part of the experience with our champagne wall, glasses, four juices, fruit, garnishes, and a custom menu.</p></li><li><div class="mi-top"><b>Frozen Drink Bar</b><span class="tag">Alcohol included</span><button type="button" class="xpick" data-pick="addon" data-val="Frozen Drink Bar" aria-pressed="false"><span class="xp-l">+ Add</span></button></div><p>Something cool for your celebration, complete with a custom cocktail menu, garnish tray, cups, delivery, setup, and breakdown.</p></li><li><div class="mi-top"><b>Self-Serve Canned Drinks Station</b><span class="tag">Self-serve</span><button type="button" class="xpick" data-pick="addon" data-val="Self-Serve Canned Drinks" aria-pressed="false"><span class="xp-l">+ Add</span></button></div><p>An easy, beautifully presented drink station guests can enjoy at their own pace, with a selection planned around your event.</p></li></ul></div></details>
+        <details class="mgroup"><summary><span>Bites &amp; Guest Experiences</span><span class="mcount">3</span></summary><div class="mbody"><div class="mthumbs"><img src="off-bloom.webp?v=29" alt="Flower bloom bar table surrounded by buckets of fresh flowers" loading="lazy" decoding="async"><img src="off-ramen.webp?v=29" alt="Self-serve noodle cup bar with toppings and sauces" loading="lazy" decoding="async"><img src="off-charcuterie.webp?v=29" alt="Individual charcuterie box with cheese, salami, fruit and nuts" loading="lazy" decoding="async"></div><ul class="mlist"><li><div class="mi-top"><b>Flower Bloom Bar</b><button type="button" class="xpick" data-pick="addon" data-val="Flower Bloom Bar" aria-pressed="false"><span class="xp-l">+ Add</span></button></div><p>A little creativity, a lot of color, and something lovely to take home. Guests create their own bouquets at our flower bloom bar.</p></li><li><div class="mi-top"><b>Late-Night Ramen Bar</b><span class="tag">Self-serve</span><button type="button" class="xpick" data-pick="addon" data-val="Late-Night Ramen Bar" aria-pressed="false"><span class="xp-l">+ Add</span></button></div><p>Keep the celebration going with a warm, satisfying bite. Guests make their own noodle cups with toppings and sauces at this self-serve station.</p></li><li><div class="mi-top"><b>Charcuterie Cups</b><button type="button" class="xpick" data-pick="addon" data-val="Charcuterie Cups" aria-pressed="false"><span class="xp-l">+ Add</span></button></div><p>Individual charcuterie cups for an easy bite between drinks, conversations, and celebrations.</p></li></ul></div></details>
+        <details class="mgroup"><summary><span>Styling &amp; Personalization</span><span class="mcount">2</span></summary><div class="mbody"><div class="mthumbs"><img src="off-decor.webp?v=29" alt="Saddle Up Drinks sign hanging from the trailer with pampas styling" loading="lazy" decoding="async"></div><ul class="mlist"><li><div class="mi-top"><b>Custom Decor &amp; Styling</b><button type="button" class="xpick" data-pick="addon" data-val="Custom Decor & Styling" aria-pressed="false"><span class="xp-l">+ Add</span></button></div><p>Bring the whole look together with finishing touches tailored to your celebration.</p></li><li><div class="mi-top"><b>Branded Cups &amp; Event Signage</b><button type="button" class="xpick" data-pick="addon" data-val="Branded Cups & Signage" aria-pressed="false"><span class="xp-l">+ Add</span></button></div><p>Personalize the experience with custom cup stickers and signage for your celebration or corporate event.</p></li></ul></div></details>
         <div class="mky-cta"><a class="cta" href="#book">Customize your event <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       </div>
     </div>
@@ -649,6 +664,7 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
 <div class="screen" data-s="1">
 <h3 class="q">What are we celebrating?</h3>
 <p class="qs">Celebration ready — pick the occasion that fits best.</p>
+<div class="picks" id="su-picks" hidden><b>Saved for your quote:</b> <span id="su-picks-l"></span><small>You&#8217;ll see these selected on the next step.</small></div>
 <div class="chips">
 <button type="button" class="chip" data-group="event" data-val="Weddings" aria-pressed="false">Weddings<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></button>
 <button type="button" class="chip" data-group="event" data-val="Corporate Events" aria-pressed="false">Corporate Events<span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"></path></svg></span></button>
@@ -843,16 +859,24 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
     var setups = SETUPS[st.svc] || [];
     $('#su-setup-wrap').hidden = !setups.length;
     $$('.chip[data-group="setup"]').forEach(function (b) { b.hidden = setups.indexOf(b.getAttribute('data-val')) === -1; });
-    if (st.setup && setups.indexOf(st.setup) === -1) st.setup = '';
+    if (st.svc && st.setup && setups.indexOf(st.setup) === -1) st.setup = '';
     var cof = $('#addon-coffee'); cof.hidden = !bar;
-    if (!bar) { var ci = st.addons.indexOf('Coffee & Matcha Bar'); if (ci !== -1) st.addons.splice(ci, 1); }
+    if (st.svc && !bar) { var ci = st.addons.indexOf('Coffee & Matcha Bar'); if (ci !== -1) st.addons.splice(ci, 1); }
     $$('.chip[data-group]').forEach(function (b) {
       var g = b.getAttribute('data-group'), v = b.getAttribute('data-val');
       var on = g === 'addon' ? st.addons.indexOf(v) !== -1 : st[g] === v;
       b.classList.toggle('on', on);
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
-    $$('.xadd[data-svc]').forEach(function (a) { a.classList.toggle('on', st.svc === a.getAttribute('data-svc')); });
+    $$('.xadd[data-svc]').forEach(function (a) { var on = st.svc === a.getAttribute('data-svc');
+      a.classList.toggle('on', on); a.querySelector('.xadd-l').textContent = on ? '\u2713 Added to your quote' : a.getAttribute('data-label'); });
+    $$('.xpick').forEach(function (b) { var k = b.getAttribute('data-pick'), v = b.getAttribute('data-val');
+      var on = k === 'setup' ? st.setup === v : st.addons.indexOf(v) !== -1;
+      b.classList.toggle('on', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); b.querySelector('.xp-l').textContent = on ? '\u2713 Added' : '+ Add'; });
+    var picks = [st.svc, st.setup].concat(st.addons).filter(Boolean);
+    var tray = $('#su-tray'); tray.hidden = !picks.length || trayHide;
+    $('#su-tray-n').textContent = picks.length; $('#su-tray-t').textContent = (picks.length === 1 ? 'pick' : 'picks') + ' saved for your quote';
+    $('#su-picks').hidden = !picks.length; $('#su-picks-l').textContent = picks.join(' \u00b7 ');
     var n1 = $('[data-next="1"]'), n2 = $('[data-next="2"]'), n3 = $('[data-next="3"]');
     n1.disabled = !st.event; n2.disabled = !st.svc; n3.disabled = !st.guests;
     $('#su-send').disabled = !ready();
@@ -869,6 +893,9 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
     'Coffee & Matcha Bar': ['Saddle Up Trailer', 'Portable Bar', 'Help me choose'],
     'Help me choose': ['Saddle Up Trailer', 'Portable Bar', 'Help me choose']
   };
+  var trayHide = false;
+  function bump() { var t = $('#su-tray'); t.classList.remove('bump'); void t.offsetWidth; t.classList.add('bump'); }
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { trayHide = es[0].isIntersecting; sync(); }, { threshold: 0 }).observe($('.panel-wrap'));
   function toggleAddon(v) { var i = st.addons.indexOf(v); if (i === -1) st.addons.push(v); else st.addons.splice(i, 1); }
 
   root.addEventListener('click', function (e) {
@@ -879,10 +906,16 @@ document.addEventListener("error",function(e){var t=e.target;if(!t||t.tagName!==
       sync(); return;
     }
     var add = e.target.closest('.xadd[data-svc]');
-    if (add) {
-      st.svc = add.getAttribute('data-svc');
-      if (st.step === 1 && st.event) show(2); else sync();
-      return;
+    if (add) {               /* save the pick and stay put, no jump to the form */
+      e.preventDefault();
+      var sv = add.getAttribute('data-svc'); st.svc = st.svc === sv ? '' : sv;
+      sync(); bump(); return;
+    }
+    var pk = e.target.closest('.xpick');
+    if (pk) {
+      var k = pk.getAttribute('data-pick'), pv = pk.getAttribute('data-val');
+      if (k === 'setup') st.setup = st.setup === pv ? '' : pv; else toggleAddon(pv);
+      sync(); bump(); return;
     }
     var nx = e.target.closest('[data-next]');
     if (nx && !nx.disabled) { show(st.step + 1); scrollPanel(); return; }
