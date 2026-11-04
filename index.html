@@ -557,6 +557,67 @@ input,textarea,select,[contenteditable]{-webkit-user-select:text;-moz-user-selec
   .mcta-call{flex:0 0 auto;padding:0 18px;color:#FFF8EE;border:1px solid rgba(255,248,238,.25)}
   .mcta-book{flex:1;color:#1B120A;background:linear-gradient(180deg,#F7CB86,#E0A458 55%,#C4853F)}
 }
+
+/* ===== premium western buttons: keep the arrow-cut shape, add layered depth =====
+   1 top highlight · 2 bottom edge · 3 tight contact shadow · 4 soft glow in the button's own color */
+.cta,.btn{filter:drop-shadow(0 1px 1px rgba(40,20,5,.45)) drop-shadow(0 9px 14px rgba(196,133,63,.42));transition:filter .25s,transform .2s,translate .08s}
+.cta::before,.btn::before{background:
+  linear-gradient(100deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%) -150% 0/250% 100% no-repeat,
+  linear-gradient(180deg,rgba(255,255,255,.55) 0 1px,rgba(255,255,255,0) 1px) 0 0/100% 100% no-repeat,
+  linear-gradient(0deg,rgba(60,30,8,.32) 0 2px,rgba(60,30,8,0) 2px) 0 0/100% 100% no-repeat,
+  radial-gradient(120% 90% at 50% 0%,rgba(255,236,200,.55),rgba(255,236,200,0) 60%) 0 0/100% 100% no-repeat,
+  linear-gradient(180deg,#F9D08E 0%,#E7AD62 48%,#C4853F 100%) 0 0/100% 100% no-repeat}
+.cta::after,.btn::after{border-color:rgba(70,40,15,.28)}
+.cta:hover,.btn:hover{filter:drop-shadow(0 1px 1px rgba(40,20,5,.45)) drop-shadow(0 12px 20px rgba(224,164,88,.6))}
+.cta:active,.btn:active{translate:0 1px;transform:none;filter:drop-shadow(0 1px 0 rgba(40,20,5,.35)) drop-shadow(0 4px 8px rgba(196,133,63,.3))}
+.cta:active::before,.btn:active::before{background:
+  linear-gradient(180deg,rgba(60,30,8,.28),rgba(60,30,8,0) 5px) 0 0/100% 100% no-repeat,
+  linear-gradient(180deg,#EDB66C 0%,#D99A50 55%,#B9783A 100%) 0 0/100% 100% no-repeat}
+.btn[disabled],.btn[disabled]:hover,.btn[disabled]:active{filter:none;translate:none}
+.btn[disabled]::before{background:linear-gradient(180deg,rgba(255,255,255,.6) 0 1px,transparent 1px),#d6dadc}
+
+/* outlined arrow buttons on dark (Plan your bar) */
+.xadd{clip-path:none!important;filter:drop-shadow(0 1px 1px rgba(0,0,0,.55)) drop-shadow(0 9px 16px rgba(224,164,88,.18))}
+.xadd::before{background:linear-gradient(180deg,rgba(247,203,134,.95),rgba(196,133,63,.75))}
+.xadd::after{background:
+  linear-gradient(180deg,rgba(255,255,255,.14) 0 1px,rgba(255,255,255,0) 1px) 0 0/100% 100% no-repeat,
+  linear-gradient(0deg,rgba(0,0,0,.45) 0 2px,rgba(0,0,0,0) 2px) 0 0/100% 100% no-repeat,
+  linear-gradient(180deg,#1C2B33,#0E1A20 70%) 0 0/100% 100% no-repeat}
+.xadd:hover,.xadd.on{filter:drop-shadow(0 1px 1px rgba(0,0,0,.5)) drop-shadow(0 12px 20px rgba(224,164,88,.5))}
+.xadd:hover::after,.xadd.on::after{background:
+  linear-gradient(180deg,rgba(255,255,255,.55) 0 1px,rgba(255,255,255,0) 1px) 0 0/100% 100% no-repeat,
+  linear-gradient(0deg,rgba(60,30,8,.32) 0 2px,rgba(60,30,8,0) 2px) 0 0/100% 100% no-repeat,
+  linear-gradient(180deg,#F9D08E,#E7AD62 48%,#C4853F) 0 0/100% 100% no-repeat}
+.xadd:active{translate:0 1px;transform:none}
+
+/* outlined arrow button on cream (Explore our services) */
+.ghost,.btn-ghost{filter:drop-shadow(0 1px 1px rgba(60,30,10,.25)) drop-shadow(0 8px 14px rgba(164,70,42,.16))}
+.ghost::after,.btn-ghost::after{background:
+  linear-gradient(180deg,#fff 0 1px,rgba(255,255,255,0) 1px) 0 0/100% 100% no-repeat,
+  linear-gradient(0deg,rgba(120,60,30,.16) 0 2px,rgba(120,60,30,0) 2px) 0 0/100% 100% no-repeat,
+  linear-gradient(180deg,#FFFBF4,#F3E8D6) 0 0/100% 100% no-repeat}
+.ghost:hover::after,.btn-ghost:hover::after{background:
+  linear-gradient(180deg,#fff 0 1px,rgba(255,255,255,0) 1px) 0 0/100% 100% no-repeat,
+  linear-gradient(0deg,rgba(120,60,30,.16) 0 2px,rgba(120,60,30,0) 2px) 0 0/100% 100% no-repeat,
+  linear-gradient(180deg,#FFFDF8,#F8EEDD) 0 0/100% 100% no-repeat}
+.ghost:active,.btn-ghost:active{translate:0 1px;transform:none}
+
+/* sticky bar + picks bar: square-cut western shapes, no ovals */
+.tray{border-radius:14px}
+@media (max-width:700px){
+  .mcta{border-radius:16px;padding:7px 8px}
+  .mcta a{border-radius:0;position:relative;isolation:isolate}
+  .mcta-call{border:0!important;filter:drop-shadow(0 1px 1px rgba(0,0,0,.5))}
+  .mcta-call::before,.mcta-call::after{content:"";position:absolute;z-index:-1;clip-path:polygon(12px 0,calc(100% - 12px) 0,100% 50%,calc(100% - 12px) 100%,12px 100%,0 50%)}
+  .mcta-call::before{inset:0;background:rgba(224,164,88,.75)}
+  .mcta-call::after{inset:1.5px;background:linear-gradient(180deg,rgba(255,255,255,.14) 0 1px,transparent 1px),linear-gradient(180deg,#1C2B33,#0E1A20)}
+  .mcta-book{background:none!important;filter:drop-shadow(0 1px 1px rgba(40,20,5,.45)) drop-shadow(0 6px 12px rgba(196,133,63,.45))}
+  .mcta-book::before{content:"";position:absolute;inset:0;z-index:-1;clip-path:polygon(12px 0,calc(100% - 12px) 0,100% 50%,calc(100% - 12px) 100%,12px 100%,0 50%);background:
+    linear-gradient(180deg,rgba(255,255,255,.55) 0 1px,rgba(255,255,255,0) 1px),
+    linear-gradient(0deg,rgba(60,30,8,.32) 0 2px,rgba(60,30,8,0) 2px),
+    linear-gradient(180deg,#F9D08E,#E7AD62 48%,#C4853F)}
+  .mcta a:active{translate:0 1px}
+}
 </style>
 <script>
 /* if any photo fails to load, retry it straight from the server (up to 2 times) */
