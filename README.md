@@ -5,7 +5,7 @@ Upload every file in this folder to the root of the GitHub repository (no folder
 - `index.html` — the whole site: spinning logo, scroll effects, offerings and booking funnel
 - `*.webp` — the logo and photos used on the page
 - `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`, `site.webmanifest` — tab and home-screen icons
-- `og-image.jpg` — preview image shown when the link is shared
+- `saddle-up-drinks-horse-trailer-bar-sacramento-social-preview.jpg` — preview image shown when the link is shared
 - `CNAME` — points GitHub Pages at saddleupdrinks.com
 - `robots.txt`, `sitemap.xml` — help Google index the site
 - `404.html` — "page not found" screen

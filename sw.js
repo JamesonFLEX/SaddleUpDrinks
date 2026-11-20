@@ -2,8 +2,8 @@
    Pages: network first (always fresh), saved copy only when offline.
    Photos, logo, fonts: served instantly from the saved copy (their URLs change with every update),
    fetched once and kept. Only real images/fonts are ever saved. Bump VERSION when you upload changes. */
-var VERSION = "saddleup-v42";
-var CORE = ["index.html", "logo.webp?v=21"];
+var VERSION = "saddleup-v43";
+var CORE = ["index.html", "saddle-up-drinks-logo.webp?v=21"];
 
 self.addEventListener("install", function (e) {
   e.waitUntil(caches.open(VERSION).then(function (c) { return c.addAll(CORE).catch(function () {}); })
