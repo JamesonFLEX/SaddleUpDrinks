@@ -2,15 +2,16 @@
    Lead events: generate_lead (quote form sent), call_click, email_click,
    social_click, review_click, form_start. Ad features are off. */
 (function () {
-  var ID = "G-XXXXXXXXXX";
-  if (!/^G-[A-Z0-9]{6,}$/.test(ID) || ID === "G-XXXXXXXXXX") return;
+  var ID = "GTM-NLS8BPPJ";
+  if (!/^(G|GT|GTM)-[A-Z0-9]{6,}$/.test(ID)) return;
   if (!/(^|\.)saddleupdrinks\.com$/.test(location.hostname)) return;
 
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
   window.gtag = gtag;
   gtag("js", new Date());
-  gtag("config", ID, { allow_google_signals: false, allow_ad_personalization_signals: false });
+  gtag("set", { allow_google_signals: false, allow_ad_personalization_signals: false });
+  if (ID.indexOf("G-") === 0) gtag("config", ID);
 
   var s = document.createElement("script");
   s.async = true;
